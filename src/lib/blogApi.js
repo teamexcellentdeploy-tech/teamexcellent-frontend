@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-// Use environment variable for API URL
-const API_URL = `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api'}/blogs`;
+const API_URL = `${import.meta.env.VITE_API_BASE_URL || 'https://team-excellent-website-backend.vercel.app/api'}/blogs`;
 
 // Get auth token from localStorage
 const getAuthToken = () => {

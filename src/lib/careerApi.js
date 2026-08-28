@@ -10,7 +10,7 @@ const getBaseUrl = () => {
         return import.meta.env.VITE_API_URL;
     }
     // Default to local development
-    return 'http://localhost:5000/api';
+    return 'https://team-excellent-website-backend.vercel.app/api';
 };
 
 const API_URL = `${getBaseUrl()}/careers`;

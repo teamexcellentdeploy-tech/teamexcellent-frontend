@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_BASE_URL || 'https://team-excellent-website-backend.vercel.app/api';
 
 /**
  * Fetch all approved reviews for the public website
