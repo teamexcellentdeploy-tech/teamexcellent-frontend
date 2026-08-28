@@ -4,7 +4,39 @@ import * as XLSX from "xlsx";
 import { authAPI, marksAPI } from "../lib/api";
 import TeamExcellent from "../assets/TeamExcellent.webp";
 import { useNavigate } from "react-router-dom";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
+import AdminNav from "./AdminNav";
+
+const formatDate = (dateStr) => {
+  if (!dateStr) return "";
+  try {
+    const d = new Date(dateStr);
+    if (isNaN(d.getTime())) return dateStr;
+    const day = String(d.getUTCDate()).padStart(2, "0");
+    const month = String(d.getUTCMonth() + 1).padStart(2, "0");
+    const year = d.getUTCFullYear();
+    return `${day}-${month}-${year}`;
+  } catch (e) {
+    return dateStr;
+  }
+};
+
+const parseDDMMYYYY = (str) => {
+  if (!str) return null;
+  const cleanStr = str.replace(/\//g, "-").trim();
+  const parts = cleanStr.split("-");
+  if (parts.length === 3) {
+    let day = parts[0].trim();
+    let month = parts[1].trim();
+    let year = parts[2].trim();
+    if (day.length === 1) day = "0" + day;
+    if (month.length === 1) month = "0" + month;
+    if (day.length === 2 && month.length === 2 && year.length === 4) {
+      return `${year}-${month}-${day}`;
+    }
+  }
+  return null;
+};
 
 // ----------------- UI Components -----------------
 const Button = ({ children, className = "", ...props }) => (
@@ -74,6 +106,7 @@ const AdminMarks = () => {
         localStorage.setItem("adminToken", data.token);
         setIsLoggedIn(true);
         toast.success("Login successful!");
+        navigate('/admin');
       } else {
         toast.error("Login failed");
       }
@@ -146,7 +179,7 @@ const AdminMarks = () => {
         <Card>
           <form onSubmit={handleLogin} className="space-y-4 w-70 lg:w-100">
             <div className="flex justify-center">
-              <img src={TeamExcellent} alt="Logo" className="w-40 md:w-56" />
+              <img src={TeamExcellent} alt="Team Excellent Career Institute Admin Portal Logo" className="w-40 md:w-56" />
             </div>
             <h2 className="text-xl font-bold text-center">Admin Login</h2>
             <Input
@@ -171,23 +204,26 @@ const AdminMarks = () => {
               {isLoading ? "Logging in..." : "Login"}
             </Button>
           </form>
-          <Toaster position="top-right" />
+
         </Card>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#f3f4f6] mt-30 p-6">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">Admin Dashboard - Marks</h1>
-        <div className="flex gap-2">
-          <Button onClick={() => navigate(-1)}>⬅ Back</Button>
-          <Button onClick={handleLogout}>
-            <LogOut className="mr-2 h-4 w-4 inline" /> Logout
-          </Button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-gray-50 flex flex-col lg:flex-row">
+      <AdminNav />
+      <main className="flex-1 lg:pl-64 p-4 md:p-8 pt-20 lg:pt-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex justify-between items-center mb-6">
+            <h1 className="text-2xl font-bold text-[#0B0B45]">Admin Dashboard - Marks</h1>
+            <div className="flex gap-2">
+              <Button onClick={() => navigate(-1)} className="bg-gray-500 hover:bg-gray-600">⬅ Back</Button>
+              <Button onClick={handleLogout} className="bg-red-500 hover:bg-red-600">
+                <LogOut className="mr-2 h-4 w-4 inline" /> Logout
+              </Button>
+            </div>
+          </div>
 
       <Card className="mb-6 flex justify-between items-center">
         <h2 className="text-lg font-semibold">Total Students: {marks.length}</h2>
@@ -212,7 +248,7 @@ const AdminMarks = () => {
               <p><strong>School:</strong> {r.schoolName}</p>
               <p><strong>Father:</strong> {r.fatherName}</p>
               <p><strong>Contact:</strong> {r.contactNumber}</p>
-              <p><strong>DOB:</strong> {new Date(r.dateofBirth).toLocaleDateString()}</p>
+              <p><strong>DOB:</strong> {formatDate(r.dateofBirth)}</p>
               <p><strong>Total:</strong> {r.total}</p>
               {r.scholarshipPercent && (
                 <p><strong>Scholarship:</strong> {r.scholarshipPercent}%</p>
@@ -242,10 +278,10 @@ const AdminMarks = () => {
           onEdit={setEditingMark}
           onDelete={handleDeleteMark}
         />
+        </div>
       </div>
-
-      <Toaster position="top-right" />
-    </div>
+    </main>
+  </div>
   );
 };
 
@@ -269,7 +305,12 @@ const MarksForm = ({ onSubmit, editingMark, onCancel }) => {
   );
 
   useEffect(() => {
-    if (editingMark) setFormData(editingMark);
+    if (editingMark) {
+      setFormData({
+        ...editingMark,
+        dateofBirth: formatDate(editingMark.dateofBirth)
+      });
+    }
   }, [editingMark]);
 
   const handleChange = (e) => {
@@ -288,7 +329,19 @@ const MarksForm = ({ onSubmit, editingMark, onCancel }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData);
+
+    const normalizedDate = parseDDMMYYYY(formData.dateofBirth);
+    if (!normalizedDate) {
+      toast.error("Please enter Date of Birth in DD-MM-YYYY format!");
+      return;
+    }
+
+    const parsedData = {
+      ...formData,
+      dateofBirth: normalizedDate
+    };
+
+    onSubmit(parsedData);
     setFormData({
       studentName: "",
       className: "",
@@ -327,7 +380,7 @@ const MarksForm = ({ onSubmit, editingMark, onCancel }) => {
         />
       ))}
       <Input
-        type="string"
+        type="text"
         name="dateofBirth"
         value={formData.dateofBirth}
         onChange={handleChange}
@@ -381,10 +434,7 @@ const MarksList = ({ marks = [], onEdit, onDelete }) => {
     currentPage * ITEMS_PER_PAGE
   );
 
-  const formatDate = (dateStr) => {
-    const d = new Date(dateStr);
-    return `${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}`;
-  };
+  // Using global formatDate helper to format date of birth
 
   return (
     <div className="space-y-4">

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Layers,
   BookOpen,
@@ -8,6 +9,7 @@ import {
   PenTool,
   Lightbulb,
 } from "lucide-react";
+import FAQSection from "./FAQSection";
 
 function Class6to10Content() {
   const groups = [
@@ -17,6 +19,7 @@ function Class6to10Content() {
       badge: "Foundation",
       color: "bg-green-600",
       icon: <Lightbulb className="w-8 h-8 text-white drop-shadow" />,
+      link: "/class-6-in-patna",
       description:
         "Class 6 marks the beginning of concept-based learning. Focus is on strengthening fundamentals and building interest in Science & Mathematics.",
       highlights: [
@@ -32,6 +35,7 @@ function Class6to10Content() {
       badge: "Foundation Builder",
       color: "bg-blue-600",
       icon: <BookOpen className="w-8 h-8 text-white drop-shadow" />,
+      link: "/class-7-in-patna",
       description:
         "Class 7 builds upon Class 6 knowledge with deeper concepts in Math and Science, while introducing logical reasoning.",
       highlights: [
@@ -47,6 +51,7 @@ function Class6to10Content() {
       badge: "Pre-Foundation",
       color: "bg-yellow-600",
       icon: <Target className="w-8 h-8 text-white drop-shadow" />,
+      link: "/class-8-in-patna",
       description:
         "Class 8 bridges the gap between middle school and high school. Students are prepared for advanced board concepts and Olympiads.",
       highlights: [
@@ -62,6 +67,7 @@ function Class6to10Content() {
       badge: "Board Foundation",
       color: "bg-indigo-600",
       icon: <BookOpen className="w-8 h-8 text-white drop-shadow" />,
+      link: "/class-9-in-patna",
       description:
         "Class 9 is a stepping stone for board exams. Focus is on NCERT fundamentals, application-based learning, and problem-solving skills.",
       highlights: [
@@ -77,6 +83,7 @@ function Class6to10Content() {
       badge: "Board Excellence",
       color: "bg-purple-700",
       icon: <Target className="w-8 h-8 text-white drop-shadow" />,
+      link: "/class-10-in-patna",
       description:
         "Class 10 lays the foundation for future competitive exams. We prepare students for Boards + Olympiads with regular practice and assessments.",
       highlights: [
@@ -113,24 +120,63 @@ function Class6to10Content() {
         "Foundation for JEE/NEET starts here with exposure to problem-solving beyond textbooks.",
       icon: <PenTool className="w-6 h-6" />,
     },
+    {
+      title: "Admission Process & Guidance",
+      detail: (
+        <>
+          Hassle-free admissions for junior foundation batches. Explore our <Link to="/admission" className="font-bold text-[#522871] hover:underline">Step-by-Step Admission Process</Link>.
+        </>
+      ),
+      icon: <BookOpen className="w-6 h-6" />,
+    },
+  ];
+
+  const faqs = [
+    {
+      question: "How does the Junior Foundation Course benefit my child?",
+      answer: "Our foundation course for Classes 6-10 strengthens basic concepts in Science and Mathematics, helps children excel in school exams, and introduces Olympiad-level logic to lay a strong foundation for future JEE/NEET preparation."
+    },
+    {
+      question: "Is the NCERT syllabus covered?",
+      answer: "Yes, NCERT forms the core base of our teaching. We systematically build up to advanced reference book levels once NCERT concepts are fully mastered."
+    },
+    {
+      question: "How do you evaluate Class 6-10 students' progress?",
+      answer: "We conduct bi-weekly chapter tests and monthly cumulative mock tests, followed by detailed performance analysis shared during parent-teacher meetings."
+    }
   ];
 
   return (
-    <section
-      className="w-full min-h-screen bg-gray-50 mt-30 py-12 px-6"
-      aria-label="Programs for Classes 6 to 10"
-    >
-      {/* Page Heading */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl sm:text-5xl font-bold text-[#522871]">
-          Classes 6 – 10 Programs
-        </h1>
-        <div className="w-40 h-1 bg-purple-600 mx-auto mt-2 rounded"></div>
-        <p className="text-gray-600 mt-3 text-base sm:text-lg max-w-3xl mx-auto">
-          Strong foundation courses for Classes 6–10 designed to excel in school
-          exams, Olympiads, and lay the groundwork for JEE/NEET preparation.
-        </p>
-      </div>
+    <div className="w-full">
+      {/* Subpage Hero Section */}
+      <section className="relative w-full bg-[#fafafc] pt-[140px] pb-[80px] flex items-center justify-center overflow-hidden text-center animate-fade-in border-b border-slate-100">
+        {/* Ambient Grid & Glows */}
+        <div className="absolute inset-0 bg-[radial-gradient(#e2e0ff_1px,transparent_1px)] [background-size:24px_24px] opacity-30" />
+        <div className="absolute -top-30 left-1/4 -z-10 h-[250px] w-[250px] rounded-full bg-purple-200/40 blur-[80px]" />
+        <div className="absolute top-20 right-1/4 -z-10 h-[300px] w-[300px] rounded-full bg-rose-100/30 blur-[90px]" />
+
+        <div className="relative max-w-4xl mx-auto px-6 w-full">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-purple-100 bg-purple-50/80 px-4 py-1.5 text-[10px] sm:text-xs font-semibold text-[#5B2D7C] shadow-sm backdrop-blur-sm mb-6">
+            <Brain className="w-4 h-4 text-[#5B2D7C]" />
+            <span className="tracking-wide">Academic Foundation Programs</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#1e1b4b] leading-tight mb-6">
+            Classes 6 – 10 <br />
+            <span className="bg-gradient-to-r from-[#5B2D7C] via-[#8424bd] to-[#b72e2f] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(91,45,124,0.08)]">
+              Junior Foundation Program
+            </span>
+          </h1>
+
+          <p className="max-w-2xl mx-auto text-xs sm:text-sm md:text-base text-slate-600 leading-relaxed font-medium">
+            Strong foundation courses for Classes 6–10 designed to excel in school exams, Olympiads, and lay the groundwork for JEE/NEET preparation.
+          </p>
+        </div>
+      </section>
+
+      {/* Main Content Area */}
+      <section className="w-full bg-gray-50 py-16 px-6" aria-label="Programs for Classes 6 to 10">
 
       {/* Class-wise Cards */}
       <div className="max-w-6xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 gap-8 sm:gap-y-6">
@@ -158,6 +204,14 @@ function Class6to10Content() {
                 <li key={i}>{h}</li>
               ))}
             </ul>
+            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between gap-3 flex-wrap">
+              <Link to={g.link} className="inline-flex items-center gap-1.5 px-3 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-xl text-xs font-bold transition-all shadow-sm">
+                Class Details →
+              </Link>
+              <Link to="/admission" className="inline-flex items-center gap-1.5 px-3 py-2 bg-purple-50 hover:bg-purple-100 text-[#5B2D7C] rounded-xl text-xs font-bold transition-all border border-purple-200">
+                Admission Process →
+              </Link>
+            </div>
           </div>
         ))}
       </div>
@@ -190,21 +244,38 @@ function Class6to10Content() {
 
       {/* Why Team Excellent */}
       <div
-        className="max-w-4xl mx-auto mt-20 text-center"
+        className="max-w-4xl mx-auto mt-20 text-center bg-purple-50 p-10 rounded-2xl shadow-inner border border-purple-100"
         aria-label="Why Choose Team Excellent"
       >
         <h2 className="text-3xl font-bold text-[#522871] mb-6 flex items-center justify-center gap-2">
-          <Award className="w-8 h-8 text-purple-600" /> Why Learn with Team
-          Excellent?
+          <Award className="w-8 h-8 text-purple-600" /> Why Learn with Team Excellent?
         </h2>
         <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
           At Team Excellent, we focus on holistic growth. From Classes 6–10, our
           students receive strong academic support, Olympiad exposure, board
-          preparation, and the foundation to tackle JEE, NEET, and other
-          competitive exams in higher classes.
+          preparation, and the foundation to tackle{" "}
+          <Link to="/best-jee-coaching-in-patna" className="font-semibold text-[#5B2D7C] hover:underline">
+            IIT-JEE Preparation
+          </Link>{" "}
+          and{" "}
+          <Link to="/best-neet-coaching-in-patna" className="font-semibold text-[#5B2D7C] hover:underline">
+            NEET Medical Preparation
+          </Link>{" "}
+          in higher classes. To learn more about getting started, check our{" "}
+          <Link to="/admission" className="font-semibold text-[#b72e2f] hover:underline">
+            Admission Procedure
+          </Link>, visit our{" "}
+          <Link to="/student-portal" className="font-semibold text-[#5B2D7C] hover:underline">
+            Student Portal
+          </Link>, or read our latest updates on our{" "}
+          <Link to="/blogs" className="font-semibold text-[#5B2D7C] hover:underline">
+            Education Blog
+          </Link>.
         </p>
       </div>
+      <FAQSection faqs={faqs} />
     </section>
+  </div>
   );
 }
 

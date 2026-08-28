@@ -1,11 +1,44 @@
 import { useState } from "react";
+import { ArrowRight, User, Phone, Calendar, Award, FileText, CheckCircle, GraduationCap, Building, ShieldCheck, Download, Star } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { marksAPI } from "../lib/api";
 import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
-import toast, { Toaster } from "react-hot-toast";
-import logo from "../assets/TeamExcellent.webp";
+import autoTable from "jspdf-autotable";
+import toast from "react-hot-toast";
+const logo = "/logo-1_transparent.jpg.jpeg";
 
-const StudentMarks = () => {
+const formatDate = (dateStr) => {
+  if (!dateStr) return "";
+  try {
+    const d = new Date(dateStr);
+    if (isNaN(d.getTime())) return dateStr;
+    const day = String(d.getUTCDate()).padStart(2, "0");
+    const month = String(d.getUTCMonth() + 1).padStart(2, "0");
+    const year = d.getUTCFullYear();
+    return `${day}-${month}-${year}`;
+  } catch (e) {
+    return dateStr;
+  }
+};
+
+const parseDDMMYYYY = (str) => {
+  if (!str) return null;
+  const cleanStr = str.replace(/\//g, "-").trim();
+  const parts = cleanStr.split("-");
+  if (parts.length === 3) {
+    let day = parts[0].trim();
+    let month = parts[1].trim();
+    let year = parts[2].trim();
+    if (day.length === 1) day = "0" + day;
+    if (month.length === 1) month = "0" + month;
+    if (day.length === 2 && month.length === 2 && year.length === 4) {
+      return `${year}-${month}-${day}`;
+    }
+  }
+  return null;
+};
+
+const StudentMarks = ({ isPageHeader = false }) => {
   const [formData, setFormData] = useState({
     studentName: "",
     contactNumber: "",
@@ -22,7 +55,16 @@ const StudentMarks = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await marksAPI.getOne(formData);
+      const normalizedDate = parseDDMMYYYY(formData.dateofBirth);
+      if (!normalizedDate) {
+        toast.error("Please enter Date of Birth in DD-MM-YYYY format!");
+        return;
+      }
+      const res = await marksAPI.getOne({
+        studentName: formData.studentName.trim(),
+        contactNumber: formData.contactNumber.trim(),
+        dateofBirth: normalizedDate
+      });
       setMarks(res.data);
       toast.success("Marks loaded successfully!");
     } catch (error) {
@@ -33,11 +75,9 @@ const StudentMarks = () => {
     }
   };
 
-  // Helper: Calculate percentage
   const getPercentage = (obtained, total) =>
     ((obtained / total) * 100).toFixed(2);
 
-  // Helper: Calculate grade
   const getGrade = (percentage) => {
     if (percentage >= 90) return "A+";
     if (percentage >= 75) return "A";
@@ -47,280 +87,763 @@ const StudentMarks = () => {
     return "F";
   };
 
-  // ✅ Export Marksheet as Full A4 PDF
-  const exportToPDF = () => {
-    const input = document.getElementById("marksheet");
-    if (!input) {
-      toast.error("Marksheet not found!");
+  const getGradeColor = (grade) => {
+    switch (grade) {
+      case "A+": return "bg-emerald-100 text-emerald-800 border-emerald-200";
+      case "A": return "bg-teal-100 text-teal-800 border-teal-200";
+      case "B": return "bg-blue-100 text-blue-800 border-blue-200";
+      case "C": return "bg-amber-100 text-amber-800 border-amber-200";
+      case "D": return "bg-orange-100 text-orange-800 border-orange-200";
+      default: return "bg-rose-100 text-rose-800 border-rose-200";
+    }
+  };
+
+  const getImageDataURL = (url) => {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0);
+        resolve({
+          dataURL: canvas.toDataURL("image/png"),
+          width: img.width,
+          height: img.height
+        });
+      };
+      img.onerror = (e) => reject(e);
+      img.src = url;
+    });
+  };
+
+  const exportToPDF = async () => {
+    if (!marks) {
+      toast.error("Marksheet data not found!");
       return;
     }
 
-    html2canvas(input, {
-      scale: 2,
-      useCORS: true,
-      backgroundColor: "#ffffff",
-    })
-      .then((canvas) => {
-        const imgData = canvas.toDataURL("image/png");
-        const pdf = new jsPDF("p", "mm", "a4");
+    const pdfToast = toast.loading("Generating PDF...");
 
-        const pageWidth = pdf.internal.pageSize.getWidth();
-        const pageHeight = pdf.internal.pageSize.getHeight();
+    try {
+      const doc = new jsPDF("p", "mm", "a4");
+      
+      // Page setup
+      const pageWidth = doc.internal.pageSize.getWidth();
+      const pageHeight = doc.internal.pageSize.getHeight();
 
-        // Force image to cover full A4 size
-        pdf.addImage(imgData, "PNG", 0, 0, pageWidth, pageHeight);
+      // Top decorative band
+      doc.setFillColor(91, 45, 124); // Primary Purple
+      doc.rect(0, 0, pageWidth, 5, "F");
 
-        pdf.save(`${marks.studentName}_Marksheet.pdf`);
-        toast.success("PDF downloaded!");
-      })
-      .catch((err) => {
-        console.error("PDF Export Error:", err);
-        toast.error("Failed to export PDF ❌");
+      // Bottom decorative band
+      doc.setFillColor(91, 45, 124); // Primary Purple
+      doc.rect(0, pageHeight - 5, pageWidth, 5, "F");
+      
+      // Draw Page Borders
+      doc.setDrawColor(226, 232, 240); // Slate 200
+      doc.setLineWidth(0.5);
+      doc.rect(10, 12, pageWidth - 20, pageHeight - 24); // Outer border
+      
+      doc.setDrawColor(243, 232, 255); // Purple 100
+      doc.setLineWidth(0.25);
+      doc.rect(11.5, 13.5, pageWidth - 23, pageHeight - 27); // Inner border
+
+      // 1. Centered Logo Header
+      let logoLoaded = false;
+      let logoResult = null;
+      
+      try {
+        logoResult = await getImageDataURL(logo);
+        logoLoaded = true;
+      } catch (err) {
+        console.warn("Could not load logo as base64, using fallback typography:", err);
+      }
+
+      const logoYSpace = 22; // Height from 15 to 37
+      let logoHeight = 18;
+      let logoWidth = 42; // Professional balanced logo size on the left
+
+      if (logoLoaded && logoResult) {
+        logoHeight = (logoResult.height / logoResult.width) * logoWidth;
+        if (logoHeight > logoYSpace) {
+          logoHeight = logoYSpace;
+          logoWidth = (logoResult.width / logoResult.height) * logoHeight;
+        }
+        const logoX = 15; // Aligned with the left page margin
+        const logoY = 15 + (logoYSpace - logoHeight) / 2;
+        doc.addImage(logoResult.dataURL, "PNG", logoX, logoY, logoWidth, logoHeight);
+      } else {
+        // Fallback Vector Logo on the left
+        const logoX = 25;
+        const logoY = 26;
+        doc.setFillColor(243, 232, 255);
+        doc.circle(logoX, logoY, 11, "F");
+        
+        doc.setFillColor(91, 45, 124);
+        doc.circle(logoX, logoY, 9, "F");
+        
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(10);
+        doc.setTextColor(255, 255, 255);
+        doc.text("TE", logoX, logoY + 3, { align: "center" });
+      }
+
+      // Right-side details (Right-aligned corporate layout)
+      const rightMarginX = pageWidth - 15;
+      
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(9.5);
+      doc.setTextColor(30, 41, 59); // Slate 800 for the organization name
+      doc.text("TEAM EXCELLENT CAREER INSTITUTE", rightMarginX, 19, { align: "right" });
+      
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(7.5);
+      doc.setTextColor(100, 116, 139); // Slate 500
+      doc.text("Address: New Kunj Colony, Saketpuri, Patna, Bihar, 800016, India", rightMarginX, 24, { align: "right" });
+      doc.text("Admission Desk: +91 9942000371 | +91 9942000372", rightMarginX, 29, { align: "right" });
+      doc.text("Email: teamexcellentpatna@gmail.com | Web: www.teamexcellentcareerinstitute.in", rightMarginX, 34, { align: "right" });
+
+      // Horizontal Divider
+      doc.setDrawColor(91, 45, 124); // Deep Purple
+      doc.setLineWidth(0.6);
+      doc.line(15, 39, pageWidth - 15, 39);
+
+      // Document Title
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(13.5);
+      doc.setTextColor(30, 41, 59); // Slate 800
+      doc.text("SCHOLARSHIP TEST REPORT CARD", pageWidth / 2, 49, { align: "center" });
+      
+      // Decorative horizontal divider below title
+      doc.setDrawColor(226, 232, 240);
+      doc.setLineWidth(0.5);
+      doc.line(40, 54, pageWidth - 40, 54);
+
+      // 2. Student Info List (Clean borderless format with top & bottom separator lines)
+      doc.setDrawColor(226, 232, 240); // Slate 200
+      doc.setLineWidth(0.5);
+      doc.line(15, 59, pageWidth - 15, 59); // Top border line
+      doc.line(15, 91, pageWidth - 15, 91); // Bottom border line
+
+      // Grid Label/Value writing helper
+      const writeInfo = (label, value, labelX, valueX, y) => {
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(9);
+        doc.setTextColor(100, 116, 139); // Slate 500
+        doc.text(label, labelX, y);
+        
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(9.5);
+        doc.setTextColor(30, 41, 59); // Slate 800
+        doc.text(value, valueX, y);
+      };
+
+      const dobString = formatDate(marks.dateofBirth);
+      
+      // Column 1 - Fixed grid alignment
+      writeInfo("Name:", marks.studentName, 20, 46, 66);
+      writeInfo("Father's Name:", marks.fatherName, 20, 46, 75);
+      writeInfo("Contact No:", marks.contactNumber, 20, 46, 84);
+      
+      // Column 2 - Fixed grid alignment
+      writeInfo("Class:", marks.className, 110, 136, 66);
+      
+      let schoolNameStr = marks.schoolName || "N/A";
+      if (schoolNameStr.length > 25) {
+        schoolNameStr = schoolNameStr.substring(0, 23) + "...";
+      }
+      writeInfo("School:", schoolNameStr, 110, 136, 75);
+      writeInfo("Date of Birth:", dobString, 110, 136, 84);
+
+      // 3. Subject-wise table
+      const subjects = [
+        { name: "Physics", obtained: marks.physics },
+        { name: "Chemistry", obtained: marks.chemistry },
+        { name: "Maths", obtained: marks.maths },
+        { name: "Biology", obtained: marks.biology },
+        { name: "Aptitude", obtained: marks.aptitude },
+      ].filter(s => s.obtained !== undefined && s.obtained !== null);
+
+      const tableBody = subjects.map((subj) => {
+        const pct = getPercentage(subj.obtained, 10);
+        const grade = getGrade(pct);
+        return [
+          subj.name,
+          subj.obtained.toString(),
+          "10",
+          `${pct}%`,
+          grade
+        ];
       });
+
+      const grandTotalPct = getPercentage(marks.total, subjects.length * 10);
+      const grandTotalGrade = getGrade(grandTotalPct);
+
+      autoTable(doc, {
+        startY: 97,
+        margin: { left: 15, right: 15 },
+        head: [["Subject", "Marks Obtained", "Total Marks", "Percentage Score", "Grade"]],
+        body: tableBody,
+        foot: [
+          ["Grand Total", marks.total.toString(), (subjects.length * 10).toString(), `${grandTotalPct}%`, grandTotalGrade]
+        ],
+        theme: "striped",
+        headStyles: {
+          fillColor: [91, 45, 124], // Deep Purple
+          textColor: [255, 255, 255],
+          fontSize: 9.5,
+          fontStyle: "bold",
+          halign: "center",
+          valign: "middle",
+        },
+        footStyles: {
+          fillColor: [91, 45, 124], // Deep Purple for a framed table aesthetic
+          textColor: [255, 255, 255], // White
+          fontSize: 10,
+          fontStyle: "bold",
+          halign: "center",
+          valign: "middle",
+        },
+        columnStyles: {
+          0: { fontStyle: "bold", textColor: [30, 41, 59], halign: "left" }, // Subject
+          1: { fontStyle: "bold", textColor: [91, 45, 124], halign: "center" }, // Obtained
+          2: { textColor: [100, 116, 139], halign: "center" }, // Total
+          3: { halign: "center" }, // Percentage
+          4: { fontStyle: "bold", halign: "center" }, // Grade
+        },
+        styles: {
+          fontSize: 9,
+          cellPadding: 5.5,
+          valign: "middle",
+          lineColor: [241, 245, 249], // Slate 100
+          lineWidth: 0.5,
+        },
+        alternateRowStyles: {
+          fillColor: [250, 248, 252], // Very soft purple tint
+        },
+        didParseCell: (data) => {
+          // Highlight grade colors
+          if (data.section === "body" && data.column.index === 4) {
+            const grade = data.cell.raw;
+            if (grade === "A+" || grade === "A") {
+              data.cell.styles.textColor = [16, 185, 129]; // Emerald Green
+            } else if (grade === "B" || grade === "C") {
+              data.cell.styles.textColor = [59, 130, 246]; // Blue
+            } else if (grade === "D") {
+              data.cell.styles.textColor = [245, 158, 11]; // Amber
+            } else {
+              data.cell.styles.textColor = [239, 68, 68]; // Red
+            }
+          }
+          // Highlight total row styling alignment
+          if (data.section === "foot") {
+            if (data.column.index === 0) {
+              data.cell.styles.halign = "left";
+            }
+          }
+        }
+      });
+
+      const finalY = doc.lastAutoTable.finalY;
+
+      // 4. Scholarship Status Box
+      const boxY = finalY + 10;
+      const boxHeight = 24;
+      
+      if (marks.scholarshipPercent > 0) {
+        // Emerald Success Box
+        doc.setFillColor(240, 253, 250); // Emerald 50
+        doc.setDrawColor(220, 252, 231); // Emerald 100
+        doc.setLineWidth(0.4);
+        doc.roundedRect(15, boxY, pageWidth - 30, boxHeight, 3, 3, "FD");
+        
+        // Green Accent sidebar
+        doc.setFillColor(16, 185, 129); // Emerald 500
+        doc.rect(15, boxY, 2.5, boxHeight, "F");
+        
+        // Badge Circle
+        doc.setFillColor(16, 185, 129);
+        doc.circle(23, boxY + boxHeight / 2, 5, "F");
+        
+        // Vector Checkmark inside badge
+        doc.setDrawColor(255, 255, 255);
+        doc.setLineWidth(0.6);
+        doc.line(21, boxY + 12, 22.5, boxY + 14.5);
+        doc.line(22.5, boxY + 14.5, 25.2, boxY + 10);
+        
+        // Content
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(10.5);
+        doc.setTextColor(6, 95, 70); // Emerald 800
+        doc.text("SCHOLARSHIP SECURED!", 32, boxY + 7);
+        
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(8.5);
+        doc.setTextColor(4, 120, 87); // Emerald 700
+        const scholarshipText = `Congratulations ${marks.studentName}, you have qualified for a ${marks.scholarshipPercent}% tuition fee scholarship. Please visit the center with this report card to claim your concession.`;
+        const textLines = doc.splitTextToSize(scholarshipText, pageWidth - 52);
+        doc.text(textLines, 32, boxY + 13);
+      } else {
+        // Blue Info Encouragement Box
+        doc.setFillColor(240, 249, 255); // Blue 50
+        doc.setDrawColor(224, 242, 254); // Blue 100
+        doc.setLineWidth(0.4);
+        doc.roundedRect(15, boxY, pageWidth - 30, boxHeight, 3, 3, "FD");
+        
+        // Blue Accent sidebar
+        doc.setFillColor(59, 130, 246); // Blue 500
+        doc.rect(15, boxY, 2.5, boxHeight, "F");
+        
+        // Badge Circle
+        doc.setFillColor(59, 130, 246);
+        doc.circle(23, boxY + boxHeight / 2, 5, "F");
+        
+        // Vector Warning exclamation mark inside badge
+        doc.setDrawColor(255, 255, 255);
+        doc.setLineWidth(0.8);
+        doc.line(23, boxY + 9, 23, boxY + 13);
+        doc.setFillColor(255, 255, 255);
+        doc.circle(23, boxY + 15, 0.4, "F");
+        
+        // Content
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(10.5);
+        doc.setTextColor(7, 89, 133); // Blue 800
+        doc.text("KEEP PUSHING FORWARD!", 32, boxY + 7);
+        
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(8.5);
+        doc.setTextColor(3, 105, 161); // Blue 700
+        const encouragementText = `Dear ${marks.studentName}, you did not qualify for a scholarship this time. Hard work always pays off—keep learning, practicing, and improving!`;
+        const textLines = doc.splitTextToSize(encouragementText, pageWidth - 52);
+        doc.text(textLines, 32, boxY + 13);
+      }
+
+      // 5. Contact Footer (Fixed position anchored to bottom)
+      const footerStartY = 248;
+      
+      // Divider
+      doc.setDrawColor(226, 232, 240); // Slate 200
+      doc.setLineWidth(0.5);
+      doc.line(15, footerStartY, pageWidth - 15, footerStartY);
+      
+      // Verified Tag
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(7.5);
+      doc.setTextColor(148, 163, 184); // Slate 400
+      doc.text("SYSTEM-GENERATED VERIFIED DIGITAL REPORT CARD", pageWidth / 2, footerStartY + 5, { align: "center" });
+      
+      // Footer info box (fill only, no border)
+      doc.setFillColor(248, 250, 252); // Slate 50
+      doc.roundedRect(15, footerStartY + 8, pageWidth - 30, 18, 2, 2, "F");
+      
+      // Footer details
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(7.5);
+      doc.setTextColor(100, 116, 139); // Slate 500
+      
+      // Left Column
+      doc.text("Admission Desk: +91 9942000371 | +91 9942000372", 22, footerStartY + 14);
+      doc.text("Email: teamexcellentpatna@gmail.com", 22, footerStartY + 20);
+      
+      // Right Column
+      doc.text("Website: www.teamexcellentcareerinstitute.in", 115, footerStartY + 14);
+
+      // Save PDF
+      doc.save(`${marks.studentName}_Class-${marks.className}_Marksheet.pdf`);
+      toast.success("PDF downloaded!", { id: pdfToast });
+
+    } catch (err) {
+      console.error("PDF Export Error:", err);
+      toast.error("Failed to export PDF ❌", { id: pdfToast });
+    }
   };
 
   return (
     <div
-      style={{ backgroundColor: "#FAFAFA" }}
-      className="min-h-screen flex mt-30 flex-col items-center"
+      style={{ backgroundColor: "#F8FAFC" }}
+      className={`w-full flex flex-col items-center pb-16 ${isPageHeader ? 'pt-24 md:pt-28' : ''}`}
     >
-      {/* Banner Header */}
-      <div
-        style={{ backgroundColor: "#6B21A8" }}
-        className="w-full text-center py-10 px-4"
-      >
-        <h1 className="text-3xl md:text-4xl font-bold text-white">
-          Scholarship Examination – Check Your Results
-        </h1>
-        <p style={{ color: "#E9D5FF" }} className="mt-2">
-          Enter your details below to view your marks and scholarship
-          eligibility.
-        </p>
+      {/* Header Banner */}
+      <div className="w-full text-center py-20 px-4 bg-gradient-to-br from-[#3F1D5B] via-[#5B2D7C] to-[#8424bd] shadow-lg relative overflow-hidden">
+        {/* Abstract shapes & glowing effects */}
+        <div className="absolute top-[-20%] left-[-10%] w-72 h-72 bg-purple-500/10 rounded-full blur-[80px]"></div>
+        <div className="absolute bottom-[-30%] right-[-10%] w-96 h-96 bg-indigo-500/15 rounded-full blur-[100px]"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] opacity-10"></div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-purple-200 border border-white/10 mb-4 backdrop-blur-md">
+            <Award className="w-3.5 h-3.5" />
+            Official Portal
+          </span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 tracking-tight drop-shadow-sm">
+            Scholarship Examination <span className="text-purple-200 font-light hidden md:inline">|</span> <span className="block md:inline mt-1 text-purple-100">Check Your Results</span>
+          </h1>
+          <p className="text-purple-100/90 text-sm sm:text-base md:text-lg font-medium max-w-2xl mx-auto leading-relaxed">
+            Enter your correct details below to retrieve and securely view your performance marksheet and scholarship eligibility status.
+          </p>
+        </div>
       </div>
 
-      {/* Search Form Card */}
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white shadow-lg rounded-xl p-6 w-full max-w-3xl grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8 mx-4"
-      >
-        <div className="col-span-full flex justify-center mb-2">
-          <img src={logo} alt="Logo" className="h-16 w-auto" />
-        </div>
-
-        {/* Student Name */}
-        <div>
-          <label className="block text-sm font-semibold mb-1">
-            Student Name
-          </label>
-          <input
-            type="text"
-            name="studentName"
-            value={formData.studentName}
-            onChange={handleChange}
-            required
-            className="w-full border"
-            style={{
-              borderColor: "#D1D5DB",
-              padding: "8px 12px",
-              borderRadius: "8px",
-            }}
-          />
-        </div>
-
-        {/* Contact Number */}
-        <div>
-          <label className="block text-sm font-semibold mb-1">
-            Contact Number
-          </label>
-          <input
-            type="text"
-            name="contactNumber"
-            value={formData.contactNumber}
-            onChange={handleChange}
-            required
-            className="w-full border"
-            style={{
-              borderColor: "#D1D5DB",
-              padding: "8px 12px",
-              borderRadius: "8px",
-            }}
-          />
-        </div>
-
-        {/* DOB */}
-        <div>
-          <label className="block text-sm font-semibold mb-1">
-            Date of Birth
-          </label>
-          <input
-            type="date"
-            name="dateofBirth"
-            value={formData.dateofBirth}
-            onChange={handleChange}
-            required
-            className="w-full border"
-            style={{
-              borderColor: "#D1D5DB",
-              padding: "8px 12px",
-              borderRadius: "8px",
-            }}
-          />
-        </div>
-
-        {/* Submit */}
-        <button
-          type="submit"
-          disabled={loading}
-          className="col-span-full text-white py-3 rounded-lg font-semibold transition"
-          style={{ backgroundColor: "#9333EA" }}
+      {/* Main Form Section */}
+      <div className="w-full max-w-4xl px-4 -mt-10 relative z-20">
+        <motion.form
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          onSubmit={handleSubmit}
+          className="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 md:p-8 w-full"
         >
-          {loading ? "Checking..." : "Get Marks"}
-        </button>
-      </form>
-
-      {/* Marksheet Card */}
-      {marks && (
-        <div
-          id="marksheet"
-          className="bg-white shadow-lg rounded-xl mt-8 w-full max-w-3xl p-6 mx-4"
-          style={{ border: "1px solid #E5E7EB" }}
-        >
-          {/* Header */}
           <div className="flex flex-col items-center mb-6">
-            <img src={logo} alt="Institute Logo" className="h-20 mb-2" />
-            <h2 className="text-xl font-bold text-center underline">
-              Scholarship Examination Report
-            </h2>
+            <img src={logo} alt="Team Excellent Career Institute" className="h-16 md:h-20 w-auto mb-3" />
+            <div className="h-0.5 w-20 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
           </div>
 
-          {/* Student Info */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6 text-sm">
-            <p>
-              <strong>Name:</strong> {marks.studentName}
-            </p>
-            <p>
-              <strong>School:</strong> {marks.schoolName}
-            </p>
-            <p>
-              <strong>Father:</strong> {marks.fatherName}
-            </p>
-            <p>
-              <strong>DOB:</strong>{" "}
-              {new Date(marks.dateofBirth).toLocaleDateString("en-GB")}
-            </p>
-            <p>
-              <strong>Contact:</strong> {marks.contactNumber}
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Input Student Name */}
+            <div className="flex flex-col gap-2">
+              <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Student Name</label>
+              <div className="relative rounded-xl shadow-sm">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                  <User className="h-4 w-4" />
+                </div>
+                <input
+                  type="text"
+                  name="studentName"
+                  value={formData.studentName}
+                  onChange={handleChange}
+                  placeholder="e.g. John Doe"
+                  required
+                  className="block w-full pl-10 pr-3 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent bg-slate-50 text-slate-900 placeholder-slate-400 text-sm transition-all hover:bg-slate-100/50"
+                />
+              </div>
+            </div>
+
+            {/* Input Contact Number */}
+            <div className="flex flex-col gap-2">
+              <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Contact Number</label>
+              <div className="relative rounded-xl shadow-sm">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                  <Phone className="h-4 w-4" />
+                </div>
+                <input
+                  type="text"
+                  name="contactNumber"
+                  value={formData.contactNumber}
+                  onChange={handleChange}
+                  placeholder="e.g. 9942000371"
+                  required
+                  className="block w-full pl-10 pr-3 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent bg-slate-50 text-slate-900 placeholder-slate-400 text-sm transition-all hover:bg-slate-100/50"
+                />
+              </div>
+            </div>
+
+            {/* Input Date of Birth */}
+            <div className="flex flex-col gap-2">
+              <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Date of Birth</label>
+              <div className="relative rounded-xl shadow-sm">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                  <Calendar className="h-4 w-4" />
+                </div>
+                <input
+                  type="text"
+                  name="dateofBirth"
+                  value={formData.dateofBirth}
+                  onChange={handleChange}
+                  placeholder="e.g. 22-06-2009"
+                  required
+                  className="block w-full pl-10 pr-3 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent bg-slate-50 text-slate-900 placeholder-slate-400 text-sm transition-all hover:bg-slate-100/50"
+                />
+              </div>
+            </div>
           </div>
 
-          {/* Subject-wise Detailed Table */}
-          <table className="w-full border text-center text-sm mb-6">
-            <thead style={{ backgroundColor: "#F3F4F6" }}>
-              <tr>
-                <th className="border p-2">Subject</th>
-                <th className="border p-2">Marks Obtained</th>
-                <th className="border p-2">Total Marks</th>
-                <th className="border p-2">Percentage</th>
-                <th className="border p-2">Grade</th>
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                { name: "Physics", obtained: marks.physics },
-                { name: "Chemistry", obtained: marks.chemistry },
-                { name: "Maths", obtained: marks.maths },
-                { name: "Biology", obtained: marks.biology },
-                { name: "Aptitude", obtained: marks.aptitude },
-              ].map((subj, i) => {
-                const percentage = getPercentage(subj.obtained, 10);
-                const grade = getGrade(percentage);
-                return (
-                  <tr key={i}>
-                    <td className="border p-2">{subj.name}</td>
-                    <td className="border p-2">{subj.obtained}</td>
-                    <td className="border p-2">10</td>
-                    <td className="border p-2">{percentage}%</td>
-                    <td className="border p-2">{grade}</td>
-                  </tr>
-                );
-              })}
-              {/* Grand Total Row */}
-              <tr className="font-bold" style={{ backgroundColor: "#FAFAFA" }}>
-                <td className="border p-2">Total</td>
-                <td className="border p-2">{marks.total}</td>
-                <td className="border p-2">50</td>
-                <td className="border p-2">
-                  {getPercentage(marks.total, 50)}%
-                </td>
-                <td className="border p-2">
-                  {getGrade(getPercentage(marks.total, 50))}
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="mt-8">
+            <motion.button
+              whileHover={{ scale: 1.01 }}
+              whileTap={{ scale: 0.99 }}
+              type="submit"
+              disabled={loading}
+              className="w-full bg-gradient-to-r from-[#5B2D7C] to-[#8424bd] hover:from-[#4A2466] hover:to-[#6E1C9F] text-white py-3.5 rounded-xl font-bold text-base transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-75 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            >
+              {loading ? (
+                <>
+                  <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Fetching Result...
+                </>
+              ) : (
+                <>
+                  View Results <ArrowRight className="w-4 h-4" />
+                </>
+              )}
+            </motion.button>
+          </div>
+        </motion.form>
+      </div>
 
-          {/* Scholarship Message */}
-          {/* Scholarship Message */}
-<div
-  className="rounded-lg p-4"
-  style={{ backgroundColor: "#FAFAFA", border: "1px solid #E5E7EB" }}
->
-  {marks.scholarshipPercent > 0 ? (
-    <p style={{ color: "#15803D", fontWeight: "500" }}>
-      🎉 Congratulations, <strong>{marks.studentName}</strong>!  
-      You have secured a <strong>{marks.scholarshipPercent}% scholarship</strong> based on your performance.
-    </p>
-  ) : (
-    <p style={{ color: "#CA8A04", fontWeight: "500" }}>
-      Dear <strong>{marks.studentName}</strong>, you did not qualify for a scholarship this time.  
-      Keep working hard, every step brings you closer to success 💪
-    </p>
-  )}
-</div>
-
-
-          <p className="text-xs italic mt-4">
-            This is a system-generated marksheet.
-          </p>
-
-          {/* ✅ Institute Contact Details */}
-          <div
-            className="mt-6 text-center text-sm border-t pt-4"
-            style={{ color: "#4B5563" }}
+      {/* Marksheet Report Display */}
+      <AnimatePresence>
+        {marks && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 30 }}
+            className="w-full max-w-4xl px-4 mt-12 flex flex-col items-center"
           >
-            <p>📞 Contact: +91 9942000371 | +91 9942000372</p>
-            <p>
-              🌐 Website:{" "}
-              <a
-                href="https://teamexcellentcareerinstitute.in/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-                style={{ color: "#9333EA" }}
-              >
-                www.teamexcellentcareerinstitute.in
-              </a>
-            </p>
-            <p>Email: teamexcellentpatna@gmail.com</p>
-            <p>
-              Address: New Kunj Colony, Saketpuri, Patna, Bihar 800016, India
-            </p>
-          </div>
-        </div>
-      )}
+            <div
+              id="marksheet"
+              className="bg-white shadow-2xl border border-slate-100 rounded-3xl w-full p-6 md:p-10 relative overflow-hidden"
+            >
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-24 h-24 bg-[#5B2D7C]/5 rounded-bl-[100px] pointer-events-none"></div>
+              
+              {/* Official Header */}
+              <div className="flex flex-col items-center text-center pb-8 border-b border-slate-100 mb-8">
+                <img src={logo} alt="Team Excellent" className="h-16 md:h-20 mb-3" />
+                <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#5B2D7C] bg-purple-50 px-3 py-1 rounded-full mb-2">
+                  Academic Evaluation Division
+                </span>
+                <h2 className="text-xl md:text-2xl font-black text-slate-800">
+                  Scholarship Test Report Card
+                </h2>
+              </div>
 
-      {/* Download Button */}
-      {marks && (
-        <button
-          onClick={exportToPDF}
-          className="mt-4 text-white px-6 py-2 rounded-lg font-semibold transition"
-          style={{ backgroundColor: "#16A34A" }}
-        >
-          Download Marksheet (PDF)
-        </button>
-      )}
+              {/* Student Personal Info Grid */}
+              <div className="bg-slate-50/75 rounded-2xl p-4 md:p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8 text-sm text-slate-700">
+                <div className="flex items-center gap-2">
+                  <User className="w-4 h-4 text-purple-600 shrink-0" />
+                  <p><strong>Name:</strong> {marks.studentName}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <GraduationCap className="w-4 h-4 text-purple-600 shrink-0" />
+                  <p><strong>Class:</strong> {marks.className}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Building className="w-4 h-4 text-purple-600 shrink-0" />
+                  <p className="truncate"><strong>School:</strong> {marks.schoolName}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <User className="w-4 h-4 text-purple-600 shrink-0" />
+                  <p><strong>Father:</strong> {marks.fatherName}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-purple-600 shrink-0" />
+                  <p><strong>DOB:</strong> {formatDate(marks.dateofBirth)}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-purple-600 shrink-0" />
+                  <p><strong>Contact:</strong> {marks.contactNumber}</p>
+                </div>
+              </div>
 
-      <Toaster position="top-right" />
+              {/* Subject Breakdown Card Grid for Mobile & Elegant Table for Desktop */}
+              <div className="mb-8">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4 flex items-center gap-1.5">
+                  <FileText className="w-4 h-4 text-purple-600" />
+                  Subject Wise Analysis
+                </h3>
+                
+                {/* Desktop View Table */}
+                <div className="hidden sm:block overflow-hidden border border-slate-100 rounded-2xl">
+                  <table className="w-full text-left text-sm">
+                    <thead className="bg-slate-50 text-slate-500 uppercase text-xs font-bold border-b border-slate-100">
+                      <tr>
+                        <th className="px-6 py-4">Subject</th>
+                        <th className="px-6 py-4 text-center">Marks Obtained</th>
+                        <th className="px-6 py-4 text-center">Total Marks</th>
+                        <th className="px-6 py-4">Performance Score</th>
+                        <th className="px-6 py-4 text-center">Grade</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100 text-slate-700">
+                      {[
+                        { name: "Physics", obtained: marks.physics },
+                        { name: "Chemistry", obtained: marks.chemistry },
+                        { name: "Maths", obtained: marks.maths },
+                        { name: "Biology", obtained: marks.biology },
+                        { name: "Aptitude", obtained: marks.aptitude },
+                      ].filter(s => s.obtained !== undefined && s.obtained !== null).map((subj, i) => {
+                        const pct = getPercentage(subj.obtained, 10);
+                        const grade = getGrade(pct);
+                        return (
+                          <tr key={i} className="hover:bg-slate-50/50 transition-colors">
+                            <td className="px-6 py-4 font-semibold text-slate-800">{subj.name}</td>
+                            <td className="px-6 py-4 text-center font-bold text-purple-600">{subj.obtained}</td>
+                            <td className="px-6 py-4 text-center text-slate-400">10</td>
+                            <td className="px-6 py-4">
+                              <div className="flex items-center gap-3">
+                                <span className="w-10 text-xs text-slate-500">{pct}%</span>
+                                <div className="w-24 bg-slate-100 rounded-full h-2 overflow-hidden shrink-0">
+                                  <div
+                                    className="bg-gradient-to-r from-purple-500 to-indigo-600 h-full rounded-full"
+                                    style={{ width: `${pct}%` }}
+                                  ></div>
+                                </div>
+                              </div>
+                            </td>
+                            <td className="px-6 py-4 text-center">
+                              <span className={`px-2.5 py-0.5 rounded-full text-xs font-bold border ${getGradeColor(grade)}`}>
+                                {grade}
+                              </span>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                      {/* Total Row */}
+                      <tr className="bg-slate-50/50 font-bold border-t-2 border-slate-200">
+                        <td className="px-6 py-4 text-slate-950">Grand Total</td>
+                        <td className="px-6 py-4 text-center text-purple-700 text-base">{marks.total}</td>
+                        <td className="px-6 py-4 text-center text-slate-500">50</td>
+                        <td className="px-6 py-4">
+                          <div className="flex items-center gap-3">
+                            <span className="w-10 text-xs text-slate-900">{getPercentage(marks.total, 50)}%</span>
+                            <div className="w-24 bg-slate-200 rounded-full h-2 overflow-hidden shrink-0">
+                              <div
+                                  className="bg-gradient-to-r from-purple-600 to-indigo-700 h-full rounded-full"
+                                  style={{ width: `${getPercentage(marks.total, 50)}%` }}
+                              ></div>
+                            </div>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 text-center">
+                          <span className={`px-2.5 py-0.5 rounded-full text-xs font-bold border ${getGradeColor(getGrade(getPercentage(marks.total, 50)))}`}>
+                            {getGrade(getPercentage(marks.total, 50))}
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Mobile View Subject Cards */}
+                <div className="sm:hidden space-y-4">
+                  {[
+                    { name: "Physics", obtained: marks.physics },
+                    { name: "Chemistry", obtained: marks.chemistry },
+                    { name: "Maths", obtained: marks.maths },
+                    { name: "Biology", obtained: marks.biology },
+                    { name: "Aptitude", obtained: marks.aptitude },
+                  ].filter(s => s.obtained !== undefined && s.obtained !== null).map((subj, i) => {
+                    const pct = getPercentage(subj.obtained, 10);
+                    const grade = getGrade(pct);
+                    return (
+                      <div key={i} className="bg-slate-50/50 border border-slate-100 rounded-2xl p-4 flex flex-col gap-3">
+                        <div className="flex justify-between items-center">
+                          <span className="font-semibold text-slate-800 text-base">{subj.name}</span>
+                          <span className={`px-2 py-0.5 rounded-full text-xs font-bold border ${getGradeColor(grade)}`}>
+                            {grade}
+                          </span>
+                        </div>
+                        <div className="flex justify-between items-center text-sm">
+                          <span className="text-slate-500">Marks: <strong className="text-purple-600">{subj.obtained}</strong> / 10</span>
+                          <span className="text-slate-500">Score: <strong>{pct}%</strong></span>
+                        </div>
+                        <div className="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
+                          <div
+                            className="bg-gradient-to-r from-purple-500 to-indigo-600 h-full rounded-full"
+                            style={{ width: `${pct}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                  {/* Mobile Total Card */}
+                  <div className="bg-purple-50/50 border border-purple-100 rounded-2xl p-4 flex flex-col gap-3 font-bold text-slate-900">
+                    <div className="flex justify-between items-center">
+                      <span className="text-base text-[#5B2D7C]">Grand Total</span>
+                      <span className={`px-2 py-0.5 rounded-full text-xs font-bold border ${getGradeColor(getGrade(getPercentage(marks.total, 50)))}`}>
+                        {getGrade(getPercentage(marks.total, 50))}
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm">
+                      <span>Marks: <strong className="text-purple-700 text-base">{marks.total}</strong> / 50</span>
+                      <span>Overall: <strong>{getPercentage(marks.total, 50)}%</strong></span>
+                    </div>
+                    <div className="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden">
+                      <div
+                        className="bg-gradient-to-r from-purple-600 to-indigo-700 h-full rounded-full"
+                        style={{ width: `${getPercentage(marks.total, 50)}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 🏆 Modern Scholarship Celebration Box */}
+              <div className="mb-6">
+                {marks.scholarshipPercent > 0 ? (
+                  <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-100 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left relative overflow-hidden shadow-inner">
+                    {/* Glowing background star */}
+                    <div className="absolute right-[-10px] bottom-[-10px] text-emerald-500/5 rotate-12 scale-150 pointer-events-none">
+                      <Star size={120} fill="currentColor" />
+                    </div>
+                    <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center text-white shrink-0 shadow-lg shadow-emerald-500/20">
+                      <Award className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-extrabold text-emerald-800 text-base mb-1">
+                        🎉 Scholarship Secured!
+                      </h4>
+                      <p className="text-sm text-emerald-700 leading-relaxed">
+                        Congratulations <strong>{marks.studentName}</strong>, you have qualified for a <strong>{marks.scholarshipPercent}% tuition fee scholarship</strong>. Visit the center with this report to claim your concession.
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-100 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left shadow-inner">
+                    <div className="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center text-white shrink-0 shadow-lg shadow-amber-500/20">
+                      <Star className="w-6 h-6 animate-pulse" />
+                    </div>
+                    <div>
+                      <h4 className="font-extrabold text-amber-800 text-base mb-1">
+                        Keep Pushing Forward!
+                      </h4>
+                      <p className="text-sm text-amber-700 leading-relaxed">
+                        Dear <strong>{marks.studentName}</strong>, you did not qualify for a scholarship this time. Hard work always pays off—keep learning, practicing, and improving! 💪
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Verification & Official Details Footer */}
+              <div className="mt-8 pt-6 border-t border-slate-100 text-center text-xs text-slate-500 leading-relaxed flex flex-col items-center gap-2">
+                <p className="flex items-center gap-1 font-semibold text-slate-400">
+                  <ShieldCheck className="w-4 h-4 text-purple-600" />
+                  System-Generated Verified Digital Report Card
+                </p>
+                <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-slate-500 text-xs py-4 px-2 bg-slate-50 rounded-xl border border-slate-100">
+                  <div className="flex flex-col gap-1 md:text-left">
+                    <p>📞 Admission Desk: +91 9942000371 | +91 9942000372</p>
+                    <p>📧 Email: teamexcellentpatna@gmail.com</p>
+                  </div>
+                  <div className="flex flex-col gap-1 md:text-right">
+                    <p>🌐 Website: www.teamexcellentcareerinstitute.in</p>
+                    <p>📍 Patna Center near NMCH College, Saketpuri</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 📄 Elegant Download Button */}
+            <motion.button
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={exportToPDF}
+              className="mt-6 flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3.5 rounded-xl font-bold transition shadow-lg hover:shadow-emerald-600/20"
+            >
+              <Download className="w-5 h-5" />
+              Download Report Card (PDF)
+            </motion.button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

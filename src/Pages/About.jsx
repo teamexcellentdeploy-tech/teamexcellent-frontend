@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import AboutContent from '../Components/AboutContent'
+import ExploreLinks from '../Components/ExploreLinks'
 
 export default function About() {
   return (
@@ -26,6 +27,7 @@ export default function About() {
         <meta property="og:description" content="Know more about Team Excellent and its mission to guide students towards success in JEE, NEET, and foundations." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://teamexcellentcareerinstitute.in/about" />
+        <link rel="canonical" href="https://teamexcellentcareerinstitute.in/about" />
         <meta property="og:image" content="https://teamexcellentcareerinstitute.in/logo192.png" />
 
         {/* Twitter Card */}
@@ -33,11 +35,61 @@ export default function About() {
         <meta name="twitter:title" content="About Team Excellent | Best Coaching for JEE, NEET & Foundations" />
         <meta name="twitter:description" content="Discover Team Excellent, led by IIT-BHU alumnus Albert Newwel, offering JEE, NEET, and foundation coaching with excellence." />
         <meta name="twitter:image" content="https://teamexcellentcareerinstitute.in/logo192.png" />
+
+        {/* AboutPage & Person (Founder/Director) Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About Us | Team Excellent Coaching Institute",
+            "description": "Learn about Team Excellent, a leading coaching institute for JEE, NEET, and Class 6–10 foundations. Guided by expert faculty and led by Founder & Director Albert Newwel, IIT-BHU (M.Tech).",
+            "url": "https://teamexcellentcareerinstitute.in/about",
+            "mainEntity": {
+              "@type": "EducationalOrganization",
+              "name": "Team Excellent Career Institute",
+              "url": "https://teamexcellentcareerinstitute.in",
+              "founder": {
+                "@type": "Person",
+                "name": "Albert Newwel",
+                "jobTitle": "Founder & Director",
+                "alumniOf": {
+                  "@type": "EducationalOrganization",
+                  "name": "IIT-BHU Varanasi"
+                },
+                "description": "M.Tech from IIT-BHU, Varanasi with 12+ years experience in mentoring JEE & NEET aspirants in Patna."
+              }
+            }
+          })}
+        </script>
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teamexcellentcareerinstitute.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About Us",
+                "item": "https://teamexcellentcareerinstitute.in/about"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
-      {/* ✅ Page Content */}
       <Navbar />
-      <AboutContent />
+      <main id="main-content">
+        <AboutContent />
+        <ExploreLinks />
+      </main>
       <Footer />
     </>
   )

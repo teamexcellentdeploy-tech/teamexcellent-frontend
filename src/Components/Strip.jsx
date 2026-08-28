@@ -9,11 +9,9 @@ export default function Strip() {
           🚀 Admissions Open – Enroll Now!
         </span>
         <span className="mx-12 text-3xl font-semibold">
-          🎓 Scholarship Test Available
+          🎓 Up to 100% Scholarship after T-MAT Scholarship Test!
         </span>
-        <span className="mx-12 text-3xl font-semibold">
-          📚 Library 24x7 Access
-        </span>
+
         <span className="mx-12 text-3xl font-semibold">
           🏠 Hostel & Mentoring Support
         </span>
@@ -23,11 +21,9 @@ export default function Strip() {
           🚀 Admissions Open – Enroll Now!
         </span>
         <span className="mx-12 text-3xl font-semibold">
-          🎓 Scholarship Test Available
+          🎓 Up to 100% Scholarship after T-MAT Scholarship Test!
         </span>
-        <span className="mx-12 text-3xl font-semibold">
-          📚 Library 24x7 Access
-        </span>
+
         <span className="mx-12 text-3xl font-semibold">
           🏠 Hostel & Mentoring Support
         </span>
