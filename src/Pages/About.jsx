@@ -45,7 +45,7 @@ export default function About() {
             "description": "Learn about Team Excellent, a leading coaching institute for JEE, NEET, and Class 6–10 foundations. Guided by expert faculty and led by Founder & Director Albert Newwel, IIT-BHU (M.Tech).",
             "url": "https://teamexcellentcareerinstitute.in/about",
             "mainEntity": {
-              "@type": "EducationalOrganization",
+              "@type": ["EducationalOrganization", "Organization"],
               "name": "Team Excellent Career Institute",
               "url": "https://teamexcellentcareerinstitute.in",
               "founder": {

@@ -45,45 +45,45 @@ function AdmissionProcess() {
 
   const faqs = [
     {
-      question: "What courses are offered at Team Excellent Career Institute?",
-      answer:
-        "Team Excellent Career Institute offers coaching for IIT-JEE, NEET, and Foundation courses for Class 6 to Class 10 students, focusing on strong concept building and competitive exam preparation.",
+      question: "How can I take admission to Team Excellent?",
+      answer: "You can apply for admission by filling out the online enquiry form on our website, registering for the T-MAT scholarship exam, or visiting our Patna campus near NMCH College directly."
     },
     {
-      question: "Are doubt classes available for students?",
-      answer:
-        "Yes. Regular doubt-clearing classes are conducted where students can ask questions and get detailed explanations from faculty members. These sessions help students strengthen concepts and improve confidence.",
+      question: "What is the admission process?",
+      answer: "The process is simple: 1. Submit an enquiry, 2. Receive academic counseling, 3. Attempt the T-MAT test for scholarships, 4. Submit documents, and 5. Complete enrollment."
     },
     {
-      question: "What are smart classes and how do they help students?",
-      answer:
-        "Smart classes use digital learning tools, visual explanations, and interactive teaching methods to make complex topics easier to understand. This improves student engagement and helps in better concept retention.",
+      question: "Which documents are required for admission?",
+      answer: "You will need to submit class mark sheets (of the previous qualifying exam), recent passport-size photographs, and a valid government ID proof (such as Aadhaar Card)."
     },
     {
-      question: "Is personal attention given to each student?",
-      answer:
-        "Yes. The institute maintains focused batch sizes so that every student receives individual attention, mentoring, and academic guidance.",
+      question: "What courses are available for admission?",
+      answer: "Admissions are open for our 1-year and 2-year classroom courses for IIT-JEE, NEET, Repeater/Dropper batches, and junior Pre-Foundation programs (Class 6-10)."
     },
     {
-      question: "Do you conduct regular tests series?",
-      answer:
-        "Yes. Regular tests, mock exams, and performance analysis are conducted to track student progress and improve exam readiness.",
+      question: "Is there an admission test?",
+      answer: "Yes, we conduct the T-MAT (Team Excellent Mentorship & Scholarship Aptitude Test) which helps evaluate student level and awards up to 100% fee scholarships."
     },
     {
-      question: "Can beginners join JEE or NEET coaching?",
-      answer:
-        "Yes. Students without prior competitive exam experience can join. The institute provides foundation-level teaching and step-by-step guidance for beginners.",
+      question: "Can I visit the Team Excellent center before admission?",
+      answer: "Yes, parents and students are welcome to visit our center to evaluate our classroom setups, library, and meet the faculty members."
     },
     {
-      question: "How can students take admission?",
-      answer:
-        "Students can visit the institute, contact the admission team, or fill out the enquiry form on the official website for admission details.",
+      question: "What are the course fees?",
+      answer: "Course fees vary depending on the class level and batch structure. We offer competitive fee models and generous scholarship waivers based on the T-MAT exam."
     },
     {
-      question: "Can Bihar Board students prepare for JEE and NEET?",
-      answer:
-        "Yes, absolutely. Bihar Board students can successfully prepare for JEE and NEET. The syllabus of these competitive exams is largely based on NCERT, which makes it suitable for Bihar Board students as well. With proper guidance, regular practice, and concept-based learning, many Bihar Board students achieve excellent results in competitive exams.",
+      question: "Are installment/payment options available?",
+      answer: "Yes, to support parents, we offer flexible installment payment options for coaching fees. Detailed schedule details can be obtained from our accounts office."
     },
+    {
+      question: "When do new batches start?",
+      answer: "New batches usually begin in the months of April, May, June, and July. Contact our help desk for specific batch start dates and orientation schedules."
+    },
+    {
+      question: "How can I contact the admission team?",
+      answer: "You can contact our admissions counselors at +91 9942000371 or +91 9942000372, or email us at teamexcellentpatna@gmail.com."
+    }
   ];
 
   const [openIndex, setOpenIndex] = useState(null);

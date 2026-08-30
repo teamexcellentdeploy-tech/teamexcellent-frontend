@@ -12,6 +12,7 @@ import EnrollmentForm from "../Components/EnrollmentForm";
 import TrustedSection from "../Components/TrustedSection";
 import Testimonials from "../Components/Testimonials";
 import ExploreLinks from "../Components/ExploreLinks";
+import FAQSection from "../Components/FAQSection";
 
 export default function JeeMainCoaching() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -106,44 +107,44 @@ export default function JeeMainCoaching() {
 
   const faqs = [
     {
-      q: "What is JEE Main coaching in Patna?",
-      a: "JEE Main coaching provides structured preparation for the JEE Main examination through classroom instruction, subject preparation, practice, testing, revision, and academic guidance."
+      question: "What is JEE Main coaching?",
+      answer: "JEE Main coaching provides structured classroom teaching, customized assignments, and mock test practices designed to help engineering aspirants master basic NCERT concepts, formulas, and speed calculations required to score high in the JEE Main exam."
     },
     {
-      q: "Which is the best JEE Main coaching in Patna?",
-      a: "Students should compare faculty experience, batch size, course structure, study material, tests, doubt support, results, and fees before choosing an institute."
+      question: "Does Team Excellent provide JEE Main coaching in Patna?",
+      answer: "Yes, Team Excellent provides specialized JEE Main coaching in Patna, combining highly experienced faculty with digital learning tools and exhaustive doubt support at our Saketpuri center."
     },
     {
-      q: "Does Team Excellent provide JEE Main coaching?",
-      a: "Yes, Team Excellent Career Institute provides dedicated JEE Main coaching in Patna with customized batches for Class 11, Class 12, and Droppers."
+      question: "Who can join JEE Main coaching at Team Excellent?",
+      answer: "Students in Class 11, Class 12, or Repeater/Dropper students aiming for a seat in NITs, IIITs, or central engineering institutes can enroll in our dedicated JEE Main preparation courses."
     },
     {
-      q: "Does JEE Main coaching cover Physics, Chemistry and Mathematics?",
-      a: "Yes, JEE Main Paper 1 preparation covers Physics, Chemistry, and Mathematics extensively."
+      question: "What subjects are covered in JEE Main preparation?",
+      answer: "Our preparation program covers Physics, Chemistry, and Mathematics in complete alignment with the official JEE Main syllabus specified by the NTA."
     },
     {
-      q: "Does Team Excellent provide JEE Main mock tests?",
-      a: "Yes, we conduct weekly chapter-wise tests and NTA-pattern Computer-Based Tests (CBT) with detailed analytics."
+      question: "Does Team Excellent provide JEE Main study material?",
+      answer: "Yes, we provide student-focused study materials, worksheets, Daily Practice Problems (DPPs), and pocket formula books curated specifically for the JEE Main pattern."
     },
     {
-      q: "Does Team Excellent provide JEE Main PYQs?",
-      a: "Yes, genuine JEE Main Previous-Year Questions (PYQs) are integrated into our classroom notes, assignments, and test series."
+      question: "Are mock tests included in JEE Main preparation?",
+      answer: "Yes, regular computer-based mock tests matching the actual NTA interface are included. Students can attempt these tests online on our dedicated Student Portal."
     },
     {
-      q: "Is JEE Main coaching available for Class 11 students?",
-      a: "Yes, we have a dedicated 2-Year Program for Class 11 students focusing on fundamental concepts up to JEE Main level."
+      question: "Does Team Excellent conduct regular JEE Main tests?",
+      answer: "Yes, we conduct weekly chapter-wise tests and full-syllabus computer-based tests (CBT) to analyze student speed and OMR/CBT answer accuracy."
     },
     {
-      q: "Is JEE Main coaching available for Class 12 students?",
-      a: "Yes, we offer a 1-Year Program for Class 12 students balancing board exam preparation and JEE Main target drills."
+      question: "Is there a separate JEE Main batch?",
+      answer: "Yes, we organize dedicated batches targeting JEE Main explicitly, in addition to our comprehensive Main + Advanced batches."
     },
     {
-      q: "Does Team Excellent offer JEE Main coaching for droppers?",
-      a: "Yes, we offer a dedicated Dropper Batch. Please refer to our Droppers page for detailed schedule and strategies."
+      question: "What is the JEE Main coaching fee?",
+      answer: "Our course fees are highly competitive. Students can also secure up to 100% scholarship on coaching fees by performing well in the T-MAT Scholarship Test."
     },
     {
-      q: "What are JEE Main coaching fees in Patna?",
-      a: "Fees depend on the program type and duration. Contact Team Excellent directly for current batch fee details and T-MAT scholarship criteria."
+      question: "How can I enroll in JEE Main coaching?",
+      answer: "You can visit our Saketpuri center in Patna near NMCH College, call us directly, or submit an online enquiry form on our website to initiate the process."
     }
   ];
 
@@ -189,6 +190,57 @@ export default function JeeMainCoaching() {
         <meta name="twitter:title" content="JEE Main Coaching in Patna | JEE Main Preparation | Team Excellent" />
         <meta name="twitter:description" content="Looking for JEE Main coaching in Patna? Explore Team Excellent's JEE Main preparation programs." />
         <meta name="twitter:image" content="https://teamexcellentcareerinstitute.in/logo192.png" />
+
+        {/* Course Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": "JEE Main Coaching Program",
+            "description": "Targeted coaching program focusing on speed, accuracy, NCERT concepts, and simulated test series for JEE Main aspirants.",
+            "provider": {
+              "@type": "EducationalOrganization",
+              "name": "Team Excellent Career Institute",
+              "url": "https://teamexcellentcareerinstitute.in/"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "498"
+            }
+          })}
+        </script>
+
+        {/* EducationalOrganization & LocalBusiness Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": ["LocalBusiness", "EducationalOrganization", "School", "ProfessionalService", "Organization"],
+            "@id": "https://teamexcellentcareerinstitute.in/#organization",
+            "name": "Team Excellent Career Institute",
+            "alternateName": "Team Excellent Coaching Institute Patna",
+            "url": "https://teamexcellentcareerinstitute.in",
+            "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "image": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "description": "Team Excellent Career Institute is a premier coaching institute in Patna, Bihar, providing IIT-JEE, NEET, and foundation preparation programs (Class 6-10) for students aiming for engineering and medical entrance exams.",
+            "telephone": "+91-9942000371",
+            "email": "teamexcellentpatna@gmail.com",
+            "hasMap": "https://www.google.com/maps?cid=16308605353139354202",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Near NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
+              "addressLocality": "Patna",
+              "addressRegion": "Bihar",
+              "postalCode": "800016",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "25.603192",
+              "longitude": "85.174559"
+            }
+          })}
+        </script>
 
         {/* BreadcrumbList Schema */}
         <script type="application/ld+json">
@@ -735,43 +787,7 @@ export default function JeeMainCoaching() {
           </div>
         </section>
 
-        {/* Frequently Asked Questions */}
-        <section className="w-full py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1e1b4b]">
-                Frequently Asked Questions
-              </h2>
-              <div className="w-16 h-1 bg-[#b72e2f] mx-auto mt-3 rounded-full" />
-            </div>
-
-            <div className="space-y-4">
-              {faqs.map((faq, idx) => (
-                <div 
-                  key={idx} 
-                  className="bg-slate-50 border border-slate-100 rounded-2xl overflow-hidden shadow-sm transition"
-                >
-                  <button
-                    onClick={() => toggleFaq(idx)}
-                    className="w-full p-5 text-left flex justify-between items-center gap-4 text-slate-800 hover:bg-slate-100/50"
-                  >
-                    <span className="font-bold text-sm sm:text-base leading-snug">{faq.q}</span>
-                    <ChevronDown 
-                      className={`w-5 h-5 text-slate-500 shrink-0 transition-transform duration-300 ${
-                        openFaq === idx ? "transform rotate-180" : ""
-                      }`} 
-                    />
-                  </button>
-                  {openFaq === idx && (
-                    <div className="p-5 border-t border-slate-100 text-xs sm:text-sm text-slate-500 leading-relaxed bg-white">
-                      {faq.a}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQSection faqs={faqs} />
 
         {/* Internal links segment */}
         <section className="w-full py-12 px-4 bg-slate-50 border-t border-slate-100">

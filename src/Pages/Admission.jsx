@@ -45,6 +45,37 @@ export default function Admission() {
           })}
         </script>
 
+        {/* EducationalOrganization & LocalBusiness Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": ["LocalBusiness", "EducationalOrganization", "School", "ProfessionalService", "Organization"],
+            "@id": "https://teamexcellentcareerinstitute.in/#organization",
+            "name": "Team Excellent Career Institute",
+            "alternateName": "Team Excellent Coaching Institute Patna",
+            "url": "https://teamexcellentcareerinstitute.in",
+            "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "image": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "description": "Team Excellent Career Institute is a premier coaching institute in Patna, Bihar, providing IIT-JEE, NEET, and foundation preparation programs (Class 6-10) for students aiming for engineering and medical entrance exams.",
+            "telephone": "+91-9942000371",
+            "email": "teamexcellentpatna@gmail.com",
+            "hasMap": "https://www.google.com/maps?cid=16308605353139354202",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Near NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
+              "addressLocality": "Patna",
+              "addressRegion": "Bihar",
+              "postalCode": "800016",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "25.603192",
+              "longitude": "85.174559"
+            }
+          })}
+        </script>
+
         {/* BreadcrumbList Schema */}
         <script type="application/ld+json">
           {JSON.stringify({

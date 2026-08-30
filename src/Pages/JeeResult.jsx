@@ -38,6 +38,77 @@ export default function JeeResult() {
                 <title>IIT-JEE Results & Selection Tallies | Team Excellent Patna</title>
                 <meta name="description" content="Check Team Excellent's outstanding IIT-JEE Main & Advanced selection ratios, top rankers, and downloadeable mock test marksheet lists in Patna." />
                 <link rel="canonical" href="https://teamexcellentcareerinstitute.in/result/jee" />
+
+                {/* ItemList & Person Schema for Rankers */}
+                <script type="application/ld+json">
+                  {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Team Excellent JEE Results",
+                    "description": "List of top performers and rankers from Team Excellent Career Institute in JEE Main & Advanced.",
+                    "numberOfItems": 4,
+                    "itemListElement": [
+                      {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                          "@type": "Person",
+                          "name": "Amit Kumar",
+                          "description": "Secured AIR 1420 (99.87 percentile) in JEE Advanced 2025."
+                        }
+                      },
+                      {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                          "@type": "Person",
+                          "name": "Riya Kumari",
+                          "description": "Secured AIR 2150 (99.65 percentile) in JEE Advanced 2025."
+                        }
+                      },
+                      {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                          "@type": "Person",
+                          "name": "Vikash Singh",
+                          "description": "Secured AIR 3410 (99.42 percentile) in JEE Advanced 2025."
+                        }
+                      },
+                      {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                          "@type": "Person",
+                          "name": "Anjali Gupta",
+                          "description": "Secured AIR 5120 (99.18 percentile) in JEE Mains 2025."
+                        }
+                      }
+                    ]
+                  })}
+                </script>
+
+                {/* BreadcrumbList Schema */}
+                <script type="application/ld+json">
+                  {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                      {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://teamexcellentcareerinstitute.in/"
+                      },
+                      {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "JEE Results",
+                        "item": "https://teamexcellentcareerinstitute.in/result/jee"
+                      }
+                    ]
+                  })}
+                </script>
             </Helmet>
             <Navbar />
             <main className="min-h-screen bg-gray-50 pt-32 pb-20">

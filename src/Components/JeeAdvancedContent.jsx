@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import TeamExcellent from "../assets/TeamExcellent.webp";
 import EnrollmentForm from "./EnrollmentForm";
+import FAQSection from "./FAQSection";
 
 function JeeAdvancedContent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -81,59 +82,49 @@ function JeeAdvancedContent() {
 
   const faqs = [
     {
-      q: "Which is the best JEE coaching in Patna?",
-      a: "There is no single JEE coaching institute that is the best choice for every student. The right institute depends on factors such as faculty, batch size, study material, test series, results, fees, academic support and the student's preparation level. Students should compare these factors before selecting a coaching institute. Team Excellent Career Institute provides JEE preparation in Patna with senior IITian-led mentoring, restricted batches of average 40 students, NTA-style computer mock tests, and daily personal doubt support desks."
+      question: "Does Team Excellent provide JEE Advanced coaching in Patna?",
+      answer: "Yes, Team Excellent Career Institute offers premium, specialized JEE Advanced coaching at our Patna center, focusing on high-level multi-concept numerical problems and analytical reasoning."
     },
     {
-      q: "How should I choose the best JEE coaching institute in Patna?",
-      a: "Compare faculty qualifications and experience, batch size, course structure, study material, test frequency, doubt support, verified results, fees and the learning environment. Visiting the institute and attending a demo class can also help students and parents make an informed decision."
+      question: "Who is eligible for JEE Advanced?",
+      answer: "Students who clear the cut-off percentile in JEE Main and rank among the top 2,50,000 candidates nationally are eligible to appear for the JEE Advanced examination."
     },
     {
-      q: "Is Team Excellent good for JEE preparation in Patna?",
-      a: "Team Excellent provides JEE preparation in Patna with a structured academic syllabus, senior faculty mentoring, comprehensive study modules, regular NTA-pattern mock tests, and individual progress tracking. Students should evaluate the institute based on its faculty, course structure, testing system, student support and verified results to determine whether it matches their preparation requirements."
+      question: "How is JEE Advanced different from JEE Main?",
+      answer: "While JEE Main tests speed, accuracy, and basic NCERT concepts, JEE Advanced evaluates deep analytical reasoning, conceptual integration across chapters, and multi-step calculations with formats like matrix matches and integer-type questions."
     },
     {
-      q: "What should I check before joining JEE coaching?",
-      a: "Check the faculty, syllabus coverage, batch size, testing schedule, study material, doubt-solving system, fees, results and academic support. It is also useful to understand how the institute tracks student performance."
+      question: "What subjects are covered in JEE Advanced preparation?",
+      answer: "We cover Physics, Chemistry, and Mathematics in extensive depth, emphasizing advanced derivations, reaction mechanisms, and calculus-based application."
     },
     {
-      q: "What is the average JEE coaching fee in Patna?",
-      a: "JEE coaching fees vary considerably depending on the institute, course duration, batch, facilities and included services. Students should compare the complete fee structure rather than comparing only the headline course price."
+      question: "Does Team Excellent provide advanced-level study material?",
+      answer: "Yes, we provide specialized JEE Advanced sheets, subjective assignments, and high-order thinking (HOT) question banks to sharpen problem-solving skills."
     },
     {
-      q: "Is JEE coaching necessary to crack JEE?",
-      a: "Coaching is not mandatory for every student. Some students prepare independently, while others benefit from structured classes, faculty guidance, study material, regular testing and academic mentoring. The right choice depends on the student's learning style, preparation level and available support."
+      question: "Does Team Excellent conduct JEE Advanced mock tests?",
+      answer: "Yes, we simulate the real exam environment with 6-hour back-to-back testing sessions (Paper 1 and Paper 2) to build physical and mental endurance."
     },
     {
-      q: "Does Team Excellent provide JEE Main and JEE Advanced coaching?",
-      a: "Team Excellent's JEE programs should be selected according to the student's target examination and current batch offerings. The institute should clearly specify whether each program covers JEE Main, JEE Advanced or both. Our standard programs are structured to cover both milestones with tailored worksheets."
+      question: "Are doubt-solving sessions available?",
+      answer: "Yes, we offer dedicated doubt desks where senior faculty members work one-on-one with students to resolve complex conceptual doubts."
     },
     {
-      q: "How can I verify JEE coaching results?",
-      a: "Look for examination year, student identity, percentile or rank, examination name and supporting documentation where available. Verified scorecards or official result information provide stronger evidence than unsupported selection numbers."
+      question: "Does Team Excellent provide personalized academic guidance?",
+      answer: "Yes, our academic mentors track student scores weekly to provide personalized revision plans and strategy adjustments based on individual strength and weakness."
+    },
+    {
+      question: "What is the JEE Advanced coaching fee?",
+      answer: "Please contact our center near NMCH College, Patna for detailed fee tables. High performers in our T-MAT test can receive up to 100% tuition fee scholarships."
+    },
+    {
+      question: "How can I join JEE Advanced coaching at Team Excellent?",
+      answer: "You can apply through our T-MAT scholarship entrance test, submit an inquiry on our official website, or visit our Saketpuri center in Patna for direct admissions."
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map((faq) => ({
-      "@type": "Question",
-      "name": faq.q,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.a
-      }
-    }))
-  };
-
   return (
     <div className="w-full bg-[#fafafc]">
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
-      </Helmet>
 
       {/* 2. Hero Section */}
       <section className="relative w-full min-h-[85vh] bg-[#fafafc] pt-[140px] pb-[60px] flex items-center justify-center overflow-x-hidden border-b border-slate-100">
@@ -1011,43 +1002,7 @@ function JeeAdvancedContent() {
         </div>
       </section>
 
-      {/* 16. Frequently Asked Questions */}
-      <section className="w-full py-20 px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B0B45] tracking-tight">
-              Frequently Asked Questions About Best JEE Coaching in Patna
-            </h2>
-            <div className="w-16 h-1 bg-[#522871] mx-auto mt-4 rounded-full"></div>
-          </div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, idx) => (
-              <div key={idx} className="bg-slate-50 border border-slate-100 rounded-2xl overflow-hidden shadow-sm">
-                <button
-                  onClick={() => toggleFaq(idx)}
-                  className="w-full px-6 py-5 text-left flex justify-between items-center gap-4 transition duration-200 hover:bg-slate-100/50"
-                >
-                  {/* H3 Heading */}
-                  <h3 className="font-extrabold text-[#0B0B45] text-sm sm:text-base leading-snug">
-                    {faq.q}
-                  </h3>
-                  <ChevronDown className={`w-5 h-5 text-slate-500 transition-transform duration-300 ${faqIndex === idx ? "rotate-180" : ""}`} />
-                </button>
-                <div 
-                  className={`transition-all duration-300 overflow-hidden ${
-                    faqIndex === idx ? "max-h-[300px] border-t border-slate-100" : "max-h-0"
-                  }`}
-                >
-                  <p className="p-6 text-gray-650 text-xs sm:text-sm leading-relaxed bg-white">
-                    {faq.a}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection faqs={faqs} />
 
       {/* 17. Start Your JEE Preparation With Team Excellent */}
       <section className="w-full py-20 px-6 bg-[#522871] text-white text-center relative overflow-hidden">

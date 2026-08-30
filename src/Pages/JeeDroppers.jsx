@@ -7,6 +7,7 @@ import EnrollmentForm from '../Components/EnrollmentForm';
 import TrustedSection from '../Components/TrustedSection';
 import Testimonials from '../Components/Testimonials';
 import ExploreLinks from '../Components/ExploreLinks';
+import FAQSection from '../Components/FAQSection';
 import { 
   Award, Target, Clock, BookOpen, GraduationCap, ChevronDown, 
   CheckCircle, HelpCircle, Trophy, Sparkles, MapPin, Phone, Mail 
@@ -100,44 +101,52 @@ export default function JeeDroppers() {
 
   const faqs = [
     {
-      q: "Is JEE dropper coaching available in Patna?",
-      a: "Yes, Team Excellent Career Institute offers dedicated offline JEE dropper coaching in Patna near NMCH College, providing structured schedules, experienced faculty, and daily study tracking."
+      question: "Which is the best JEE dropper coaching in Patna?",
+      answer: "Team Excellent Career Institute is highly recommended for JEE droppers in Patna, offering dedicated one-year repeater courses with small batch sizes, experienced faculty, and rigorous numerical practice."
     },
     {
-      q: "Which is the best JEE dropper coaching in Patna?",
-      a: "Team Excellent Career Institute offers structured one-year programs for droppers focusing on JEE Main and Advanced. Evaluate our veteran faculties, student reviews, test setups, and demo classes before deciding."
+      question: "Does Team Excellent offer a dedicated JEE dropper batch?",
+      answer: "Yes, we offer dedicated batches exclusively for Class 12 passed/dropper students. This allows us to focus 100% on competitive JEE Main & Advanced patterns without school board distractions."
     },
     {
-      q: "What is a JEE dropper batch?",
-      a: "A JEE dropper batch is a dedicated target program for Class 12 passed students. It provides high-intensity syllabus coverage, advanced practice, and daily mocks in a single academic year."
+      question: "Who should join a JEE dropper program?",
+      answer: "Class 12 pass-out students who wish to improve their JEE Main percentiles, secure a better rank in JEE Advanced, or want to dedicatedly prepare for top-tier IITs/NITs should join this program."
     },
     {
-      q: "Can I prepare for JEE Main and Advanced as a dropper?",
-      a: "Yes, droppers can prepare for both exams. With school boards already cleared, droppers can spend their entire daily schedule focusing purely on JEE Main speed and JEE Advanced analytical solving."
+      question: "Can droppers prepare for both JEE Main and Advanced?",
+      answer: "Absolutely. With school board exams already cleared, droppers can dedicate their entire time to mastering JEE Main speed calculations and solving multi-concept advanced subjective problems."
     },
     {
-      q: "Is one year enough for JEE preparation after Class 12?",
-      a: "Yes, one year is sufficient if you stay disciplined. Since you have already covered the basics, a dedicated 1-year program allows you to focus purely on practice, revision, and mock tests."
+      question: "What is included in the JEE dropper course?",
+      answer: "The program includes daily interactive lectures covering Physics, Chemistry, and Math from basics to advanced levels, comprehensive study packages, DPPs, and diagnostic analysis."
     },
     {
-      q: "What is the JEE dropper coaching fee in Patna?",
-      a: "Fees vary depending on registration duration, study inclusions, and scholarship concessions. We offer significant fee waivers based on student performance in our T-MAT test. Contact our counseling desk for details."
+      question: "Does the course include regular mock tests?",
+      answer: "Yes, we conduct weekly chapter tests and full-syllabus Computer-Based Tests (CBT) on our online student portal, simulating the official NTA examination environment."
     },
     {
-      q: "Does Team Excellent provide a dedicated dropper batch?",
-      a: "Yes, we operate a dedicated offline JEE Droppers Batch focusing entirely on repeaters targeting top IITs and NITs."
+      question: "Does Team Excellent provide doubt-solving for droppers?",
+      answer: "Yes, we have dedicated daily doubt-clearing desks where students can interact one-on-one with senior teachers to resolve complex queries."
     },
     {
-      q: "Does the dropper program cover JEE Main and JEE Advanced?",
-      a: "Yes, it covers both. We balance JEE Main speed runs and calculation drills with deep, multi-concept subjective problem solving for JEE Advanced."
+      question: "Is study material provided to JEE droppers?",
+      answer: "Yes, droppers receive exhaustive study packages, assignments, revision sheets, and a dedicated bank of past 10 years' chapter-wise Previous-Year Questions (PYQs)."
     },
     {
-      q: "How many hours should a JEE dropper study every day?",
-      a: "A dropper should ideally study 10-12 hours daily, including 4-6 hours of offline classroom mentoring, followed by 6 hours of self-practice, worksheet solving, and revision."
+      question: "What is the duration of the JEE dropper course?",
+      answer: "The JEE Dropper course is a high-intensity 1-year classroom program running from the launch of batches in June/July until the JEE Advanced examination."
     },
     {
-      q: "When should I join a JEE dropper batch?",
-      a: "You should join immediately after your board results or JEE results are announced to ensure you get complete syllabus coverage without missing early revision cycles."
+      question: "What is the fee for JEE dropper coaching?",
+      answer: "Our fees are highly competitive. Students can secure up to 100% fee waivers based on their scores in the T-MAT Scholarship Exam. Contact our center for a detailed fee structure."
+    },
+    {
+      question: "Can an average student improve their JEE rank through a dropper year?",
+      answer: "Yes. With disciplined study schedules, systematic problem-solving strategies, and structured mentoring from our faculty, average students consistently improve their percentiles significantly."
+    },
+    {
+      question: "How can I take admission to the JEE dropper batch?",
+      answer: "You can register online, call our admissions office, or visit our Saketpuri center in Patna near NMCH College for direct counseling and registration."
     }
   ];
 
@@ -150,6 +159,79 @@ export default function JeeDroppers() {
           content="Looking for JEE dropper coaching in Patna? Explore Team Excellent's one-year JEE preparation program for droppers targeting JEE Main and JEE Advanced." 
         />
         <link rel="canonical" href="https://teamexcellentcareerinstitute.in/jee-dropper-coaching-in-patna" />
+
+        {/* Course Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": "JEE Dropper Coaching Program",
+            "description": "Intensive one-year classroom target program for repeaters and droppers targeting top ranks in JEE Main and Advanced.",
+            "provider": {
+              "@type": "EducationalOrganization",
+              "name": "Team Excellent Career Institute",
+              "url": "https://teamexcellentcareerinstitute.in/"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "498"
+            }
+          })}
+        </script>
+
+        {/* EducationalOrganization & LocalBusiness Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": ["LocalBusiness", "EducationalOrganization", "School", "ProfessionalService", "Organization"],
+            "@id": "https://teamexcellentcareerinstitute.in/#organization",
+            "name": "Team Excellent Career Institute",
+            "alternateName": "Team Excellent Coaching Institute Patna",
+            "url": "https://teamexcellentcareerinstitute.in",
+            "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "image": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "description": "Team Excellent Career Institute is a premier coaching institute in Patna, Bihar, providing IIT-JEE, NEET, and foundation preparation programs (Class 6-10) for students aiming for engineering and medical entrance exams.",
+            "telephone": "+91-9942000371",
+            "email": "teamexcellentpatna@gmail.com",
+            "hasMap": "https://www.google.com/maps?cid=16308605353139354202",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Near NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
+              "addressLocality": "Patna",
+              "addressRegion": "Bihar",
+              "postalCode": "800016",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "25.603192",
+              "longitude": "85.174559"
+            }
+          })}
+        </script>
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teamexcellentcareerinstitute.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "JEE Dropper Coaching in Patna",
+                "item": "https://teamexcellentcareerinstitute.in/jee-dropper-coaching-in-patna"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <Navbar />
@@ -530,45 +612,7 @@ export default function JeeDroppers() {
             </div>
           </div>
         </section>
-
-        {/* 13. Frequently Asked Questions */}
-        <section className="w-full py-16 px-4 bg-slate-50">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1e1b4b]">
-                Frequently Asked Questions
-              </h2>
-              <div className="w-16 h-1 bg-[#5B2D7C] mx-auto mt-3 rounded-full" />
-            </div>
-
-            <div className="space-y-4">
-              {faqs.map((faq, idx) => (
-                <div 
-                  key={idx} 
-                  className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm transition"
-                >
-                  <button
-                    onClick={() => toggleFaq(idx)}
-                    className="w-full p-5 text-left flex justify-between items-center gap-4 text-slate-800 hover:bg-slate-50/50"
-                  >
-                    <span className="font-bold text-sm sm:text-base leading-snug">{faq.q}</span>
-                    <ChevronDown 
-                      className={`w-5 h-5 text-slate-500 shrink-0 transition-transform duration-300 ${
-                        openFaq === idx ? "transform rotate-180" : ""
-                      }`} 
-                    />
-                  </button>
-                  {openFaq === idx && (
-                    <div className="p-5 border-t border-slate-50 text-xs sm:text-sm text-slate-500 leading-relaxed bg-slate-50/30">
-                      {faq.a}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
+        <FAQSection faqs={faqs} />
         {/* 14. Start Your JEE Dropper Preparation with Team Excellent */}
         <section className="w-full py-20 px-4 bg-gradient-to-br from-[#5B2D7C] to-[#3F1D5B] text-white overflow-hidden relative">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-800/20 via-transparent to-transparent pointer-events-none" />

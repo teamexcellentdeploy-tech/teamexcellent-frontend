@@ -83,64 +83,64 @@ function JeeContent() {
 
   const faqs = [
     {
-      question: "Why should I choose Team Excellent Career Institute for JEE preparation?",
-      answer: "At Team Excellent Career Institute, we focus on building strong concepts, regular practice, and personal mentoring. Our experienced faculty, structured study plan, and regular mock tests help students prepare confidently for both JEE Main and JEE Advanced."
+      question: "Which is the best JEE coaching in Patna?",
+      answer: "Team Excellent Career Institute is highly regarded as one of the best JEE coaching institutes in Patna, offering comprehensive coaching for JEE Main and Advanced with experienced faculty and mock tests."
     },
     {
-      question: "Who can join the JEE coaching program?",
-      answer: "Students studying in Class 11, Class 12, or those taking a drop year after Class 12 can join our JEE coaching program."
+      question: "Why should I choose Team Excellent for JEE preparation?",
+      answer: "We offer structured offline lectures, custom study modules, daily doubt clearance counters, and a computer-based test platform. Our student portal allows parents and students to monitor progress regularly."
     },
     {
-      question: "Do you have separate batches for Class 11, Class 12, and droppers?",
-      answer: "Yes. We offer separate batches for Class 11, Class 12, and JEE droppers so that every student learns at the right pace with a syllabus designed for their level."
+      question: "Does Team Excellent provide JEE Main and JEE Advanced coaching?",
+      answer: "Yes, our preparation program covers the entire syllabus for both JEE Main and Advanced comprehensively, starting from NCERT fundamentals and progressing to advanced problem-solving techniques."
     },
     {
-      question: "Which subjects are covered in the JEE course?",
-      answer: "The course covers all three JEE subjects—Physics, Chemistry, and Mathematics—according to the latest JEE Main and JEE Advanced syllabus."
+      question: "What is the JEE coaching fee at Team Excellent?",
+      answer: "Our fees are highly competitive. We also offer scholarships of up to 100% based on the T-MAT Scholarship Exam. Please contact our Patna admission desk for detailed fee structures for specific batches."
     },
     {
-      question: "How often are tests conducted?",
-      answer: "Students take regular chapter-wise tests, unit tests, revision tests, and full-length mock exams throughout the course to track their progress and improve their performance."
+      question: "Does Team Excellent offer JEE coaching for Class 11 students?",
+      answer: "Yes, we have a dedicated 2-year classroom program for Class 11 students which covers basic concept building before moving to competitive levels."
     },
     {
-      question: "Do you provide study materials?",
-      answer: "Yes. Every student receives well-prepared study materials, practice sheets, assignments, revision notes, and mock test papers designed by our faculty."
+      question: "Does Team Excellent offer JEE coaching for Class 12 students?",
+      answer: "Yes, we offer a 1-year classroom program for Class 12 students that covers the Class 12 syllabus along with systematic revision of Class 11 topics."
     },
     {
-      question: "What if I have doubts after class?",
-      answer: "We conduct dedicated doubt-solving sessions where students can discuss their questions directly with our teachers until every concept is clear."
+      question: "Does Team Excellent have JEE dropper batches?",
+      answer: "Yes, we have dedicated Repeater/Dropper batches for students taking a drop year to focus exclusively on improving their JEE ranks."
     },
     {
-      question: "How do you help students improve their JEE scores?",
-      answer: "After every test, our faculty review each student's performance, identify weak areas, and provide personalized guidance and extra practice to help improve scores."
+      question: "How are JEE classes conducted at Team Excellent?",
+      answer: "Classes are conducted offline at our Saketpuri center in Patna. Lectures are interactive, using modern visual aids, followed by detailed sheet discussion."
     },
     {
-      question: "Do you prepare students for both JEE Main and JEE Advanced?",
-      answer: "Yes. Our teaching methodology is designed to prepare students for both JEE Main and JEE Advanced, with separate practice sessions for advanced-level questions."
+      question: "Does Team Excellent provide JEE study material?",
+      answer: "Yes, we provide exhaustive study packages, assignments, daily practice problems (DPPs), and chapter worksheets tailored to JEE patterns."
     },
     {
-      question: "Are scholarship programs available?",
-      answer: "Yes. We offer up to 100% scholarship to students based on their performance in the T-MAT Scholarship Test. High-scoring candidates can receive complete fee concessions."
+      question: "Are regular tests conducted for JEE students?",
+      answer: "Yes, we conduct weekly tests, unit tests, and full-length mock examinations based on the real NTA computer-based test (CBT) pattern."
     },
     {
-      question: "What is the batch size?",
-      answer: "We keep our batch sizes limited so that every student receives individual attention and can interact freely with the faculty."
+      question: "Does Team Excellent provide doubt-solving sessions?",
+      answer: "Yes, we run dedicated doubt-solving counters every day after regular classes where teachers resolve doubts on a one-on-one basis."
     },
     {
-      question: "Can I join if I have already started preparing for JEE?",
-      answer: "Absolutely. Our academic counselors will assess your current preparation level and recommend the most suitable batch based on your needs."
+      question: "How can I take admission for JEE coaching in Patna?",
+      answer: "You can register for our T-MAT exam, submit an enquiry form on our website, or visit our center near NMCH College, Patna for a direct counseling session."
     },
     {
-      question: "How can I take admission?",
-      answer: "You can visit our institute, call our admission team, or submit the enquiry form on our website. Our counselors will guide you through the admission process."
+      question: "What is the best JEE coaching institute in Patna for serious preparation?",
+      answer: "Serious aspirants choose Team Excellent Career Institute due to our focused batch sizes, regular diagnostic test analytics, and personalized mentoring by expert faculty."
     },
     {
-      question: "Do you provide regular progress reports?",
-      answer: "Yes. We regularly track students' attendance, test scores, and overall performance. Parents and students receive updates to help monitor progress."
+      question: "Which coaching institute in Patna provides JEE Main and Advanced preparation?",
+      answer: "Team Excellent Career Institute provides integrated preparation for both JEE Main and Advanced, ensuring students master basic speed calculation as well as multi-concept subjective questions."
     },
     {
-      question: "How can I book a free counseling session?",
-      answer: "You can call us, send us a WhatsApp message, or fill out the enquiry form on our website. Our counselors will schedule a free counseling session and help you choose the right JEE program."
+      question: "Where can I prepare for JEE in Patna?",
+      answer: "You can prepare at our main campus located near NMCH College, Bajar Samiti, Saketpuri, Patna, which has state-of-the-art classrooms and a library facility."
     }
   ];
 

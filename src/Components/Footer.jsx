@@ -117,7 +117,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10">
         {/* Logo + Tagline */}
         <div className="text-center md:text-left">
           <img
@@ -142,17 +142,28 @@ export default function Footer() {
             <li><Link to="/about" className="hover:text-gray-300 transition-colors">About Us</Link></li>
             <li><Link to="/admission" className="hover:text-gray-300 transition-colors">Admission Process</Link></li>
             <li><Link to="/blogs" className="hover:text-gray-300 transition-colors">Blogs</Link></li>
+            <li><Link to="/result" className="hover:text-gray-300 transition-colors">Results & Stars</Link></li>
             <li><Link to="/contact" className="hover:text-gray-300 transition-colors">Contact Us</Link></li>
           </ul>
         </div>
 
-        {/* Programs & Tools */}
+        {/* Courses & Batches */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">Programs & Tools</h3>
+          <h3 className="text-lg font-semibold mb-3">Courses</h3>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/jee-coaching-in-patna" className="hover:text-gray-300 transition-colors">JEE Coaching</Link></li>
+            <li><Link to="/best-jee-coaching-in-patna" className="hover:text-gray-300 transition-colors">JEE Coaching</Link></li>
             <li><Link to="/best-neet-coaching-in-patna" className="hover:text-gray-300 transition-colors">NEET Coaching</Link></li>
             <li><Link to="/class-6-to-10" className="hover:text-gray-300 transition-colors">Class 6-10 Foundation</Link></li>
+            <li><Link to="/scholarship" className="hover:text-gray-300 transition-colors">Scholarship (T-MAT)</Link></li>
+          </ul>
+        </div>
+
+        {/* Resources & Tools */}
+        <div>
+          <h3 className="text-lg font-semibold mb-3">Resources & Tools</h3>
+          <ul className="space-y-2 text-sm">
+            <li><Link to="/study-material" className="hover:text-gray-300 transition-colors">Study Material</Link></li>
+            <li><Link to="/test-series" className="hover:text-gray-300 transition-colors">Test Series</Link></li>
             <li><Link to="/rank-predictor" className="hover:text-gray-300 transition-colors">Rank Predictor</Link></li>
             <li><Link to="/college-predictor" className="hover:text-gray-300 transition-colors">College Predictor</Link></li>
             <li><Link to="/student-portal" className="hover:text-gray-300 transition-colors">Student Portal</Link></li>

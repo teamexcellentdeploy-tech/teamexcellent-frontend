@@ -133,16 +133,44 @@ function Class6to10Content() {
 
   const faqs = [
     {
-      question: "How does the Junior Foundation Course benefit my child?",
-      answer: "Our foundation course for Classes 6-10 strengthens basic concepts in Science and Mathematics, helps children excel in school exams, and introduces Olympiad-level logic to lay a strong foundation for future JEE/NEET preparation."
+      question: "What is a foundation course for students?",
+      answer: "A foundation course is an early preparation program designed for school students to strengthen basic concepts in Science and Mathematics, helping them excel in school exams while preparing them for future competitive entrance tests."
     },
     {
-      question: "Is the NCERT syllabus covered?",
-      answer: "Yes, NCERT forms the core base of our teaching. We systematically build up to advanced reference book levels once NCERT concepts are fully mastered."
+      question: "Who can join the Team Excellent foundation course?",
+      answer: "School students aiming for academic excellence, NTSE, Olympiads, and early preparation for engineering or medical careers can join this program."
     },
     {
-      question: "How do you evaluate Class 6-10 students' progress?",
-      answer: "We conduct bi-weekly chapter tests and monthly cumulative mock tests, followed by detailed performance analysis shared during parent-teacher meetings."
+      question: "Which classes are eligible for foundation coaching?",
+      answer: "We offer tailored foundation batches for students studying in Class 6, Class 7, Class 8, Class 9, and Class 10."
+    },
+    {
+      question: "Does the foundation course prepare students for JEE and NEET?",
+      answer: "Yes, our curriculum builds logical thinking and deep conceptual understanding in Physics, Chemistry, and Mathematics/Biology, laying a strong base for future IIT-JEE and NEET courses."
+    },
+    {
+      question: "Which subjects are taught in the foundation program?",
+      answer: "We systematically teach Physics, Chemistry, Mathematics, Biology, and Mental Ability (Logical Reasoning) aligned with school boards and competitive syllabus guidelines."
+    },
+    {
+      question: "Does the course include regular tests?",
+      answer: "Yes, we conduct bi-weekly chapter tests and cumulative monthly tests, followed by detailed performance analysis feedback shared during parent-teacher meetings."
+    },
+    {
+      question: "Is study material provided?",
+      answer: "Yes, every student receives specialized booklets, worksheets, Daily Practice Problems (DPPs), and Olympiad preparation modules curated by our expert educators."
+    },
+    {
+      question: "Does Team Excellent provide doubt-solving sessions?",
+      answer: "Yes, we offer daily doubt counters where school students can get one-on-one help from teachers to clarify homework and concept queries."
+    },
+    {
+      question: "What is the foundation course fee?",
+      answer: "Our foundation course fees are affordable. Scholarships up to 100% are available based on T-MAT test scores. Contact our Patna campus for specific batch fee schedules."
+    },
+    {
+      question: "How can students take admission?",
+      answer: "Parents can visit our institute near NMCH College, Saketpuri, Patna, register online on our official website, or enroll their child via the T-MAT scholarship exam."
     }
   ];
 

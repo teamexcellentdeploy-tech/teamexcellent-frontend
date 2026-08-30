@@ -7,9 +7,57 @@ import { GraduationCap, CheckCircle, Calendar } from 'lucide-react'
 import TrustedSection from '../Components/TrustedSection'
 import Testimonials from '../Components/Testimonials'
 import ExploreLinks from '../Components/ExploreLinks'
+import FAQSection from '../Components/FAQSection'
 
 export default function NeetDroppers() {
   const [isOpen, setIsOpen] = useState(false)
+
+  const faqs = [
+    {
+      question: "What is a NEET dropper batch?",
+      answer: "A NEET dropper batch is a high-intensity, one-year repeater course designed for Class 12 passout students to prepare exclusively for the NEET UG medical entrance exam."
+    },
+    {
+      question: "Who should join NEET dropper coaching?",
+      answer: "Students who have completed Class 12 and wish to focus their full attention on improving their NEET score, concepts, and speed without the distraction of board exams should join."
+    },
+    {
+      question: "Does Team Excellent offer NEET dropper coaching in Patna?",
+      answer: "Yes, we offer dedicated offline NEET dropper coaching at our Patna center, featuring OMR-based mock testing and specialized physics guidance."
+    },
+    {
+      question: "Can NEET droppers improve their score with one year of preparation?",
+      answer: "Yes. With a disciplined offline lecture schedule, regular concept revision, and rigorous testing, most dropper students secure a significantly higher score."
+    },
+    {
+      question: "What subjects are covered in the NEET dropper program?",
+      answer: "The program covers Physics, Chemistry, and Biology (both Botany and Zoology) in complete depth, strictly aligned with the NCERT curriculum."
+    },
+    {
+      question: "Does the program include regular tests?",
+      answer: "Yes, we conduct weekly chapter tests and full-syllabus mock tests on real NEET-pattern OMR sheets to minimize exam-day bubbling errors."
+    },
+    {
+      question: "Is NEET study material provided?",
+      answer: "Yes, we provide exhaustive printed modules, Daily Practice Problems (DPPs), summary charts, and assertion-reason worksheets."
+    },
+    {
+      question: "Are doubt-solving sessions available?",
+      answer: "Yes, senior teachers manage dedicated doubt-clearing desks daily, helping repeaters resolve concept queries on a one-on-one basis."
+    },
+    {
+      question: "What is the duration of the NEET dropper course?",
+      answer: "It is a 1-year offline classroom program that starts shortly after board/NEET results and continues until the next NEET UG exam."
+    },
+    {
+      question: "What is the NEET dropper coaching fee?",
+      answer: "Our fees are highly competitive. We offer up to 100% scholarship fee waivers based on performance in our T-MAT Scholarship Exam."
+    },
+    {
+      question: "How can I enroll in the NEET dropper batch?",
+      answer: "You can submit an enquiry form on our website, call our counseling office, or visit our Patna Saketpuri center near NMCH College."
+    }
+  ];
 
   return (
     <>
@@ -20,6 +68,79 @@ export default function NeetDroppers() {
           content="Supercharge your medical career ambitions with the best NEET Droppers (Repeater) batch in Patna. Complete biology, chemistry, and physics coaching." 
         />
         <link rel="canonical" href="https://teamexcellentcareerinstitute.in/neet-dropper-coaching-in-patna" />
+
+        {/* Course Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": "NEET Dropper / Repeater Program",
+            "description": "Intensive offline classroom target program for repeaters and droppers targeting top ranks in the NEET UG medical entrance exam.",
+            "provider": {
+              "@type": "EducationalOrganization",
+              "name": "Team Excellent Career Institute",
+              "url": "https://teamexcellentcareerinstitute.in/"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "498"
+            }
+          })}
+        </script>
+
+        {/* EducationalOrganization & LocalBusiness Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": ["LocalBusiness", "EducationalOrganization", "School", "ProfessionalService", "Organization"],
+            "@id": "https://teamexcellentcareerinstitute.in/#organization",
+            "name": "Team Excellent Career Institute",
+            "alternateName": "Team Excellent Coaching Institute Patna",
+            "url": "https://teamexcellentcareerinstitute.in",
+            "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "image": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "description": "Team Excellent Career Institute is a premier coaching institute in Patna, Bihar, providing IIT-JEE, NEET, and foundation preparation programs (Class 6-10) for students aiming for engineering and medical entrance exams.",
+            "telephone": "+91-9942000371",
+            "email": "teamexcellentpatna@gmail.com",
+            "hasMap": "https://www.google.com/maps?cid=16308605353139354202",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Near NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
+              "addressLocality": "Patna",
+              "addressRegion": "Bihar",
+              "postalCode": "800016",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "25.603192",
+              "longitude": "85.174559"
+            }
+          })}
+        </script>
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teamexcellentcareerinstitute.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "NEET Dropper Coaching in Patna",
+                "item": "https://teamexcellentcareerinstitute.in/neet-dropper-coaching-in-patna"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <Navbar />
@@ -103,6 +224,7 @@ export default function NeetDroppers() {
         </div>
         <TrustedSection />
         <Testimonials />
+        <FAQSection faqs={faqs} />
         <ExploreLinks />
       </main>
 

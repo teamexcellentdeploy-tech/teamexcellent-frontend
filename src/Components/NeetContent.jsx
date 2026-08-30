@@ -66,64 +66,52 @@ function NeetContent() {
 
   const faqs = [
     {
-      question: "Why should I choose Team Excellent Career Institute for NEET preparation?",
-      answer: "We focus on concept-based learning, regular tests, experienced faculty, and personal mentoring. Every student receives individual attention, regular performance reviews, and doubt-solving support to help them prepare with confidence."
+      question: "Which is the best NEET coaching in Patna?",
+      answer: "Team Excellent Career Institute is highly regarded as one of the best NEET coaching institutes in Patna, offering comprehensive medical entrance preparation with expert biology and physics/chemistry faculty."
     },
     {
-      question: "Who can join the NEET coaching program?",
-      answer: "Students studying in Class 11, Class 12, or those taking a drop year after Class 12 can join our NEET coaching programs."
+      question: "Does Team Excellent provide NEET coaching in Patna?",
+      answer: "Yes, we offer specialized offline NEET UG coaching in Patna. Our campus is equipped with smart classrooms and dedicated doubt desks to help students excel in the medical entrance exam."
     },
     {
-      question: "Do you offer separate batches for Class 11, Class 12, and droppers?",
-      answer: "Yes. We have dedicated batches for Class 11 students, Class 12 students, and NEET droppers so that the teaching pace and study plan match each student's needs."
+      question: "What subjects are covered in NEET preparation?",
+      answer: "We cover Physics, Chemistry, and Biology (Botany & Zoology) in complete detail, adhering strictly to the NTA NEET syllabus guidelines."
     },
     {
-      question: "Which subjects are covered in the course?",
-      answer: "Our NEET coaching covers all three subjects—Biology, Physics, and Chemistry—according to the latest NEET syllabus."
+      question: "Does Team Excellent provide NEET study material?",
+      answer: "Yes, we provide exhaustive printed modules, assignments, daily practice problems (DPPs), and chapter-wise question banks optimized for medical preparation."
     },
     {
-      question: "How often are tests conducted?",
-      answer: "We conduct regular chapter-wise tests, unit tests, revision tests, and full-length mock tests to track every student's progress and improve exam performance."
+      question: "Are regular NEET mock tests conducted?",
+      answer: "Yes, we conduct weekly tests and full-length simulated mock tests on standard paper-and-pen OMR sheets to minimize bubbling mistakes on exam day."
     },
     {
-      question: "Will I get study materials?",
-      answer: "Yes. Students receive comprehensive study materials, practice worksheets, assignments, revision notes, and mock test papers prepared by our experienced faculty."
+      question: "Does Team Excellent provide doubt-solving sessions?",
+      answer: "Yes, we have dedicated daily doubt-clearing desks where students can sit one-on-one with senior teachers to resolve complex conceptual questions."
     },
     {
-      question: "What if I have doubts after class?",
-      answer: "No problem. We conduct dedicated doubt-solving sessions where students can ask questions and get clear explanations from our faculty."
+      question: "Does Team Excellent offer NEET coaching for Class 11 students?",
+      answer: "Yes, we have a dedicated 2-year classroom program for Class 11 students that focuses on building deep concepts from basic levels."
     },
     {
-      question: "How do you help students improve their scores?",
-      answer: "After every test, we analyze each student's performance, identify weak areas, and provide personalized guidance so they can improve continuously."
+      question: "Does Team Excellent offer NEET coaching for Class 12 students?",
+      answer: "Yes, we offer a 1-year target course for Class 12 students, helping them manage their board exams alongside systematic NEET prep."
     },
     {
-      question: "Are there scholarship programs available?",
-      answer: "Yes. We offer up to 100% scholarship to students after they clear the T-MAT Scholarship Test. Scholarships are awarded based on test scores and performance."
+      question: "Does Team Excellent offer NEET dropper batches?",
+      answer: "Yes, we run dedicated NEET repeater batches focusing purely on intensive practice, mock tests, and rank improvement."
     },
     {
-      question: "Do you provide counseling for students and parents?",
-      answer: "Yes. We offer academic counseling to help students choose the right batch, plan their preparation, and keep parents informed about their child's progress."
+      question: "What is the NEET coaching fee?",
+      answer: "Our fees are highly competitive. Students can secure up to 100% scholarship based on their performance in the T-MAT Scholarship Exam."
     },
     {
-      question: "What is the batch size?",
-      answer: "We maintain a limited batch size so that every student receives proper attention and has the opportunity to interact with the faculty."
+      question: "How can I take admission to NEET coaching?",
+      answer: "You can submit an inquiry form on our website, call our counseling desks, or visit our Saketpuri center near NMCH College in Patna for direct admissions."
     },
     {
-      question: "Can I join the course if my preparation has already started?",
-      answer: "Absolutely. Our counselors will assess your current preparation level and recommend the most suitable batch for you."
-    },
-    {
-      question: "How can I take admission?",
-      answer: "You can visit our institute, call our admission team, or fill out the enquiry form on our website. Our counselors will guide you through the complete admission process."
-    },
-    {
-      question: "Do you provide regular progress reports?",
-      answer: "Yes. Students receive regular performance reports based on classroom tests, mock exams, attendance, and overall academic progress."
-    },
-    {
-      question: "How can I book a free counseling session?",
-      answer: "Simply contact us by phone, WhatsApp, or fill out the enquiry form on our website. Our team will schedule a counseling session at your convenience."
+      question: "Does Team Excellent provide academic guidance for NEET preparation?",
+      answer: "Yes, our experienced mentors track student scores weekly to provide personalized study calendars, revision plans, and tips to boost efficiency."
     }
   ];
 
