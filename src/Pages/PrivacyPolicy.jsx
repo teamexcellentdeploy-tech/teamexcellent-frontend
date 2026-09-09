@@ -13,6 +13,9 @@ export default function PrivacyPolicy() {
       <Helmet>
         <title>Privacy Policy | Team Excellent Career Institute</title>
         <meta name="description" content="Privacy Policy of Team Excellent Career Institute. We are committed to protecting your privacy and ensuring transparency in how we handle your personal information." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://teamexcellentcareerinstitute.in/privacy-policy" />
+        <link rel="canonical" href="https://teamexcellentcareerinstitute.in/privacy-policy" />
       </Helmet>
 
       <Navbar />

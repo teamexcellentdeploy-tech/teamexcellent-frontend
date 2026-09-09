@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import ExploreLinks from "../Components/ExploreLinks";
@@ -174,6 +175,13 @@ export default function CollegePredictor() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100/50 flex flex-col font-sans">
+      <Helmet>
+        <title>JEE & NEET College Predictor 2026 | Team Excellent Patna</title>
+        <meta name="description" content="Predict your admission probabilities in top IITs, NITs, IIITs, AIIMS, and Medical Colleges with Team Excellent's free College Predictor tool." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://teamexcellentcareerinstitute.in/college-predictor" />
+        <link rel="canonical" href="https://teamexcellentcareerinstitute.in/college-predictor" />
+      </Helmet>
       <Navbar />
 
       <main className="flex-grow pt-32 pb-20 px-4 md:px-8 max-w-7xl mx-auto w-full">

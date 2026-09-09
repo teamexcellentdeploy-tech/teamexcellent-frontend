@@ -13,6 +13,9 @@ export default function TermsOfService() {
       <Helmet>
         <title>Terms of Service | Team Excellent Career Institute</title>
         <meta name="description" content="Terms of Service for Team Excellent Career Institute. By accessing our website or enrolling in our courses, you agree to these terms." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://teamexcellentcareerinstitute.in/terms-of-service" />
+        <link rel="canonical" href="https://teamexcellentcareerinstitute.in/terms-of-service" />
       </Helmet>
 
       <Navbar />

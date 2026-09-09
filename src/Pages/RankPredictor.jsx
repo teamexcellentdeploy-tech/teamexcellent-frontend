@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import ExploreLinks from "../Components/ExploreLinks";
@@ -98,6 +99,13 @@ export default function RankPredictor() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100/50 flex flex-col font-sans">
+      <Helmet>
+        <title>JEE & NEET Rank Predictor 2026 | Team Excellent Patna</title>
+        <meta name="description" content="Calculate your estimated All India Rank (AIR) for JEE Main and NEET UG with Team Excellent's free Rank Predictor tool." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://teamexcellentcareerinstitute.in/rank-predictor" />
+        <link rel="canonical" href="https://teamexcellentcareerinstitute.in/rank-predictor" />
+      </Helmet>
       <Navbar />
 
       {/* Main Container */}

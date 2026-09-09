@@ -149,11 +149,15 @@ export default function Footer() {
 
         {/* Courses & Batches */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">Courses</h3>
-          <ul className="space-y-2 text-sm">
-            <li><Link to="/best-jee-coaching-in-patna" className="hover:text-gray-300 transition-colors">JEE Coaching</Link></li>
-            <li><Link to="/best-neet-coaching-in-patna" className="hover:text-gray-300 transition-colors">NEET Coaching</Link></li>
-            <li><Link to="/class-6-to-10" className="hover:text-gray-300 transition-colors">Class 6-10 Foundation</Link></li>
+          <h3 className="text-lg font-semibold mb-3">Courses & Batches</h3>
+          <ul className="space-y-1.5 text-sm">
+            <li><Link to="/jee-coaching-in-patna" className="hover:text-gray-300 transition-colors">JEE Coaching in Patna</Link></li>
+            <li><Link to="/jee-dropper-coaching-in-patna" className="hover:text-gray-300 transition-colors">JEE Droppers Batch</Link></li>
+            <li><Link to="/iit-jee-coaching-in-patna" className="hover:text-gray-300 transition-colors">IIT-JEE (Class 11)</Link></li>
+            <li><Link to="/neet-coaching-in-patna" className="hover:text-gray-300 transition-colors">NEET Coaching in Patna</Link></li>
+            <li><Link to="/neet-dropper-coaching-in-patna" className="hover:text-gray-300 transition-colors">NEET Droppers Batch</Link></li>
+            <li><Link to="/neet-class-12-in-patna" className="hover:text-gray-300 transition-colors">NEET Class 12 Boards</Link></li>
+            <li><Link to="/class-6-to-10" className="hover:text-gray-300 transition-colors">Class 6–10 Foundation</Link></li>
             <li><Link to="/scholarship" className="hover:text-gray-300 transition-colors">Scholarship (T-MAT)</Link></li>
           </ul>
         </div>

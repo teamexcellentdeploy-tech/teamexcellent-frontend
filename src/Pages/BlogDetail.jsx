@@ -126,7 +126,8 @@ export default function BlogDetail() {
                     content={blog.seoDescription || blog.excerpt || blog.description.replace(/<[^>]*>/g, '').substring(0, 160)}
                 />
                 <meta property="og:type" content="article" />
-                <meta property="og:url" content={window.location.href} />
+                <meta property="og:url" content={`https://teamexcellentcareerinstitute.in/blogs/${blog.permalink}`} />
+                <link rel="canonical" href={`https://teamexcellentcareerinstitute.in/blogs/${blog.permalink}`} />
                 <meta property="og:title" content={blog.ogTitle || blog.seoTitle || blog.title} />
                 <meta property="og:description" content={blog.ogDescription || blog.seoDescription || blog.excerpt || blog.description.replace(/<[^>]*>/g, '').substring(0, 160)} />
                 {blog.featuredImage && <meta property="og:image" content={blog.featuredImage} />}

@@ -113,6 +113,7 @@ export default function App() {
         <meta property="og:title" content="Team Excellent - Best Institute in Patna for JEE, NEET & Foundations" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://teamexcellentcareerinstitute.in/" />
+        <link rel="canonical" href="https://teamexcellentcareerinstitute.in/" />
         <meta property="og:image" content="https://teamexcellentcareerinstitute.in/Favicon.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Team Excellent - Best Institute in Patna for JEE, NEET & Foundations" />

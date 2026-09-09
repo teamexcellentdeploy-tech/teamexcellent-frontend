@@ -12,6 +12,9 @@ export default function Student() {
       <Helmet>
         <title>Student Portal | Team Excellent Career Institute</title>
         <meta name="description" content="Access student performance marks, test results, and academic progress at Team Excellent Career Institute's Student Portal." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://teamexcellentcareerinstitute.in/student-portal" />
+        <link rel="canonical" href="https://teamexcellentcareerinstitute.in/student-portal" />
       </Helmet>
       <Navbar />
       

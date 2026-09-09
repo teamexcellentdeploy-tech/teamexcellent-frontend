@@ -69,6 +69,9 @@ export default function CareerDetail() {
             <Helmet>
                 <title>{career.title} - Careers | Team Excellent</title>
                 <meta name="description" content={`Apply for ${career.title} at Team Excellent.`} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={`https://teamexcellentcareerinstitute.in/careers/${career._id}`} />
+                <link rel="canonical" href={`https://teamexcellentcareerinstitute.in/careers/${career._id}`} />
             </Helmet>
             <Navbar />
             

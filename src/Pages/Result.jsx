@@ -11,6 +11,9 @@ export default function Result() {
             <Helmet>
                 <title>Examination Results | Team Excellent Career Institute</title>
                 <meta name="description" content="Check your competitive exam results, mock tests, and performance reports at Team Excellent Career Institute Patna." />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://teamexcellentcareerinstitute.in/result" />
+                <link rel="canonical" href="https://teamexcellentcareerinstitute.in/result" />
                 
                 {/* WebPage & BreadcrumbList Schema */}
                 <script type="application/ld+json">

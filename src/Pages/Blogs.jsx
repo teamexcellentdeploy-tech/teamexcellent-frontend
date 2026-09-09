@@ -59,6 +59,9 @@ export default function Blogs() {
                     name="description"
                     content="Stay updated with the latest insights, tips, and news from Team Excellent Career Institute. Articles on JEE, NEET, and school foundations."
                 />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://teamexcellentcareerinstitute.in/blogs" />
+                <link rel="canonical" href="https://teamexcellentcareerinstitute.in/blogs" />
                 {/* BLOG FAQ SCHEMA */}
                 <script type="application/ld+json">
                     {JSON.stringify({

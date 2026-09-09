@@ -67,6 +67,7 @@ export default function Contact() {
         <meta property="og:description" content="Reach Team Excellent Coaching Institute, Patna for admissions, JEE/NEET queries, or foundation course details. Call, email, or visit us today." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://teamexcellentcareerinstitute.in/contact" />
+        <link rel="canonical" href="https://teamexcellentcareerinstitute.in/contact" />
         <meta property="og:image" content="https://teamexcellentcareerinstitute.in/logo192.png" />
 
         {/* Twitter Card */}

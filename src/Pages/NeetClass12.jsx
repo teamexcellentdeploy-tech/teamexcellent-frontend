@@ -19,7 +19,7 @@ export default function NeetClass12() {
           name="description" 
           content="Maximize your NEET UG score and board results with the best medical coaching for Class 12 in Patna. Learn biology diagrams, shortcuts, and OMR drills." 
         />
-        <link rel="canonical" href="https://teamexcellentcareerinstitute.in/neet-coaching-in-patna" />
+        <link rel="canonical" href="https://teamexcellentcareerinstitute.in/neet-class-12-in-patna" />
       </Helmet>
 
       <Navbar />

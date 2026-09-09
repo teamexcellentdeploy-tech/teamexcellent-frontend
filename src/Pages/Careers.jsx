@@ -31,6 +31,9 @@ export default function Careers() {
             <Helmet>
                 <title>Careers | Team Excellent</title>
                 <meta name="description" content="Join Team Excellent and build your career with us. Explore our current job openings and opportunities." />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://teamexcellentcareerinstitute.in/careers" />
+                <link rel="canonical" href="https://teamexcellentcareerinstitute.in/careers" />
             </Helmet>
             <Navbar />
             

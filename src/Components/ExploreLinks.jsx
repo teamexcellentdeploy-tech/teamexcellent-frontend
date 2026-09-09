@@ -19,16 +19,20 @@ export default function ExploreLinks() {
   const currentPath = location.pathname;
 
   const links = [
-    { to: "/best-jee-coaching-in-patna", label: "JEE Coaching", icon: <GraduationCap className="w-4 h-4" /> },
-    { to: "/best-neet-coaching-in-patna", label: "NEET Coaching", icon: <Stethoscope className="w-4 h-4" /> },
+    { to: "/jee-coaching-in-patna", label: "JEE Coaching in Patna", icon: <GraduationCap className="w-4 h-4" /> },
+    { to: "/jee-dropper-coaching-in-patna", label: "JEE Dropper Coaching", icon: <GraduationCap className="w-4 h-4" /> },
+    { to: "/iit-jee-coaching-in-patna", label: "Class 11 IIT-JEE", icon: <GraduationCap className="w-4 h-4" /> },
+    { to: "/jee-advanced-coaching-in-patna", label: "JEE Advanced Prep", icon: <GraduationCap className="w-4 h-4" /> },
+    { to: "/neet-coaching-in-patna", label: "NEET Coaching in Patna", icon: <Stethoscope className="w-4 h-4" /> },
+    { to: "/neet-dropper-coaching-in-patna", label: "NEET Droppers Batch", icon: <Stethoscope className="w-4 h-4" /> },
+    { to: "/neet-class-12-in-patna", label: "NEET Class 12 Boards", icon: <Stethoscope className="w-4 h-4" /> },
     { to: "/class-6-to-10", label: "Class 6-10 Foundation", icon: <BookOpen className="w-4 h-4" /> },
-    { to: "/admission", label: "Admission Procedure", icon: <ClipboardCheck className="w-4 h-4" /> },
-    { to: "/rank-predictor", label: "JEE/NEET Rank Predictor", icon: <Award className="w-4 h-4" /> },
-    { to: "/college-predictor", label: "JEE College Predictor", icon: <Building2 className="w-4 h-4" /> },
+    { to: "/admission", label: "Admission & Scholarship", icon: <ClipboardCheck className="w-4 h-4" /> },
+    { to: "/rank-predictor", label: "Rank Predictor", icon: <Award className="w-4 h-4" /> },
+    { to: "/college-predictor", label: "College Predictor", icon: <Building2 className="w-4 h-4" /> },
     { to: "/result", label: "Results & Toppers", icon: <Trophy className="w-4 h-4" /> },
-    { to: "/blogs", label: "Blogs & Articles", icon: <FileText className="w-4 h-4" /> },
+    { to: "/blogs", label: "Articles & Guides", icon: <FileText className="w-4 h-4" /> },
     { to: "/about", label: "About Institute", icon: <Info className="w-4 h-4" /> },
-    { to: "/student-portal", label: "Student Portal", icon: <UserCheck className="w-4 h-4" /> },
     { to: "/contact", label: "Contact Us", icon: <Send className="w-4 h-4" /> },
   ];
 
