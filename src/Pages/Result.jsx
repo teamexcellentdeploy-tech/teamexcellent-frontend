@@ -62,11 +62,16 @@ export default function Result() {
                             Track your academic progress and competitive exam performance. View detailed lists for{" "}
                             <Link to="/result/jee" className="font-bold text-[#5B2D7C] hover:underline">
                                 JEE Results & Toppers
-                            </Link>{" "}
-                            and{" "}
+                            </Link>
+                            {", "}
                             <Link to="/result/neet" className="font-bold text-[#b72e2f] hover:underline">
                                 NEET Results & Toppers
-                            </Link>, or log in to your{" "}
+                            </Link>
+                            {", "}
+                            <Link to="/scholarship" className="font-bold text-amber-600 hover:underline">
+                                T-MAT Scholarship Results
+                            </Link>
+                            {", or log in to your "}
                             <Link to="/student-portal" className="font-bold text-[#5B2D7C] hover:underline">
                                 Student Portal
                             </Link>.

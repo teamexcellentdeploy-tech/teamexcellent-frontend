@@ -49,27 +49,7 @@ export default function Scholarship() {
             </p>
           </div>
 
-          {/* Scholarship Slabs Matrix */}
-          <div className="bg-white rounded-3xl border border-gray-100 shadow-lg p-8 md:p-12 mb-16">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-[#0B0B45] text-center mb-8">T-MAT Scholarship Slabs</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 text-center">
-              {[
-                { rank: "Rank 1 - 10", pct: "100%", desc: "Complete fee waiver on tuition fee", color: "bg-amber-50 border-amber-200 text-amber-800" },
-                { rank: "Rank 11 - 30", pct: "75%", desc: "75% tuition fee deduction", color: "bg-slate-100 border-slate-200 text-slate-800" },
-                { rank: "Rank 31 - 100", pct: "50%", desc: "Half fee concession", color: "bg-orange-50 border-orange-200 text-orange-800" },
-                { rank: "Rank 101 - 250", pct: "25%", desc: "Quarter fee concession", color: "bg-purple-50 border-purple-200 text-[#5B2D7C]" },
-                { rank: "Rank 251 - 500", pct: "10%", desc: "Direct 10% fee waiver", color: "bg-gray-50 border-gray-100 text-gray-700" }
-              ].map((slab, idx) => (
-                <div key={idx} className={`p-6 rounded-2xl border ${slab.color} flex flex-col justify-between`}>
-                  <div>
-                    <h3 className="font-bold text-sm tracking-wide uppercase mb-1">{slab.rank}</h3>
-                    <div className="text-4xl font-extrabold my-2">{slab.pct}</div>
-                  </div>
-                  <p className="text-xs leading-relaxed opacity-90">{slab.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+
 
           {/* Exam Structure and Details */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">

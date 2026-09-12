@@ -250,9 +250,6 @@ const AdminMarks = () => {
               <p><strong>Contact:</strong> {r.contactNumber}</p>
               <p><strong>DOB:</strong> {formatDate(r.dateofBirth)}</p>
               <p><strong>Total:</strong> {r.total}</p>
-              {r.scholarshipPercent && (
-                <p><strong>Scholarship:</strong> {r.scholarshipPercent}%</p>
-              )}
             </div>
           ))
         ) : (
@@ -451,9 +448,6 @@ const MarksList = ({ marks = [], onEdit, onDelete }) => {
               Biology: {mark.biology}, Aptitude: {mark.aptitude}
             </p>
             <p><strong>Total: {mark.total}</strong></p>
-            {mark.scholarshipPercent && (
-              <p>Scholarship: {mark.scholarshipPercent}%</p>
-            )}
           </div>
 
           <div className="flex gap-2 mt-2">

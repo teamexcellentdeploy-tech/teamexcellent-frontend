@@ -215,7 +215,7 @@ const StudentMarks = ({ isPageHeader = false }) => {
       doc.setFont("helvetica", "bold");
       doc.setFontSize(13.5);
       doc.setTextColor(30, 41, 59); // Slate 800
-      doc.text("SCHOLARSHIP TEST REPORT CARD", pageWidth / 2, 49, { align: "center" });
+      doc.text("STUDENT TEST REPORT CARD", pageWidth / 2, 49, { align: "center" });
       
       // Decorative horizontal divider below title
       doc.setDrawColor(226, 232, 240);
@@ -258,65 +258,54 @@ const StudentMarks = ({ isPageHeader = false }) => {
       writeInfo("School:", schoolNameStr, 110, 136, 75);
       writeInfo("Date of Birth:", dobString, 110, 136, 84);
 
-      // 3. Subject-wise table
+      // 3. Marks Breakdown Table with jspdf-autotable
       const subjects = [
-        { name: "Physics", obtained: marks.physics },
-        { name: "Chemistry", obtained: marks.chemistry },
-        { name: "Maths", obtained: marks.maths },
-        { name: "Biology", obtained: marks.biology },
-        { name: "Aptitude", obtained: marks.aptitude },
-      ].filter(s => s.obtained !== undefined && s.obtained !== null);
+        { name: "Physics", marks: marks.physics, max: 10 },
+        { name: "Chemistry", marks: marks.chemistry, max: 10 },
+        { name: "Mathematics", marks: marks.maths, max: 10 },
+        { name: "Biology", marks: marks.biology, max: 10 },
+        { name: "Aptitude / MAT", marks: marks.aptitude, max: 10 },
+      ];
 
-      const tableBody = subjects.map((subj) => {
-        const pct = getPercentage(subj.obtained, 10);
+      const tableData = subjects.map((sub, i) => {
+        const pct = getPercentage(sub.marks, sub.max);
         const grade = getGrade(pct);
-        return [
-          subj.name,
-          subj.obtained.toString(),
-          "10",
-          `${pct}%`,
-          grade
-        ];
+        return [i + 1, sub.name, sub.marks, sub.max, grade];
       });
 
-      const grandTotalPct = getPercentage(marks.total, subjects.length * 10);
-      const grandTotalGrade = getGrade(grandTotalPct);
+      const totalPct = getPercentage(marks.total, 50);
+      const overallGrade = getGrade(totalPct);
 
       autoTable(doc, {
         startY: 97,
         margin: { left: 15, right: 15 },
-        head: [["Subject", "Marks Obtained", "Total Marks", "Percentage Score", "Grade"]],
-        body: tableBody,
-        foot: [
-          ["Grand Total", marks.total.toString(), (subjects.length * 10).toString(), `${grandTotalPct}%`, grandTotalGrade]
-        ],
-        theme: "striped",
+        head: [["S.No", "Subject / Area", "Marks Obtained", "Maximum Marks", "Grade"]],
+        body: tableData,
+        foot: [["", "GRAND TOTAL", marks.total, "50", overallGrade]],
+        theme: "plain",
         headStyles: {
           fillColor: [91, 45, 124], // Deep Purple
           textColor: [255, 255, 255],
-          fontSize: 9.5,
           fontStyle: "bold",
+          fontSize: 8.5,
           halign: "center",
           valign: "middle",
+          cellPadding: 3,
         },
         footStyles: {
-          fillColor: [91, 45, 124], // Deep Purple for a framed table aesthetic
-          textColor: [255, 255, 255], // White
-          fontSize: 10,
+          fillColor: [243, 232, 255], // Purple 100
+          textColor: [91, 45, 124], // Deep Purple
           fontStyle: "bold",
+          fontSize: 9,
           halign: "center",
           valign: "middle",
+          cellPadding: 3.5,
         },
-        columnStyles: {
-          0: { fontStyle: "bold", textColor: [30, 41, 59], halign: "left" }, // Subject
-          1: { fontStyle: "bold", textColor: [91, 45, 124], halign: "center" }, // Obtained
-          2: { textColor: [100, 116, 139], halign: "center" }, // Total
-          3: { halign: "center" }, // Percentage
-          4: { fontStyle: "bold", halign: "center" }, // Grade
-        },
-        styles: {
-          fontSize: 9,
-          cellPadding: 5.5,
+        bodyStyles: {
+          fontSize: 8.5,
+          textColor: [51, 65, 85], // Slate 700
+          cellPadding: 2.8,
+          halign: "center",
           valign: "middle",
           lineColor: [241, 245, 249], // Slate 100
           lineWidth: 0.5,
@@ -324,103 +313,46 @@ const StudentMarks = ({ isPageHeader = false }) => {
         alternateRowStyles: {
           fillColor: [250, 248, 252], // Very soft purple tint
         },
-        didParseCell: (data) => {
-          // Highlight grade colors
-          if (data.section === "body" && data.column.index === 4) {
-            const grade = data.cell.raw;
-            if (grade === "A+" || grade === "A") {
-              data.cell.styles.textColor = [16, 185, 129]; // Emerald Green
-            } else if (grade === "B" || grade === "C") {
-              data.cell.styles.textColor = [59, 130, 246]; // Blue
-            } else if (grade === "D") {
-              data.cell.styles.textColor = [245, 158, 11]; // Amber
-            } else {
-              data.cell.styles.textColor = [239, 68, 68]; // Red
-            }
-          }
-          // Highlight total row styling alignment
-          if (data.section === "foot") {
-            if (data.column.index === 0) {
-              data.cell.styles.halign = "left";
-            }
-          }
-        }
       });
 
       const finalY = doc.lastAutoTable.finalY;
 
-      // 4. Scholarship Status Box
+      // 4. Congratulations Status Box
       const boxY = finalY + 10;
       const boxHeight = 24;
       
-      if (marks.scholarshipPercent > 0) {
-        // Emerald Success Box
-        doc.setFillColor(240, 253, 250); // Emerald 50
-        doc.setDrawColor(220, 252, 231); // Emerald 100
-        doc.setLineWidth(0.4);
-        doc.roundedRect(15, boxY, pageWidth - 30, boxHeight, 3, 3, "FD");
-        
-        // Green Accent sidebar
-        doc.setFillColor(16, 185, 129); // Emerald 500
-        doc.rect(15, boxY, 2.5, boxHeight, "F");
-        
-        // Badge Circle
-        doc.setFillColor(16, 185, 129);
-        doc.circle(23, boxY + boxHeight / 2, 5, "F");
-        
-        // Vector Checkmark inside badge
-        doc.setDrawColor(255, 255, 255);
-        doc.setLineWidth(0.6);
-        doc.line(21, boxY + 12, 22.5, boxY + 14.5);
-        doc.line(22.5, boxY + 14.5, 25.2, boxY + 10);
-        
-        // Content
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(10.5);
-        doc.setTextColor(6, 95, 70); // Emerald 800
-        doc.text("SCHOLARSHIP SECURED!", 32, boxY + 7);
-        
-        doc.setFont("helvetica", "normal");
-        doc.setFontSize(8.5);
-        doc.setTextColor(4, 120, 87); // Emerald 700
-        const scholarshipText = `Congratulations ${marks.studentName}, you have qualified for a ${marks.scholarshipPercent}% tuition fee scholarship. Please visit the center with this report card to claim your concession.`;
-        const textLines = doc.splitTextToSize(scholarshipText, pageWidth - 52);
-        doc.text(textLines, 32, boxY + 13);
-      } else {
-        // Blue Info Encouragement Box
-        doc.setFillColor(240, 249, 255); // Blue 50
-        doc.setDrawColor(224, 242, 254); // Blue 100
-        doc.setLineWidth(0.4);
-        doc.roundedRect(15, boxY, pageWidth - 30, boxHeight, 3, 3, "FD");
-        
-        // Blue Accent sidebar
-        doc.setFillColor(59, 130, 246); // Blue 500
-        doc.rect(15, boxY, 2.5, boxHeight, "F");
-        
-        // Badge Circle
-        doc.setFillColor(59, 130, 246);
-        doc.circle(23, boxY + boxHeight / 2, 5, "F");
-        
-        // Vector Warning exclamation mark inside badge
-        doc.setDrawColor(255, 255, 255);
-        doc.setLineWidth(0.8);
-        doc.line(23, boxY + 9, 23, boxY + 13);
-        doc.setFillColor(255, 255, 255);
-        doc.circle(23, boxY + 15, 0.4, "F");
-        
-        // Content
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(10.5);
-        doc.setTextColor(7, 89, 133); // Blue 800
-        doc.text("KEEP PUSHING FORWARD!", 32, boxY + 7);
-        
-        doc.setFont("helvetica", "normal");
-        doc.setFontSize(8.5);
-        doc.setTextColor(3, 105, 161); // Blue 700
-        const encouragementText = `Dear ${marks.studentName}, you did not qualify for a scholarship this time. Hard work always pays off—keep learning, practicing, and improving!`;
-        const textLines = doc.splitTextToSize(encouragementText, pageWidth - 52);
-        doc.text(textLines, 32, boxY + 13);
-      }
+      // Emerald Success Box
+      doc.setFillColor(240, 253, 250); // Emerald 50
+      doc.setDrawColor(220, 252, 231); // Emerald 100
+      doc.setLineWidth(0.4);
+      doc.roundedRect(15, boxY, pageWidth - 30, boxHeight, 3, 3, "FD");
+      
+      // Green Accent sidebar
+      doc.setFillColor(16, 185, 129); // Emerald 500
+      doc.rect(15, boxY, 2.5, boxHeight, "F");
+      
+      // Badge Circle
+      doc.setFillColor(16, 185, 129);
+      doc.circle(23, boxY + boxHeight / 2, 5, "F");
+      
+      // Vector Checkmark inside badge
+      doc.setDrawColor(255, 255, 255);
+      doc.setLineWidth(0.6);
+      doc.line(21, boxY + 12, 22.5, boxY + 14.5);
+      doc.line(22.5, boxY + 14.5, 25.2, boxY + 10);
+      
+      // Content
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(10.5);
+      doc.setTextColor(6, 95, 70); // Emerald 800
+      doc.text("CONGRATULATIONS!", 32, boxY + 7);
+      
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(8.5);
+      doc.setTextColor(4, 120, 87); // Emerald 700
+      const congratsText = `Congratulations ${marks.studentName}! Please visit the center with this report card to proceed with your admission and counseling.`;
+      const textLines = doc.splitTextToSize(congratsText, pageWidth - 52);
+      doc.text(textLines, 32, boxY + 13);
 
       // 5. Contact Footer (Fixed position anchored to bottom)
       const footerStartY = 248;
@@ -775,41 +707,25 @@ const StudentMarks = ({ isPageHeader = false }) => {
                 </div>
               </div>
 
-              {/* 🏆 Modern Scholarship Celebration Box */}
+              {/* 🎉 Congratulations Box */}
               <div className="mb-6">
-                {marks.scholarshipPercent > 0 ? (
-                  <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-100 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left relative overflow-hidden shadow-inner">
-                    {/* Glowing background star */}
-                    <div className="absolute right-[-10px] bottom-[-10px] text-emerald-500/5 rotate-12 scale-150 pointer-events-none">
-                      <Star size={120} fill="currentColor" />
-                    </div>
-                    <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center text-white shrink-0 shadow-lg shadow-emerald-500/20">
-                      <Award className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h4 className="font-extrabold text-emerald-800 text-base mb-1">
-                        🎉 Scholarship Secured!
-                      </h4>
-                      <p className="text-sm text-emerald-700 leading-relaxed">
-                        Congratulations <strong>{marks.studentName}</strong>, you have qualified for a <strong>{marks.scholarshipPercent}% tuition fee scholarship</strong>. Visit the center with this report to claim your concession.
-                      </p>
-                    </div>
+                <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-100 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left relative overflow-hidden shadow-inner">
+                  {/* Glowing background star */}
+                  <div className="absolute right-[-10px] bottom-[-10px] text-emerald-500/5 rotate-12 scale-150 pointer-events-none">
+                    <Star size={120} fill="currentColor" />
                   </div>
-                ) : (
-                  <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-100 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left shadow-inner">
-                    <div className="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center text-white shrink-0 shadow-lg shadow-amber-500/20">
-                      <Star className="w-6 h-6 animate-pulse" />
-                    </div>
-                    <div>
-                      <h4 className="font-extrabold text-amber-800 text-base mb-1">
-                        Keep Pushing Forward!
-                      </h4>
-                      <p className="text-sm text-amber-700 leading-relaxed">
-                        Dear <strong>{marks.studentName}</strong>, you did not qualify for a scholarship this time. Hard work always pays off—keep learning, practicing, and improving! 💪
-                      </p>
-                    </div>
+                  <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center text-white shrink-0 shadow-lg shadow-emerald-500/20">
+                    <Award className="w-6 h-6" />
                   </div>
-                )}
+                  <div>
+                    <h4 className="font-extrabold text-emerald-800 text-base mb-1">
+                      🎉 Congratulations!
+                    </h4>
+                    <p className="text-sm text-emerald-700 leading-relaxed">
+                      Congratulations <strong>{marks.studentName}</strong>! Please visit the center with this report card to proceed with your admission and counseling.
+                    </p>
+                  </div>
+                </div>
               </div>
 
               {/* Verification & Official Details Footer */}

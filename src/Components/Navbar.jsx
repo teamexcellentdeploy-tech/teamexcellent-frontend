@@ -88,6 +88,7 @@ export default function Navbar() {
             items={[
               { to: "/result/jee", label: "JEE Result" },
               { to: "/result/neet", label: "NEET Result" },
+              { to: "/scholarship", label: "Scholarship" },
             ]}
           />
           <Dropdown
@@ -96,7 +97,6 @@ export default function Navbar() {
             items={[
               { to: "/study-material", label: "Study Material" },
               { to: "/test-series", label: "Test Series" },
-              { to: "/scholarship", label: "Scholarship" },
               { to: "/blogs", label: "Blog" },
             ]}
           />
@@ -225,6 +225,7 @@ export default function Navbar() {
                     { to: "/result", label: "All Results ➔" },
                     { to: "/result/jee", label: "JEE Result" },
                     { to: "/result/neet", label: "NEET Result" },
+                    { to: "/scholarship", label: "Scholarship" },
                   ]}
                   onClose={() => setIsOpen(false)}
                 />
@@ -235,7 +236,6 @@ export default function Navbar() {
                   items={[
                     { to: "/study-material", label: "Study Material" },
                     { to: "/test-series", label: "Test Series" },
-                    { to: "/scholarship", label: "Scholarship" },
                     { to: "/blogs", label: "Blog" },
                   ]}
                   onClose={() => setIsOpen(false)}
