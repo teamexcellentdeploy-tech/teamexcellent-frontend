@@ -98,6 +98,10 @@ export default function BlogDetail() {
     if (error || !blog) {
         return (
             <>
+                <Helmet>
+                    <title>Blog Post Not Found | Team Excellent Career Institute</title>
+                    <meta name="robots" content="noindex, nofollow" />
+                </Helmet>
                 <Navbar />
                 <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-32 pb-16">
                     <div className="max-w-4xl mx-auto px-4 text-center">

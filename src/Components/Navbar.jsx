@@ -52,21 +52,21 @@ export default function Navbar() {
         <ul className="hidden lg:flex items-center gap-4 xl:gap-8 text-[15px] text-[#0B0B45] font-semibold">
           <NavItem to="/" label="Home" />
           <Dropdown
-            to="/best-jee-coaching-in-patna"
+            to="/iit-jee-coaching-in-patna"
             label="IIT JEE"
             items={[
+              { to: "/iit-jee-coaching-in-patna", label: "IIT-JEE Complete Program" },
               { to: "/jee-main-coaching-in-patna", label: "JEE Main Coaching" },
               { to: "/jee-advanced-coaching-in-patna", label: "JEE Advanced Coaching" },
-              { to: "/iit-jee-coaching-in-patna", label: "JEE Class 11" },
               { to: "/jee-coaching-in-patna", label: "JEE Class 12" },
               { to: "/jee-dropper-coaching-in-patna", label: "JEE Droppers" },
             ]}
           />
           <Dropdown
-            to="/best-neet-coaching-in-patna"
+            to="/neet-coaching-in-patna"
             label="NEET"
             items={[
-              { to: "/neet-coaching-in-patna", label: "NEET Class 11" },
+              { to: "/neet-coaching-in-patna", label: "NEET Complete Program" },
               { to: "/neet-class-12-in-patna", label: "NEET Class 12" },
               { to: "/neet-dropper-coaching-in-patna", label: "NEET Droppers" },
             ]}
@@ -80,15 +80,6 @@ export default function Navbar() {
               { to: "/class-8-in-patna", label: "Class 8" },
               { to: "/class-9-in-patna", label: "Class 9" },
               { to: "/class-10-in-patna", label: "Class 10" },
-            ]}
-          />
-          <Dropdown
-            to="/result"
-            label="Results"
-            items={[
-              { to: "/result/jee", label: "JEE Result" },
-              { to: "/result/neet", label: "NEET Result" },
-              { to: "/scholarship", label: "Scholarship" },
             ]}
           />
           <Dropdown
@@ -182,10 +173,9 @@ export default function Navbar() {
                   label="IIT JEE"
                   icon={<GraduationCap className="w-4.5 h-4.5 text-purple-600" />}
                   items={[
-                    { to: "/best-jee-coaching-in-patna", label: "All JEE Courses ➔" },
+                    { to: "/iit-jee-coaching-in-patna", label: "All JEE Courses ➔" },
                     { to: "/jee-main-coaching-in-patna", label: "JEE Main Coaching" },
                     { to: "/jee-advanced-coaching-in-patna", label: "JEE Advanced Coaching" },
-                    { to: "/iit-jee-coaching-in-patna", label: "JEE Class 11" },
                     { to: "/jee-coaching-in-patna", label: "JEE Class 12" },
                     { to: "/jee-dropper-coaching-in-patna", label: "JEE Droppers" },
                   ]}
@@ -196,8 +186,7 @@ export default function Navbar() {
                   label="NEET"
                   icon={<GraduationCap className="w-4.5 h-4.5 text-rose-600" />}
                   items={[
-                    { to: "/best-neet-coaching-in-patna", label: "All NEET Courses ➔" },
-                    { to: "/neet-coaching-in-patna", label: "NEET Class 11" },
+                    { to: "/neet-coaching-in-patna", label: "All NEET Courses ➔" },
                     { to: "/neet-class-12-in-patna", label: "NEET Class 12" },
                     { to: "/neet-dropper-coaching-in-patna", label: "NEET Droppers" },
                   ]}

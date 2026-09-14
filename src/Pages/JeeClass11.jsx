@@ -12,21 +12,21 @@ export default function JeeClass11() {
     <>
       <Helmet>
         {/* Title & Description */}
-        <title>JEE Coaching for Class 11 in Patna | Team Excellent</title>
+        <title>IIT JEE Coaching in Patna | Best Institute for JEE Prep - Team Excellent</title>
         <meta 
           name="description" 
-          content="Start your engineering dream early with our JEE coaching program for Class 11 in Patna. Focus on solid basic concepts and board support." 
+          content="Looking for premier IIT JEE coaching in Patna? Team Excellent offers top JEE Main & Advanced preparation with expert IITian mentors, Class 11-12 batches, dropper courses, and regular mock tests." 
         />
 
         {/* Keywords */}
         <meta 
           name="keywords" 
-          content="jee class 11 coaching in patna, iit class 11 preparation patna, team excellent patna, best class 11 engineering coaching" 
+          content="iit jee coaching in patna, jee coaching in patna, best jee coaching in patna, iit jee preparation patna, team excellent patna, engineering coaching patna, jee main coaching patna, jee advanced coaching patna" 
         />
 
         {/* Open Graph */}
-        <meta property="og:title" content="JEE Coaching for Class 11 in Patna | Team Excellent" />
-        <meta property="og:description" content="Start your engineering dream early with our JEE coaching program for Class 11 in Patna. Focus on solid basic concepts and board support." />
+        <meta property="og:title" content="IIT JEE Coaching in Patna | Best Institute for JEE Prep - Team Excellent" />
+        <meta property="og:description" content="Prepare for IIT JEE Main & Advanced in Patna with Team Excellent. Expert IITian faculty, Class 11-12 batches, and comprehensive test series." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://teamexcellentcareerinstitute.in/iit-jee-coaching-in-patna" />
         <link rel="canonical" href="https://teamexcellentcareerinstitute.in/iit-jee-coaching-in-patna" />
@@ -34,8 +34,8 @@ export default function JeeClass11() {
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="JEE Coaching for Class 11 in Patna | Team Excellent" />
-        <meta name="twitter:description" content="Start your engineering dream early with our JEE coaching program for Class 11 in Patna." />
+        <meta name="twitter:title" content="IIT JEE Coaching in Patna | Team Excellent" />
+        <meta name="twitter:description" content="Crack JEE Main & Advanced with Patna's leading IIT coaching institute. Expert faculty and personal mentorship." />
         <meta name="twitter:image" content="https://teamexcellentcareerinstitute.in/logo192.png" />
         
         {/* Course Schema */}

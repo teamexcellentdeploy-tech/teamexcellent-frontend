@@ -189,36 +189,32 @@ export default function NeetClass11() {
 
   const seoClusters = [
     { label: "NEET Coaching in Patna", to: "/neet-coaching-in-patna" },
-    { label: "Best NEET Coaching in Patna", to: "/best-neet-coaching-in-patna" },
-    { label: "NEET Coaching Institute in Patna", to: "/best-neet-coaching-in-patna" },
-    { label: "NEET Preparation in Patna", to: "/best-neet-coaching-in-patna" },
-    { label: "NEET Classes in Patna", to: "/neet-coaching-in-patna" },
-    { label: "NEET Coaching in Bihar", to: "/best-neet-coaching-in-patna" },
-    { label: "Medical Coaching in Patna", to: "/best-neet-coaching-in-patna" },
-    { label: "NEET Dropper Coaching in Patna", to: "/neet-dropper-coaching-in-patna" },
-    { label: "NEET Admission in Patna", to: "/admission" },
-    { label: "NEET Results", to: "/result" }
+    { label: "NEET Droppers Batch", to: "/neet-dropper-coaching-in-patna" },
+    { label: "NEET Class 12 Boards Prep", to: "/neet-class-12-in-patna" },
+    { label: "NEET Scholarship (T-MAT)", to: "/scholarship" },
+    { label: "NEET Admission Process", to: "/admission" },
+    { label: "NEET Results & Stars", to: "/result" }
   ];
 
   return (
     <>
       <Helmet>
         {/* Title & Description */}
-        <title>NEET Coaching in Patna | Team Excellent</title>
+        <title>NEET Coaching in Patna | Top Medical UG Institute - Team Excellent</title>
         <meta 
           name="description" 
-          content="Looking for NEET coaching in Patna? Explore Team Excellent's NEET UG preparation programs, faculty, study material, mock tests, and admission details." 
+          content="Looking for the best NEET coaching in Patna? Team Excellent offers premier NEET UG medical entrance preparation with expert biology & chemistry mentors, regular NTA-pattern mock tests, and personalized guidance." 
         />
 
         {/* Keywords */}
         <meta 
           name="keywords" 
-          content="NEET coaching in Patna, NEET coaching institute in Patna, NEET preparation in Patna, NEET classes in Patna, NEET coaching in Bihar, Medical coaching in Patna" 
+          content="neet coaching in patna, best neet coaching in patna, medical coaching patna, neet preparation institute in patna, team excellent patna, neet dropper batch patna, biology coaching patna" 
         />
 
         {/* Open Graph */}
-        <meta property="og:title" content="NEET Coaching in Patna | Team Excellent" />
-        <meta property="og:description" content="Looking for NEET coaching in Patna? Explore Team Excellent's NEET UG preparation programs, faculty, study material, mock tests, and admission details." />
+        <meta property="og:title" content="NEET Coaching in Patna | Top Medical UG Institute - Team Excellent" />
+        <meta property="og:description" content="Crack NEET UG with Patna's leading medical coaching institute. Expert doctor faculty, customized NCERT materials, and regular test series." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://teamexcellentcareerinstitute.in/neet-coaching-in-patna" />
         <link rel="canonical" href="https://teamexcellentcareerinstitute.in/neet-coaching-in-patna" />

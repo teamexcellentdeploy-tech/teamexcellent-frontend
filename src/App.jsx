@@ -113,7 +113,6 @@ export default function App() {
         <meta property="og:title" content="Team Excellent - Best Institute in Patna for JEE, NEET & Foundations" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://teamexcellentcareerinstitute.in/" />
-        <link rel="canonical" href="https://teamexcellentcareerinstitute.in/" />
         <meta property="og:image" content="https://teamexcellentcareerinstitute.in/Favicon.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Team Excellent - Best Institute in Patna for JEE, NEET & Foundations" />
@@ -125,8 +124,10 @@ export default function App() {
         <Route path="/admission" element={<Admission />} />
 
         {/* Redirect Routes */}
-        <Route path="/programs/jee" element={<Navigate to="/best-jee-coaching-in-patna" replace />} />
-        <Route path="/programs/neet" element={<Navigate to="/best-neet-coaching-in-patna" replace />} />
+        <Route path="/programs/jee" element={<Navigate to="/iit-jee-coaching-in-patna" replace />} />
+        <Route path="/programs/neet" element={<Navigate to="/neet-coaching-in-patna" replace />} />
+        <Route path="/best-jee-coaching-in-patna" element={<Navigate to="/iit-jee-coaching-in-patna" replace />} />
+        <Route path="/best-neet-coaching-in-patna" element={<Navigate to="/neet-coaching-in-patna" replace />} />
         <Route path="/programs/jee-main-coaching-in-patna" element={<Navigate to="/jee-main-coaching-in-patna" replace />} />
         <Route path="/programs/class-6-to-10" element={<Navigate to="/class-6-to-10" replace />} />
         <Route path="/programs/jee-advanced-coaching-in-patna" element={<Navigate to="/jee-advanced-coaching-in-patna" replace />} />
@@ -144,10 +145,8 @@ export default function App() {
 
         {/* Program Routes */}
         <Route path="/jee-coaching-in-patna" element={<JeeClass12 />} />
-        <Route path="/best-jee-coaching-in-patna" element={<Jee />} />
         <Route path="/iit-jee-coaching-in-patna" element={<JeeClass11 />} />
         <Route path="/class-6-to-10" element={<Class6to10 />} />
-        <Route path="/best-neet-coaching-in-patna" element={<Neet />} />
         <Route path="/neet-coaching-in-patna" element={<NeetClass11 />} />
 
         {/* New Program Subroutes */}
@@ -195,6 +194,8 @@ export default function App() {
         <Route path="/result" element={<Result />} />
         <Route path="/result/jee" element={<JeeResult />} />
         <Route path="/result/neet" element={<NeetResult />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/careers/:id" element={<CareerDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

@@ -149,16 +149,14 @@ export default function JeeMainCoaching() {
   ];
 
   const seoClusters = [
-    { label: "JEE Coaching in Patna", to: "/best-jee-coaching-in-patna" },
-    { label: "Best JEE Coaching in Patna", to: "/best-jee-coaching-in-patna" },
-    { label: "IIT JEE Coaching in Patna", to: "/best-jee-coaching-in-patna" },
-    { label: "JEE Advanced Coaching in Patna", to: "/best-jee-coaching-in-patna" },
+    { label: "IIT JEE Coaching in Patna", to: "/iit-jee-coaching-in-patna" },
+    { label: "JEE Advanced Coaching in Patna", to: "/jee-advanced-coaching-in-patna" },
+    { label: "JEE Class 12 Target Batch", to: "/jee-coaching-in-patna" },
     { label: "JEE Dropper Coaching in Patna", to: "/jee-dropper-coaching-in-patna" },
-    { label: "JEE Foundation Coaching in Patna", to: "/class-6-to-10" },
-    { label: "JEE Coaching Fees in Patna", to: "/best-jee-coaching-in-patna" },
-    { label: "JEE Admission in Patna", to: "/admission" },
-    { label: "JEE Results", to: "/result" },
-    { label: "JEE Faculty", to: "/about" }
+    { label: "JEE Foundation Coaching (Class 6-10)", to: "/class-6-to-10" },
+    { label: "T-MAT Scholarship Scheme", to: "/scholarship" },
+    { label: "JEE Admission Process", to: "/admission" },
+    { label: "JEE Results & Toppers", to: "/result" }
   ];
 
   return (
@@ -554,7 +552,7 @@ export default function JeeMainCoaching() {
                     For Class 12 students. Focuses on completing the Class 12 syllabus efficiently, revision of Class 11 core topics, timed mock test practice, and balancing school board examinations.
                   </p>
                 </div>
-                <Link to="/best-jee-coaching-in-patna" className="w-full py-2.5 bg-white text-center text-xs font-bold text-[#5B2D7C] border border-slate-200 hover:bg-purple-50 rounded-xl transition">
+                <Link to="/jee-coaching-in-patna" className="w-full py-2.5 bg-white text-center text-xs font-bold text-[#5B2D7C] border border-slate-200 hover:bg-purple-50 rounded-xl transition">
                   Explore Class 12 Program ➔
                 </Link>
               </div>

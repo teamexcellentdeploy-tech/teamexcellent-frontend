@@ -282,11 +282,11 @@ function Class6to10Content() {
           At Team Excellent, we focus on holistic growth. From Classes 6–10, our
           students receive strong academic support, Olympiad exposure, board
           preparation, and the foundation to tackle{" "}
-          <Link to="/best-jee-coaching-in-patna" className="font-semibold text-[#5B2D7C] hover:underline">
+          <Link to="/iit-jee-coaching-in-patna" className="font-semibold text-[#5B2D7C] hover:underline">
             IIT-JEE Preparation
           </Link>{" "}
           and{" "}
-          <Link to="/best-neet-coaching-in-patna" className="font-semibold text-[#5B2D7C] hover:underline">
+          <Link to="/neet-coaching-in-patna" className="font-semibold text-[#5B2D7C] hover:underline">
             NEET Medical Preparation
           </Link>{" "}
           in higher classes. To learn more about getting started, check our{" "}

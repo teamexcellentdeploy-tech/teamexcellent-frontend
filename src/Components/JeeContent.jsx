@@ -574,11 +574,11 @@ function JeeContent() {
           <Link to="/admission" className="text-[#b72e2f] font-bold hover:underline">
             Admission Guidelines
           </Link>. You can also learn about our{" "}
-          <Link to="/best-neet-coaching-in-patna" className="text-[#5B2D7C] font-bold hover:underline">
+          <Link to="/neet-coaching-in-patna" className="text-[#5B2D7C] font-bold hover:underline">
             NEET Medical Program
           </Link>{" "}
           and{" "}
-          <Link to="/programs/class-6-to-10" className="text-[#5B2D7C] font-bold hover:underline">
+          <Link to="/class-6-to-10" className="text-[#5B2D7C] font-bold hover:underline">
             Class 6-10 Foundation Courses
           </Link>. Have questions? Feel free to{" "}
           <Link to="/contact" className="text-[#b72e2f] font-bold hover:underline">

@@ -19,10 +19,10 @@ export default function ExploreLinks() {
   const currentPath = location.pathname;
 
   const links = [
-    { to: "/jee-coaching-in-patna", label: "JEE Coaching in Patna", icon: <GraduationCap className="w-4 h-4" /> },
-    { to: "/jee-dropper-coaching-in-patna", label: "JEE Dropper Coaching", icon: <GraduationCap className="w-4 h-4" /> },
-    { to: "/iit-jee-coaching-in-patna", label: "Class 11 IIT-JEE", icon: <GraduationCap className="w-4 h-4" /> },
+    { to: "/iit-jee-coaching-in-patna", label: "IIT-JEE Coaching in Patna", icon: <GraduationCap className="w-4 h-4" /> },
+    { to: "/jee-main-coaching-in-patna", label: "JEE Main Coaching", icon: <GraduationCap className="w-4 h-4" /> },
     { to: "/jee-advanced-coaching-in-patna", label: "JEE Advanced Prep", icon: <GraduationCap className="w-4 h-4" /> },
+    { to: "/jee-dropper-coaching-in-patna", label: "JEE Dropper Coaching", icon: <GraduationCap className="w-4 h-4" /> },
     { to: "/neet-coaching-in-patna", label: "NEET Coaching in Patna", icon: <Stethoscope className="w-4 h-4" /> },
     { to: "/neet-dropper-coaching-in-patna", label: "NEET Droppers Batch", icon: <Stethoscope className="w-4 h-4" /> },
     { to: "/neet-class-12-in-patna", label: "NEET Class 12 Boards", icon: <Stethoscope className="w-4 h-4" /> },

@@ -1,4 +1,21 @@
 {
+  "redirects": [
+    {
+      "source": "/best-jee-coaching-in-patna",
+      "destination": "/iit-jee-coaching-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/best-neet-coaching-in-patna",
+      "destination": "/neet-coaching-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/blogs/role-of-time-management-in-jee-and-neet-preparation",
+      "destination": "/blogs",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]

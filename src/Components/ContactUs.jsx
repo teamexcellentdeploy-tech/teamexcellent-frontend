@@ -49,11 +49,11 @@ function ContactUs() {
                 Admission Procedure
               </Link>{" "}
               or explore our{" "}
-              <Link to="/best-jee-coaching-in-patna" className="font-semibold text-[#8424bd] hover:underline">
+              <Link to="/iit-jee-coaching-in-patna" className="font-semibold text-[#8424bd] hover:underline">
                 JEE
               </Link>{" "}
               &{" "}
-              <Link to="/best-neet-coaching-in-patna" className="font-semibold text-[#8424bd] hover:underline">
+              <Link to="/neet-coaching-in-patna" className="font-semibold text-[#8424bd] hover:underline">
                 NEET Coaching
               </Link>{" "}
               programs.
@@ -209,7 +209,7 @@ function ContactUs() {
             <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
               <h4 className="font-bold text-[#8424bd] text-lg mb-2">🎓 Course Guidance</h4>
               <p className="text-xs text-gray-600 leading-relaxed">
-                Get advice on selecting 1-year, 2-year, or repeater dropper batches for <Link to="/best-jee-coaching-in-patna" className="font-bold underline">JEE</Link> & <Link to="/best-neet-coaching-in-patna" className="font-bold underline">NEET</Link>.
+                Get advice on selecting 1-year, 2-year, or repeater dropper batches for <Link to="/iit-jee-coaching-in-patna" className="font-bold underline">JEE</Link> & <Link to="/neet-coaching-in-patna" className="font-bold underline">NEET</Link>.
               </p>
             </div>
 

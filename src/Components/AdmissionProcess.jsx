@@ -242,10 +242,10 @@ function AdmissionProcess() {
         </h3>
         <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
           Need help picking the right batch? Explore details of our{" "}
-          <Link to="/best-jee-coaching-in-patna" className="font-bold text-[#5B2D7C] hover:underline">
+          <Link to="/iit-jee-coaching-in-patna" className="font-bold text-[#5B2D7C] hover:underline">
             IIT-JEE Coaching
           </Link>,{" "}
-          <Link to="/best-neet-coaching-in-patna" className="font-bold text-[#5B2D7C] hover:underline">
+          <Link to="/neet-coaching-in-patna" className="font-bold text-[#5B2D7C] hover:underline">
             NEET UG Medical Prep
           </Link>, and{" "}
           <Link to="/class-6-to-10" className="font-bold text-[#5B2D7C] hover:underline">

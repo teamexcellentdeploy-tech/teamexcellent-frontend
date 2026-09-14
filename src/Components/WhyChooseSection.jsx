@@ -35,7 +35,7 @@ const advantages = [
     title: "Expert Faculty",
     description: (
       <>
-        Learn from experienced educators who simplify complex concepts and provide exam-oriented strategies for <Link to="/jee-coaching-in-patna" className="text-[#522871] font-semibold hover:underline">IIT-JEE Coaching</Link> and <Link to="/best-neet-coaching-in-patna" className="text-[#522871] font-semibold hover:underline">NEET Coaching</Link> in Patna.
+        Learn from experienced educators who simplify complex concepts and provide exam-oriented strategies for <Link to="/iit-jee-coaching-in-patna" className="text-[#522871] font-semibold hover:underline">IIT-JEE Coaching</Link> and <Link to="/neet-coaching-in-patna" className="text-[#522871] font-semibold hover:underline">NEET Coaching</Link> in Patna.
       </>
     ),
     textColor: "text-[#522871]",
@@ -135,7 +135,7 @@ const advantages = [
     title: "Convenient Location in Patna",
     description: (
       <>
-        Located in Patna, Team Excellent Career Institute provides top coaching for <Link to="/jee-coaching-in-patna" className="text-indigo-600 font-semibold hover:underline">JEE Main/Advanced</Link> & <Link to="/best-neet-coaching-in-patna" className="text-indigo-600 font-semibold hover:underline">NEET Medical</Link>.
+        Located in Patna, Team Excellent Career Institute provides top coaching for <Link to="/iit-jee-coaching-in-patna" className="text-indigo-600 font-semibold hover:underline">JEE Main/Advanced</Link> & <Link to="/neet-coaching-in-patna" className="text-indigo-600 font-semibold hover:underline">NEET Medical</Link>.
       </>
     ),
     textColor: "text-indigo-600",

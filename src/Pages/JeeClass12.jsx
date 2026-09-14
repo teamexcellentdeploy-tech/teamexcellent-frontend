@@ -181,12 +181,20 @@ export default function JeeClass12() {
       a: "Yes, we conduct weekly chapter-wise tests and monthly Computer-Based Tests (CBT) matching the NTA pattern."
     },
     {
-      q: "Does Team Excellent provide doubt-clearing sessions?",
-      a: "Yes, we operate daily dedicated doubt desks for 1-on-1 problem-solving sessions with our faculties."
+      q: "What makes Team Excellent the best JEE coaching in Patna?",
+      a: "Team Excellent provides an integrated preparation system led by experienced IITian faculties, structured study material, disciplined testing cycles, and individual mentoring."
     },
     {
-      q: "What are the JEE coaching fees in Patna?",
-      a: "Fees vary by institute and program. Parents should check the current Team Excellent fee structures and T-MAT scholarship options at our center before admission."
+      q: "Does Team Excellent offer coaching for both JEE Main and JEE Advanced?",
+      a: "Yes, our programs provide comprehensive preparation covering the conceptual clarity needed for JEE Main along with the analytical depth required for JEE Advanced."
+    },
+    {
+      q: "What is the batch size for JEE coaching at Team Excellent?",
+      a: "We maintain optimized batch sizes to ensure every student gets personal attention and faculty interaction during doubt clearing sessions."
+    },
+    {
+      q: "Are scholarships available for JEE courses?",
+      a: "Yes! Students can participate in our T-MAT (Team Excellent Mentorship & Admission Test) to avail scholarships up to 100% on course tuition fees."
     },
     {
       q: "How can I take admission to Team Excellent?",
@@ -195,16 +203,14 @@ export default function JeeClass12() {
   ];
 
   const seoClusters = [
-    { label: "Best JEE Coaching in Patna", to: "/best-jee-coaching-in-patna" },
-    { label: "IIT JEE Coaching in Patna", to: "/best-jee-coaching-in-patna" },
-    { label: "JEE Main Coaching in Patna", to: "/jee-coaching-in-patna" },
-    { label: "JEE Advanced Coaching in Patna", to: "/best-jee-coaching-in-patna" },
+    { label: "IIT JEE Coaching in Patna", to: "/iit-jee-coaching-in-patna" },
+    { label: "JEE Main Coaching in Patna", to: "/jee-main-coaching-in-patna" },
+    { label: "JEE Advanced Coaching in Patna", to: "/jee-advanced-coaching-in-patna" },
     { label: "JEE Dropper Coaching in Patna", to: "/jee-dropper-coaching-in-patna" },
     { label: "JEE Foundation Coaching in Patna", to: "/class-6-to-10" },
-    { label: "JEE Coaching Fees in Patna", to: "/jee-coaching-in-patna" },
+    { label: "JEE Scholarship (T-MAT)", to: "/scholarship" },
     { label: "JEE Admission in Patna", to: "/admission" },
-    { label: "JEE Results", to: "/result" },
-    { label: "Faculty Info", to: "/about" }
+    { label: "JEE Results", to: "/result" }
   ];
 
   return (
