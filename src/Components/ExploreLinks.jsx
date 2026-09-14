@@ -23,6 +23,7 @@ export default function ExploreLinks() {
     { to: "/jee-main-coaching-in-patna", label: "JEE Main Coaching", icon: <GraduationCap className="w-4 h-4" /> },
     { to: "/jee-advanced-coaching-in-patna", label: "JEE Advanced Prep", icon: <GraduationCap className="w-4 h-4" /> },
     { to: "/jee-dropper-coaching-in-patna", label: "JEE Dropper Coaching", icon: <GraduationCap className="w-4 h-4" /> },
+    { to: "/best-neet-coaching-in-patna", label: "Best NEET Coaching in Patna", icon: <Stethoscope className="w-4 h-4" /> },
     { to: "/neet-coaching-in-patna", label: "NEET Coaching in Patna", icon: <Stethoscope className="w-4 h-4" /> },
     { to: "/neet-dropper-coaching-in-patna", label: "NEET Droppers Batch", icon: <Stethoscope className="w-4 h-4" /> },
     { to: "/neet-class-12-in-patna", label: "NEET Class 12 Boards", icon: <Stethoscope className="w-4 h-4" /> },

@@ -127,7 +127,6 @@ export default function App() {
         <Route path="/programs/jee" element={<Navigate to="/iit-jee-coaching-in-patna" replace />} />
         <Route path="/programs/neet" element={<Navigate to="/neet-coaching-in-patna" replace />} />
         <Route path="/best-jee-coaching-in-patna" element={<Navigate to="/iit-jee-coaching-in-patna" replace />} />
-        <Route path="/best-neet-coaching-in-patna" element={<Navigate to="/neet-coaching-in-patna" replace />} />
         <Route path="/programs/jee-main-coaching-in-patna" element={<Navigate to="/jee-main-coaching-in-patna" replace />} />
         <Route path="/programs/class-6-to-10" element={<Navigate to="/class-6-to-10" replace />} />
         <Route path="/programs/jee-advanced-coaching-in-patna" element={<Navigate to="/jee-advanced-coaching-in-patna" replace />} />
@@ -148,6 +147,7 @@ export default function App() {
         <Route path="/iit-jee-coaching-in-patna" element={<JeeClass11 />} />
         <Route path="/class-6-to-10" element={<Class6to10 />} />
         <Route path="/neet-coaching-in-patna" element={<NeetClass11 />} />
+        <Route path="/best-neet-coaching-in-patna" element={<Neet />} />
 
         {/* New Program Subroutes */}
         <Route path="/jee-main-coaching-in-patna" element={<JeeMainCoaching />} />
