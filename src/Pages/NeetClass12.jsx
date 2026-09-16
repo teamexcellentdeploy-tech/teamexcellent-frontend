@@ -173,6 +173,63 @@ export default function NeetClass12() {
         <meta name="twitter:description" content="Score 650+ in NEET UG and excel in Class 12 Boards with Team Excellent's dedicated medical program." />
         <meta name="twitter:image" content="https://teamexcellentcareerinstitute.in/logo192.png" />
 
+        {/* EducationalOrganization & LocalBusiness Schema with E-E-A-T Authority */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": ["LocalBusiness", "EducationalOrganization", "School", "ProfessionalService", "Organization"],
+            "@id": "https://teamexcellentcareerinstitute.in/#organization",
+            "name": "Team Excellent Career Institute",
+            "alternateName": "Team Excellent NEET Coaching Patna",
+            "url": "https://teamexcellentcareerinstitute.in",
+            "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "image": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "description": "Premier medical entrance coaching institute in Patna, offering Class 12 target batches for NEET UG aspirants.",
+            "telephone": "+91-9942000371",
+            "email": "teamexcellentpatna@gmail.com",
+            "hasMap": "https://www.google.com/maps?cid=16308605353139354202",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Near NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
+              "addressLocality": "Patna",
+              "addressRegion": "Bihar",
+              "postalCode": "800016",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "25.603192",
+              "longitude": "85.174559"
+            },
+            "founder": {
+              "@type": "Person",
+              "name": "Albert Newwel",
+              "jobTitle": "Founder & Director",
+              "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": "IIT-BHU Varanasi"
+              },
+              "description": "M.Tech from IIT-BHU with 12+ years of expertise in mentoring medical aspirants."
+            },
+            "knowsAbout": [
+              "NEET Class 12 Boards Preparation",
+              "Target Medical Coaching",
+              "NCERT Biology Line-by-Line",
+              "OMR Test Series"
+            ],
+            "sameAs": [
+              "https://www.facebook.com/share/1JTxznYnFg/",
+              "https://www.instagram.com/team.excellent.patna",
+              "https://www.youtube.com/@teamexcellentpatna"
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "498"
+            }
+          })}
+        </script>
+
         {/* Course Schema */}
         <script type="application/ld+json">
           {JSON.stringify({

@@ -38,24 +38,122 @@ export default function JeeClass11() {
         <meta name="twitter:description" content="Crack JEE Main & Advanced with Patna's leading IIT coaching institute. Expert faculty and personal mentorship." />
         <meta name="twitter:image" content="https://teamexcellentcareerinstitute.in/logo192.png" />
         
+        {/* EducationalOrganization & LocalBusiness Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": ["LocalBusiness", "EducationalOrganization", "School", "ProfessionalService", "Organization"],
+            "@id": "https://teamexcellentcareerinstitute.in/#organization",
+            "name": "Team Excellent Career Institute",
+            "alternateName": "Team Excellent IIT-JEE Coaching Patna",
+            "url": "https://teamexcellentcareerinstitute.in",
+            "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "image": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "description": "Premier engineering entrance coaching institute in Patna, Bihar, providing IIT-JEE (Main & Advanced) and foundation preparation programs.",
+            "telephone": "+91-9942000371",
+            "email": "teamexcellentpatna@gmail.com",
+            "hasMap": "https://www.google.com/maps?cid=16308605353139354202",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Near NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
+              "addressLocality": "Patna",
+              "addressRegion": "Bihar",
+              "postalCode": "800016",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "25.603192",
+              "longitude": "85.174559"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "540"
+            }
+          })}
+        </script>
+
         {/* Course Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Course",
-            "name": "Class 11 IIT-JEE Program",
-            "description": "2-Year JEE foundation course covering Physics, Chemistry, and Mathematics with board and competitive exam preparation.",
+            "name": "IIT-JEE (Main & Advanced) Coaching Program in Patna",
+            "description": "Comprehensive engineering entrance preparation program with IITian faculty, small batches, Daily Practice Problems (DPPs), and Computer-Based Test Series.",
             "provider": {
               "@type": "EducationalOrganization",
               "name": "Team Excellent Career Institute",
               "url": "https://teamexcellentcareerinstitute.in/"
             },
+            "hasCourseInstance": [
+              {
+                "@type": "CourseInstance",
+                "name": "Class 11 2-Year JEE Foundation Course",
+                "courseMode": "Offline Classroom",
+                "duration": "P2Y"
+              },
+              {
+                "@type": "CourseInstance",
+                "name": "Class 12 1-Year JEE Target Course",
+                "courseMode": "Offline Classroom",
+                "duration": "P1Y"
+              },
+              {
+                "@type": "CourseInstance",
+                "name": "JEE Dropper / Repeater Rank Booster Batch",
+                "courseMode": "Offline Classroom",
+                "duration": "P1Y"
+              }
+            ],
             "offers": {
               "@type": "Offer",
               "category": "Scholarship Available up to 100% via T-MAT Exam",
               "priceCurrency": "INR",
               "availability": "https://schema.org/InStock"
             }
+          })}
+        </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Which is the best IIT-JEE coaching institute in Patna?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Team Excellent Career Institute is widely regarded as one of Patna's top IIT-JEE coaching centers, led by Founder & Director Albert Newwel (M.Tech IIT-BHU) with experienced IITian faculties, small batch sizes, and a proven track record of 99+ percentilers."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What courses are offered for IIT-JEE preparation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We provide a 2-Year Comprehensive Program for Class 11, a 1-Year Target Program for Class 12, and a 1-Year Rank Booster Batch for 12th Pass / Dropper students targeting JEE Main and Advanced."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Team Excellent conduct Computer-Based Tests (CBT) for JEE Main?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, we run regular All India Test Series (AITS) on a dedicated Computer-Based Test portal that perfectly replicates the NTA test interface, complete with timer, question palettes, and granular analytics."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can students get scholarships for JEE coaching at Team Excellent?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, through the T-MAT (Team Excellent Mentorship & Admission Test) examination, deserving students can secure up to 100% scholarship on course tuition fees."
+                }
+              }
+            ]
           })}
         </script>
 
@@ -74,7 +172,7 @@ export default function JeeClass11() {
               {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "JEE Coaching for Class 11 in Patna",
+                "name": "IIT JEE Coaching in Patna",
                 "item": "https://teamexcellentcareerinstitute.in/iit-jee-coaching-in-patna"
               }
             ]

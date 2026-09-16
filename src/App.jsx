@@ -123,10 +123,9 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/admission" element={<Admission />} />
 
-        {/* Redirect Routes */}
         <Route path="/programs/jee" element={<Navigate to="/iit-jee-coaching-in-patna" replace />} />
         <Route path="/programs/neet" element={<Navigate to="/neet-coaching-in-patna" replace />} />
-        <Route path="/best-jee-coaching-in-patna" element={<Navigate to="/iit-jee-coaching-in-patna" replace />} />
+        <Route path="/best-jee-coaching-in-patna" element={<Jee />} />
         <Route path="/programs/jee-main-coaching-in-patna" element={<Navigate to="/jee-main-coaching-in-patna" replace />} />
         <Route path="/programs/class-6-to-10" element={<Navigate to="/class-6-to-10" replace />} />
         <Route path="/programs/jee-advanced-coaching-in-patna" element={<Navigate to="/jee-advanced-coaching-in-patna" replace />} />

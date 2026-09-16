@@ -15,6 +15,32 @@ export default function Result() {
                 <meta property="og:url" content="https://teamexcellentcareerinstitute.in/result" />
                 <link rel="canonical" href="https://teamexcellentcareerinstitute.in/result" />
                 
+                {/* EducationalOrganization with E-E-A-T Schema */}
+                <script type="application/ld+json">
+                  {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "EducationalOrganization",
+                    "name": "Team Excellent Career Institute",
+                    "url": "https://teamexcellentcareerinstitute.in",
+                    "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+                    "founder": {
+                      "@type": "Person",
+                      "name": "Albert Newwel",
+                      "jobTitle": "Founder & Director",
+                      "alumniOf": {
+                        "@type": "EducationalOrganization",
+                        "name": "IIT-BHU Varanasi"
+                      }
+                    },
+                    "sameAs": [
+                      "https://www.facebook.com/share/1JTxznYnFg/",
+                      "https://www.instagram.com/team.excellent.patna",
+                      "https://www.linkedin.com/company/teamexcellentpatna",
+                      "https://www.youtube.com/@teamexcellentpatna"
+                    ]
+                  })}
+                </script>
+
                 {/* WebPage & BreadcrumbList Schema */}
                 <script type="application/ld+json">
                   {JSON.stringify({
@@ -41,6 +67,40 @@ export default function Result() {
                         "position": 2,
                         "name": "Results",
                         "item": "https://teamexcellentcareerinstitute.in/result"
+                      }
+                    ]
+                  })}
+                </script>
+
+                {/* FAQPage Schema */}
+                <script type="application/ld+json">
+                  {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                      {
+                        "@type": "Question",
+                        "name": "Where can I check Team Excellent NEET and JEE results?",
+                        "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "You can view authentic selections and toppers directly on our dedicated JEE Results (/result/jee) and NEET Results (/result/neet) pages or log in to the Student Portal."
+                        }
+                      },
+                      {
+                        "@type": "Question",
+                        "name": "How are Team Excellent mock test results evaluated?",
+                        "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "All internal test results and CBT mock examinations are evaluated using automated diagnostic analytics highlighting subject-wise accuracy, negative marking patterns, and national percentile projections."
+                        }
+                      },
+                      {
+                        "@type": "Question",
+                        "name": "How do I check my T-MAT scholarship result?",
+                        "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "T-MAT scholarship exam scores and eligible fee waivers (up to 100%) are sent via SMS/WhatsApp to registered numbers and displayed on our Scholarship page."
+                        }
                       }
                     ]
                   })}

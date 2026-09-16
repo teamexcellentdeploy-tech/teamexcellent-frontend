@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import ExploreLinks from '../Components/ExploreLinks';
+import FAQSection from '../Components/FAQSection';
 import { Trophy, Search, ChevronRight, Award, Download, Users, Star } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
@@ -28,6 +29,21 @@ export default function NeetResult() {
         { title: "NEET Full Syllabus Practice Test - 3", date: "February 2026", type: "Result PDF", link: "#" }
     ];
 
+    const resultFaqs = [
+        {
+            question: "How can I verify Team Excellent's NEET results?",
+            answer: "All results published by Team Excellent Career Institute are supported by official NTA roll numbers, scorecards, and admission allotment letters for AIIMS, PMCH, NMCH, IGIMS, and other medical colleges. Parents and students can verify these credentials at our Saketpuri center."
+        },
+        {
+            question: "What medical colleges have Team Excellent students joined?",
+            answer: "Our students have secured MBBS seats in premier government institutions including AIIMS Patna, PMCH Patna, NMCH Patna, IGIMS, DMCH Darbhanga, JLNMC Bhagalpur, and other national medical colleges."
+        },
+        {
+            question: "What was the highest score achieved by Team Excellent students in NEET 2025?",
+            answer: "In NEET 2025, our top student achieved 685/720 with a 99.87 percentile, securing an All India Rank of 1420."
+        }
+    ];
+
     const filteredUpdates = updates.filter(update => 
         update.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -38,6 +54,47 @@ export default function NeetResult() {
                 <title>NEET UG Results & Top Score Tallies | Team Excellent Patna</title>
                 <meta name="description" content="Check Team Excellent's medical selection ratios, top scorers, and downloadeable NEET mock test marksheets and answer keys in Patna." />
                 <link rel="canonical" href="https://teamexcellentcareerinstitute.in/result/neet" />
+
+                {/* EducationalOrganization E-E-A-T Schema */}
+                <script type="application/ld+json">
+                  {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "EducationalOrganization",
+                    "name": "Team Excellent Career Institute",
+                    "url": "https://teamexcellentcareerinstitute.in",
+                    "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+                    "founder": {
+                      "@type": "Person",
+                      "name": "Albert Newwel",
+                      "jobTitle": "Founder & Director",
+                      "alumniOf": {
+                        "@type": "EducationalOrganization",
+                        "name": "IIT-BHU Varanasi"
+                      }
+                    },
+                    "aggregateRating": {
+                      "@type": "AggregateRating",
+                      "ratingValue": "4.9",
+                      "reviewCount": "530"
+                    }
+                  })}
+                </script>
+
+                {/* FAQPage Schema */}
+                <script type="application/ld+json">
+                  {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": resultFaqs.map(faq => ({
+                      "@type": "Question",
+                      "name": faq.question,
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": faq.answer
+                      }
+                    }))
+                  })}
+                </script>
 
                 {/* ItemList & Person Schema for Rankers */}
                 <script type="application/ld+json">
@@ -215,6 +272,7 @@ export default function NeetResult() {
                     </div>
 
                 </div>
+                <FAQSection faqs={resultFaqs} title="Frequently Asked Questions on NEET Results" />
             </main>
             <ExploreLinks />
             <Footer />

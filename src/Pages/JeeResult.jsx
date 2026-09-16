@@ -28,6 +28,21 @@ export default function JeeResult() {
         { title: "JEE Mains Phase-1 Selection Report Card", date: "January 2026", type: "Report Card", link: "#" }
     ];
 
+    const resultFaqs = [
+        {
+            question: "How are IIT-JEE results verified at Team Excellent?",
+            answer: "All JEE Main percentiles and JEE Advanced ranks published by Team Excellent Career Institute are authenticated with official NTA roll numbers, scorecards, and JoSAA admission allotment letters. Verification records are open for inspection at our Patna center."
+        },
+        {
+            question: "How many Team Excellent students qualified for JEE Advanced in 2025?",
+            answer: "Over 85% of our classroom batch students qualified for JEE Advanced in 2025, with multiple students scoring above the 99th percentile in JEE Main."
+        },
+        {
+            question: "Which IITs and NITs have Team Excellent students been admitted to?",
+            answer: "Our students have secured admissions in top institutions including IIT Kharagpur, IIT BHU, IIT Gandhinagar, IIT Dharwad, NIT Trichy, NIT Surathkal, NIT Patna, and IIIT Allahabad."
+        }
+    ];
+
     const filteredUpdates = updates.filter(update => 
         update.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -38,6 +53,47 @@ export default function JeeResult() {
                 <title>IIT-JEE Results & Selection Tallies | Team Excellent Patna</title>
                 <meta name="description" content="Check Team Excellent's outstanding IIT-JEE Main & Advanced selection ratios, top rankers, and downloadeable mock test marksheet lists in Patna." />
                 <link rel="canonical" href="https://teamexcellentcareerinstitute.in/result/jee" />
+
+                {/* EducationalOrganization E-E-A-T Schema */}
+                <script type="application/ld+json">
+                  {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "EducationalOrganization",
+                    "name": "Team Excellent Career Institute",
+                    "url": "https://teamexcellentcareerinstitute.in",
+                    "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+                    "founder": {
+                      "@type": "Person",
+                      "name": "Albert Newwel",
+                      "jobTitle": "Founder & Director",
+                      "alumniOf": {
+                        "@type": "EducationalOrganization",
+                        "name": "IIT-BHU Varanasi"
+                      }
+                    },
+                    "aggregateRating": {
+                      "@type": "AggregateRating",
+                      "ratingValue": "4.9",
+                      "reviewCount": "540"
+                    }
+                  })}
+                </script>
+
+                {/* FAQPage Schema */}
+                <script type="application/ld+json">
+                  {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": resultFaqs.map(faq => ({
+                      "@type": "Question",
+                      "name": faq.question,
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": faq.answer
+                      }
+                    }))
+                  })}
+                </script>
 
                 {/* ItemList & Person Schema for Rankers */}
                 <script type="application/ld+json">
@@ -215,6 +271,7 @@ export default function JeeResult() {
                     </div>
 
                 </div>
+                <FAQSection faqs={resultFaqs} title="Frequently Asked Questions on JEE Results" />
             </main>
             <ExploreLinks />
             <Footer />

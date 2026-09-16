@@ -6,6 +6,7 @@ import { BookOpen, Download, ClipboardList, FileText, Send, Sparkles } from 'luc
 import toast from 'react-hot-toast'
 import { submitEnrollment } from '../lib/enrollmentApi'
 import ExploreLinks from '../Components/ExploreLinks'
+import FAQSection from '../Components/FAQSection'
 
 export default function StudyMaterial() {
   const [formData, setFormData] = useState({
@@ -52,6 +53,25 @@ export default function StudyMaterial() {
     }
   }
 
+  const faqs = [
+    {
+      question: "What is included in the Team Excellent study material for JEE & NEET?",
+      answer: "Our packages include comprehensive theory booklets, graded exercise sheets (Level 1, Level 2, Level 3), Daily Practice Problems (DPPs), chapter-wise 15-year PYQs, and quick formula revision flashcards."
+    },
+    {
+      question: "Is the study material available for Class 11, Class 12, and Dropper batches?",
+      answer: "Yes, separate meticulously structured modules are provided for 2-year Class 11 courses, 1-year Class 12 courses, and high-intensity Repeater/Dropper rank booster batches."
+    },
+    {
+      question: "Is Team Excellent study material aligned with the latest NCERT & NTA syllabus?",
+      answer: "Yes, our study material is 100% updated every academic year to reflect the latest NTA JEE Main, IIT JEE Advanced, and NEET UG syllabus and question patterns."
+    },
+    {
+      question: "How can external students obtain Team Excellent study material in Patna?",
+      answer: "Students can register via the request form on this page or visit our Patna center at Saketpuri, Bajar Samiti to collect study modules or enroll in postal delivery."
+    }
+  ];
+
   return (
     <>
       <Helmet>
@@ -65,6 +85,48 @@ export default function StudyMaterial() {
           content="jee study material patna, neet study material, dpp iit jee, chemistry notes, physics worksheets patna, biology coaching material" 
         />
         <link rel="canonical" href="https://teamexcellentcareerinstitute.in/study-material" />
+
+        {/* EducationalOrganization Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "Team Excellent Career Institute",
+            "url": "https://teamexcellentcareerinstitute.in",
+            "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Albert Newwel",
+              "jobTitle": "Founder & Director",
+              "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": "IIT-BHU Varanasi"
+              }
+            }
+          })}
+        </script>
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teamexcellentcareerinstitute.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Study Material",
+                "item": "https://teamexcellentcareerinstitute.in/study-material"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <Navbar />
@@ -221,6 +283,7 @@ export default function StudyMaterial() {
           </div>
 
         </div>
+        <FAQSection faqs={faqs} />
         <ExploreLinks />
       </main>
 

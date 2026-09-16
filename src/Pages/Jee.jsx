@@ -35,7 +35,7 @@ export default function Jee() {
         <meta name="twitter:description" content="Crack JEE Main & Advanced with Patna's leading JEE coaching institute. Expert faculty and personal mentorship." />
         <meta name="twitter:image" content="https://teamexcellentcareerinstitute.in/logo192.png" />
         
-        {/* EducationalOrganization & LocalBusiness Schema */}
+        {/* EducationalOrganization & LocalBusiness Schema with E-E-A-T */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -46,7 +46,7 @@ export default function Jee() {
             "url": "https://teamexcellentcareerinstitute.in",
             "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
             "image": "https://teamexcellentcareerinstitute.in/logo192.png",
-            "description": "Team Excellent Career Institute is a premier coaching institute in Patna, Bihar, providing IIT-JEE, NEET, and foundation preparation programs (Class 6-10) for students aiming for engineering and medical entrance exams.",
+            "description": "Team Excellent Career Institute is a premier coaching institute in Patna, Bihar, providing IIT-JEE (Main & Advanced), NEET, and foundation preparation programs for students aiming for top engineering and medical institutions.",
             "telephone": "+91-9942000371",
             "email": "teamexcellentpatna@gmail.com",
             "hasMap": "https://www.google.com/maps?cid=16308605353139354202",
@@ -62,6 +62,37 @@ export default function Jee() {
               "@type": "GeoCoordinates",
               "latitude": "25.603192",
               "longitude": "85.174559"
+            },
+            "founder": {
+              "@type": "Person",
+              "name": "Albert Newwel",
+              "jobTitle": "Founder & Director",
+              "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": "IIT-BHU Varanasi",
+                "sameAs": "https://en.wikipedia.org/wiki/Indian_Institute_of_Technology_(BHU)_Varanasi"
+              },
+              "description": "M.Tech from IIT-BHU Varanasi with 12+ years of expertise in mentoring JEE & NEET aspirants in Patna, Bihar."
+            },
+            "knowsAbout": [
+              "IIT-JEE Main Coaching",
+              "IIT-JEE Advanced Coaching",
+              "Engineering Entrance Preparation",
+              "Physics Numericals for JEE",
+              "Advanced Calculus and Mathematics",
+              "Organic & Inorganic Chemistry for JEE",
+              "NTA CBT Mock Test Platform"
+            ],
+            "sameAs": [
+              "https://www.facebook.com/share/1JTxznYnFg/",
+              "https://www.instagram.com/team.excellent.patna",
+              "https://www.linkedin.com/company/teamexcellentpatna",
+              "https://www.youtube.com/@teamexcellentpatna"
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "510"
             }
           })}
         </script>

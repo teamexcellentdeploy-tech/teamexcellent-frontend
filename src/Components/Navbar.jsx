@@ -30,6 +30,12 @@ export default function Navbar() {
 
   const jeeItems = [
     { 
+      to: "/best-jee-coaching-in-patna", 
+      title: "Best JEE Coaching in Patna", 
+      desc: "Why Team Excellent is Ranked #1 for Engineering",
+      badge: "Top Choice"
+    },
+    { 
       to: "/iit-jee-coaching-in-patna", 
       title: "IIT-JEE Complete Program", 
       desc: "2-Year comprehensive coaching for Class 11",
@@ -200,7 +206,7 @@ export default function Navbar() {
             <NavItem to="/" label="Home" active={location.pathname === "/"} />
             
             <Dropdown
-              to="/iit-jee-coaching-in-patna"
+              to="/best-jee-coaching-in-patna"
               label="IIT JEE"
               items={jeeItems}
               active={location.pathname.includes("jee")}

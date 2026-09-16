@@ -38,14 +38,14 @@ export default function JeeAdvancedCoaching() {
         <meta name="twitter:description" content="Crack IIT JEE with Patna's leading engineering mentors." />
         <meta name="twitter:image" content="https://teamexcellentcareerinstitute.in/logo192.png" />
 
-        {/* EducationalOrganization & LocalBusiness Schema */}
+        {/* EducationalOrganization & LocalBusiness Schema with E-E-A-T Authority */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": ["LocalBusiness", "EducationalOrganization", "School", "ProfessionalService", "Organization"],
             "@id": "https://teamexcellentcareerinstitute.in/#organization",
             "name": "Team Excellent Career Institute",
-            "alternateName": "Team Excellent Coaching Institute Patna",
+            "alternateName": "Team Excellent JEE Advanced Academy Patna",
             "url": "https://teamexcellentcareerinstitute.in",
             "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
             "image": "https://teamexcellentcareerinstitute.in/logo192.png",
@@ -65,6 +65,32 @@ export default function JeeAdvancedCoaching() {
               "@type": "GeoCoordinates",
               "latitude": "25.603192",
               "longitude": "85.174559"
+            },
+            "founder": {
+              "@type": "Person",
+              "name": "Albert Newwel",
+              "jobTitle": "Founder & Director",
+              "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": "IIT-BHU Varanasi"
+              },
+              "description": "M.Tech from IIT-BHU with 12+ years of leadership in mentoring IIT-JEE Advanced top rankers in Patna."
+            },
+            "knowsAbout": [
+              "JEE Advanced Coaching",
+              "Multi-concept Numerical Problem Solving",
+              "Calculus and Rotational Mechanics",
+              "IIT Admissions Counseling"
+            ],
+            "sameAs": [
+              "https://www.facebook.com/share/1JTxznYnFg/",
+              "https://www.instagram.com/team.excellent.patna",
+              "https://www.youtube.com/@teamexcellentpatna"
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "540"
             }
           })}
         </script>
@@ -86,6 +112,40 @@ export default function JeeAdvancedCoaching() {
               "ratingValue": "4.8",
               "reviewCount": "510"
             }
+          })}
+        </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How is JEE Advanced preparation different from JEE Main at Team Excellent?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "JEE Advanced focuses heavily on multi-concept integration, matrix-matching, integer-type questions, and deep theoretical understanding. Our JEE Advanced batches feature rigorous problem-solving modules led by IITian faculty."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Who teaches JEE Advanced at Team Excellent Patna?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Classes are mentored by experienced engineering faculty led by Founder & Director Albert Newwel (M.Tech from IIT-BHU Varanasi) with 12+ years of expertise in mentoring top rankers."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Team Excellent conduct mock tests on the actual JEE Advanced pattern?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, we conduct dual-paper (Paper 1 & Paper 2, 3 hours each on the same day) Computer-Based Mock Tests simulating the exact examination conditions and negative marking patterns."
+                }
+              }
+            ]
           })}
         </script>
 

@@ -80,16 +80,96 @@ export default function TestSeries() {
   return (
     <>
       <Helmet>
-        <title>All India CBT Test Series | Team Excellent Career Institute Patna</title>
+        <title>All India CBT Test Series 2026 | JEE & NEET Mock Tests - Team Excellent Patna</title>
         <meta 
           name="description" 
-          content="Accelerate your preparation with NTA computer-based mock test series for JEE Main, JEE Advanced, and NEET UG at Team Excellent Patna." 
+          content="Accelerate your preparation with NTA computer-based mock test series for JEE Main, JEE Advanced, and NEET UG at Team Excellent Patna. Detailed performance analytics, rank predictors, and video solutions." 
         />
         <meta 
           name="keywords" 
-          content="jee test series patna, neet mock test patna, cbt test series bihar, online mock tests for engineering, medical test series saketpuri" 
+          content="jee test series patna, neet mock test patna, cbt test series bihar, online mock tests for engineering, medical test series saketpuri, nta mock exam test center" 
         />
         <link rel="canonical" href="https://teamexcellentcareerinstitute.in/test-series" />
+        <meta property="og:title" content="All India CBT Test Series 2026 | JEE & NEET Mock Tests - Team Excellent" />
+        <meta property="og:description" content="Simulate real NTA exam conditions with Team Excellent's All India Test Series for JEE & NEET." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://teamexcellentcareerinstitute.in/test-series" />
+        <meta property="og:image" content="https://teamexcellentcareerinstitute.in/logo192.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="All India CBT Test Series 2026 | Team Excellent Patna" />
+        <meta name="twitter:description" content="Realistic Computer-Based Tests with performance analytics for JEE & NEET." />
+        <meta name="twitter:image" content="https://teamexcellentcareerinstitute.in/logo192.png" />
+
+        {/* EducationalOrganization & Course Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": "Team Excellent All India CBT Test Series (AITS)",
+            "description": "Comprehensive NTA-simulated online and offline test series for JEE Main, JEE Advanced, and NEET UG aspirants.",
+            "provider": {
+              "@type": "EducationalOrganization",
+              "name": "Team Excellent Career Institute",
+              "url": "https://teamexcellentcareerinstitute.in"
+            }
+          })}
+        </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the format of the Team Excellent Test Series?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The test series includes both online Computer-Based Tests (CBT) matching the official NTA software layout and physical OMR-based test sheets for NEET medical aspirants."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do students receive detailed performance analytics after tests?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, our automated assessment system generates in-depth analytical reports showing time spent per question, topic-wise accuracy, negative marking analysis, and estimated All India Percentile/Rank."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is the test series included in classroom coaching?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, all regular classroom students at Team Excellent receive complete access to chapter tests, unit tests, and full mock test series without any additional cost."
+                }
+              }
+            ]
+          })}
+        </script>
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teamexcellentcareerinstitute.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Test Series",
+                "item": "https://teamexcellentcareerinstitute.in/test-series"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <Navbar />

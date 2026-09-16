@@ -75,14 +75,14 @@ export default function Neet() {
         <meta name="twitter:description" content="Enroll at Team Excellent for NEET UG coaching in Patna. Expert doctor faculty, personalized doubt resolution, and top medical selection records." />
         <meta name="twitter:image" content="https://teamexcellentcareerinstitute.in/logo192.png" />
 
-        {/* EducationalOrganization & LocalBusiness Schema */}
+        {/* EducationalOrganization & LocalBusiness Schema with E-E-A-T Authority */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": ["LocalBusiness", "EducationalOrganization", "School", "ProfessionalService", "Organization"],
             "@id": "https://teamexcellentcareerinstitute.in/#organization",
             "name": "Team Excellent Career Institute",
-            "alternateName": "Team Excellent Coaching Institute Patna",
+            "alternateName": "Team Excellent Medical & Engineering Coaching Patna",
             "url": "https://teamexcellentcareerinstitute.in",
             "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
             "image": "https://teamexcellentcareerinstitute.in/logo192.png",
@@ -103,6 +103,32 @@ export default function Neet() {
               "latitude": "25.603192",
               "longitude": "85.174559"
             },
+            "founder": {
+              "@type": "Person",
+              "name": "Albert Newwel",
+              "jobTitle": "Founder & Director",
+              "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": "IIT-BHU Varanasi",
+                "sameAs": "https://en.wikipedia.org/wiki/Indian_Institute_of_Technology_(BHU)_Varanasi"
+              },
+              "description": "M.Tech from IIT-BHU Varanasi with 12+ years of expertise in mentoring NEET & JEE aspirants in Bihar."
+            },
+            "knowsAbout": [
+              "NEET UG Preparation",
+              "Medical Entrance Coaching",
+              "NCERT Biology Line-by-Line Mastery",
+              "Organic Chemistry Mechanisms",
+              "Medical Physics Numericals",
+              "NTA OMR Test Simulation",
+              "AIIMS PMCH MBBS Admissions"
+            ],
+            "sameAs": [
+              "https://www.facebook.com/share/1JTxznYnFg/",
+              "https://www.instagram.com/team.excellent.patna",
+              "https://www.linkedin.com/company/teamexcellentpatna",
+              "https://www.youtube.com/@teamexcellentpatna"
+            ],
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "4.9",

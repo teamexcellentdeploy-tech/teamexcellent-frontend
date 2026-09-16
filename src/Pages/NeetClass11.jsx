@@ -226,6 +226,120 @@ export default function NeetClass11() {
         <meta name="twitter:description" content="Looking for NEET coaching in Patna? Explore Team Excellent's NEET UG preparation programs." />
         <meta name="twitter:image" content="https://teamexcellentcareerinstitute.in/logo192.png" />
 
+        {/* EducationalOrganization & LocalBusiness Schema with E-E-A-T Authority */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": ["LocalBusiness", "EducationalOrganization", "School", "ProfessionalService", "Organization"],
+            "@id": "https://teamexcellentcareerinstitute.in/#organization",
+            "name": "Team Excellent Career Institute",
+            "alternateName": "Team Excellent NEET Coaching Patna",
+            "url": "https://teamexcellentcareerinstitute.in",
+            "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "image": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "description": "Premier medical entrance coaching institute in Patna, offering 2-Year, 1-Year, and Dropper preparation for NEET UG aspirants.",
+            "telephone": "+91-9942000371",
+            "email": "teamexcellentpatna@gmail.com",
+            "hasMap": "https://www.google.com/maps?cid=16308605353139354202",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Near NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
+              "addressLocality": "Patna",
+              "addressRegion": "Bihar",
+              "postalCode": "800016",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "25.603192",
+              "longitude": "85.174559"
+            },
+            "founder": {
+              "@type": "Person",
+              "name": "Albert Newwel",
+              "jobTitle": "Founder & Director",
+              "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": "IIT-BHU Varanasi"
+              },
+              "description": "M.Tech from IIT-BHU with 12+ years experience in medical & engineering coaching leadership."
+            },
+            "knowsAbout": [
+              "NEET UG Medical Coaching",
+              "Class 11 2-Year Medical Foundation",
+              "NCERT Biology Diagrams & Mnemonics",
+              "Medical Physics Practice"
+            ],
+            "sameAs": [
+              "https://www.facebook.com/share/1JTxznYnFg/",
+              "https://www.instagram.com/team.excellent.patna",
+              "https://www.youtube.com/@teamexcellentpatna"
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "512"
+            }
+          })}
+        </script>
+
+        {/* Course Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": "NEET UG Coaching Program in Patna",
+            "description": "Comprehensive classroom program for NEET UG covering Physics, Chemistry, and NCERT-based Biology with daily doubt counters and NTA-pattern test series.",
+            "provider": {
+              "@type": "EducationalOrganization",
+              "name": "Team Excellent Career Institute",
+              "url": "https://teamexcellentcareerinstitute.in/"
+            },
+            "hasCourseInstance": [
+              {
+                "@type": "CourseInstance",
+                "name": "NEET 2-Year Program (Class 11)",
+                "courseMode": "Offline Classroom",
+                "duration": "P2Y"
+              },
+              {
+                "@type": "CourseInstance",
+                "name": "NEET 1-Year Program (Class 12)",
+                "courseMode": "Offline Classroom",
+                "duration": "P1Y"
+              },
+              {
+                "@type": "CourseInstance",
+                "name": "NEET Dropper / Repeater Batch",
+                "courseMode": "Offline Classroom",
+                "duration": "P1Y"
+              }
+            ],
+            "offers": {
+              "@type": "Offer",
+              "category": "Scholarship Available up to 100% via T-MAT",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock"
+            }
+          })}
+        </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqs.map((faq) => ({
+              "@type": "Question",
+              "name": faq.q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.a
+              }
+            }))
+          })}
+        </script>
+
         {/* BreadcrumbList Schema */}
         <script type="application/ld+json">
           {JSON.stringify({

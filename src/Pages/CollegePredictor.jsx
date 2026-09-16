@@ -176,11 +176,111 @@ export default function CollegePredictor() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100/50 flex flex-col font-sans">
       <Helmet>
-        <title>JEE & NEET College Predictor 2026 | Team Excellent Patna</title>
-        <meta name="description" content="Predict your admission probabilities in top IITs, NITs, IIITs, AIIMS, and Medical Colleges with Team Excellent's free College Predictor tool." />
+        <title>JEE & NEET College Predictor 2026 | Predict IIT, NIT & AIIMS Admission - Team Excellent</title>
+        <meta
+          name="description"
+          content="Predict your admission chances in IITs, NITs, IIITs, GFTIs, AIIMS, PMCH, and top Government Medical Colleges based on JoSAA and MCC cutoff trends with Team Excellent's free College Predictor tool."
+        />
+        <meta
+          name="keywords"
+          content="jee college predictor 2026, neet college predictor 2026, josaa college predictor, iit admission predictor, nit cut off ranks, medical college predictor bihar, team excellent college predictor"
+        />
+        <link rel="canonical" href="https://teamexcellentcareerinstitute.in/college-predictor" />
+        <meta property="og:title" content="JEE & NEET College Predictor 2026 | Predict IIT, NIT & Medical Colleges" />
+        <meta
+          property="og:description"
+          content="Check your admission probability in top IITs, NITs, IIITs, AIIMS, and Medical Colleges with Team Excellent's free College Predictor tool."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://teamexcellentcareerinstitute.in/college-predictor" />
-        <link rel="canonical" href="https://teamexcellentcareerinstitute.in/college-predictor" />
+        <meta property="og:image" content="https://teamexcellentcareerinstitute.in/logo192.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="JEE & NEET College Predictor 2026 | Team Excellent" />
+        <meta
+          name="twitter:description"
+          content="Predict admission probabilities in top engineering and medical colleges based on rank and reservation category."
+        />
+        <meta name="twitter:image" content="https://teamexcellentcareerinstitute.in/logo192.png" />
+
+        {/* WebApplication Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Team Excellent JEE & NEET College Predictor",
+            "url": "https://teamexcellentcareerinstitute.in/college-predictor",
+            "applicationCategory": "EducationalApplication",
+            "operatingSystem": "All",
+            "browserRequirements": "Requires JavaScript. Requires HTML5.",
+            "description": "Predict admission possibilities across IITs, NITs, IIITs, AIIMS, and State Medical Colleges based on historical JoSAA/CSAB and MCC counseling rounds.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "INR"
+            },
+            "provider": {
+              "@type": "EducationalOrganization",
+              "name": "Team Excellent Career Institute",
+              "url": "https://teamexcellentcareerinstitute.in"
+            }
+          })}
+        </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How does the JEE and NEET College Predictor work?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The tool cross-references your predicted All India Rank (AIR), category (GEN/EWS/OBC/SC/ST), home state quota, and gender with official opening and closing rank archives from JoSAA, CSAB, and MCC counseling rounds to calculate admission probabilities."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which colleges are covered in this predictor?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The predictor covers all 23 IITs, 31 NITs, 26 IIITs, top GFTIs, AIIMS institutes across India, and premier medical colleges in Bihar including PMCH, NMCH, IGIMS, and DMCH."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between Home State (HS) and Other State (OS) quotas in NITs?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "In National Institutes of Technology (NITs), 50% of total seats are reserved for students holding the domicile of that state (Home State Quota), while the remaining 50% seats are open to students from all other states (Other State Quota)."
+                }
+              }
+            ]
+          })}
+        </script>
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teamexcellentcareerinstitute.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "College Predictor",
+                "item": "https://teamexcellentcareerinstitute.in/college-predictor"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       <Navbar />
 

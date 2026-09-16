@@ -38,6 +38,7 @@ function NeetContent() {
     setIsModalOpen(true);
   };
 
+
   const keyHighlights = [
     {
       title: "Doctor & Specialist Faculty",

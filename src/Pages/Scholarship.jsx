@@ -15,16 +15,101 @@ export default function Scholarship() {
   return (
     <>
       <Helmet>
-        <title>T-MAT Scholarship Test 2026 | Team Excellent Career Institute Patna</title>
+        <title>T-MAT Scholarship Test 2026 | Win up to 100% Scholarship - Team Excellent Patna</title>
         <meta 
           name="description" 
-          content="Apply for T-MAT (Team Excellent Mentorship & Admission Test) to win up to 100% scholarship on JEE, NEET, and Foundation classroom programs in Patna." 
+          content="Apply for T-MAT (Team Excellent Mentorship & Admission Test) 2026 to win up to 100% scholarship on IIT-JEE, NEET, and Class 6-10 foundation courses in Patna. Check exam dates, syllabus, and results." 
         />
         <meta 
           name="keywords" 
-          content="coaching scholarship patna, t-mat exam, team excellent scholarship test, free coaching patna, admission test iit jee bihar" 
+          content="t-mat scholarship test 2026, coaching scholarship in patna, 100 percent scholarship iit jee neet, team excellent scholarship exam, admission test bihar" 
         />
         <link rel="canonical" href="https://teamexcellentcareerinstitute.in/scholarship" />
+        <meta property="og:title" content="T-MAT Scholarship Test 2026 | Win up to 100% Scholarship - Team Excellent" />
+        <meta property="og:description" content="Apply for T-MAT to win up to 100% scholarship on JEE, NEET, and Foundation programs in Patna." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://teamexcellentcareerinstitute.in/scholarship" />
+        <meta property="og:image" content="https://teamexcellentcareerinstitute.in/logo192.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="T-MAT Scholarship Test 2026 | Team Excellent Patna" />
+        <meta name="twitter:description" content="Win up to 100% tuition fee waiver for IIT-JEE and NEET prep with T-MAT 2026." />
+        <meta name="twitter:image" content="https://teamexcellentcareerinstitute.in/logo192.png" />
+
+        {/* EducationalOrganization & Offer Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "Team Excellent Career Institute",
+            "url": "https://teamexcellentcareerinstitute.in",
+            "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "makesOffer": {
+              "@type": "Offer",
+              "name": "T-MAT 100% Scholarship Program",
+              "description": "Talent hunt & scholarship examination for students of Class 6 to 12 & Droppers to win up to 100% tuition waivers for IIT-JEE & NEET preparation.",
+              "price": "0",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "validThrough": "2026-12-31"
+            }
+          })}
+        </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the T-MAT Scholarship Test?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "T-MAT (Team Excellent Mentorship & Admission Test) is an all-Bihar talent assessment test offering up to 100% scholarship on coaching fees for IIT-JEE, NEET, and Class 6-10 foundation courses."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Who is eligible to appear for the T-MAT exam?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Students studying in Classes 6, 7, 8, 9, 10, 11, 12, as well as 12th Pass / Dropper students are eligible to apply."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the registration fee for T-MAT?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Registration for the T-MAT Scholarship Examination is completely free of cost when applying online or at our Saketpuri, Patna center."
+                }
+              }
+            ]
+          })}
+        </script>
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teamexcellentcareerinstitute.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Scholarship (T-MAT)",
+                "item": "https://teamexcellentcareerinstitute.in/scholarship"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <Navbar />

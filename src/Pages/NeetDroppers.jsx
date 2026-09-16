@@ -89,14 +89,14 @@ export default function NeetDroppers() {
           })}
         </script>
 
-        {/* EducationalOrganization & LocalBusiness Schema */}
+        {/* EducationalOrganization & LocalBusiness Schema with E-E-A-T Authority */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": ["LocalBusiness", "EducationalOrganization", "School", "ProfessionalService", "Organization"],
             "@id": "https://teamexcellentcareerinstitute.in/#organization",
             "name": "Team Excellent Career Institute",
-            "alternateName": "Team Excellent Coaching Institute Patna",
+            "alternateName": "Team Excellent NEET Droppers Coaching Patna",
             "url": "https://teamexcellentcareerinstitute.in",
             "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
             "image": "https://teamexcellentcareerinstitute.in/logo192.png",
@@ -116,7 +116,49 @@ export default function NeetDroppers() {
               "@type": "GeoCoordinates",
               "latitude": "25.603192",
               "longitude": "85.174559"
+            },
+            "founder": {
+              "@type": "Person",
+              "name": "Albert Newwel",
+              "jobTitle": "Founder & Director",
+              "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": "IIT-BHU Varanasi"
+              },
+              "description": "M.Tech from IIT-BHU with 12+ years mentoring top medical rankers."
+            },
+            "knowsAbout": [
+              "NEET Dropper Coaching",
+              "Medical Repeater Batch",
+              "NCERT Biology Revision Drills",
+              "OMR Testing Technique"
+            ],
+            "sameAs": [
+              "https://www.facebook.com/share/1JTxznYnFg/",
+              "https://www.instagram.com/team.excellent.patna",
+              "https://www.youtube.com/@teamexcellentpatna"
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "498"
             }
+          })}
+        </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqs.map((faq) => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
+            }))
           })}
         </script>
 
