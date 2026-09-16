@@ -571,25 +571,29 @@ function NeetContent() {
             <Award className="w-7 h-7 text-purple-600" /> Complete Medical Guidance at Team Excellent
           </h2>
           <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-            Team Excellent is committed to delivering the best NEET coaching in Patna through our NCERT-focused curriculum, 1-on-1 daily mentorship, and comprehensive test series. Explore our specialized programs:{" "}
+            Team Excellent is committed to delivering top medical guidance in Patna through our NCERT-focused curriculum, 1-on-1 daily mentorship, and comprehensive test series. Explore our specialized programs:{" "}
             <Link to="/neet-coaching-in-patna" className="text-[#5B2D7C] font-bold hover:underline">
-              NEET Complete Hub
+              NEET Coaching for Class 11
             </Link>
             ,{" "}
             <Link to="/neet-class-12-in-patna" className="text-[#5B2D7C] font-bold hover:underline">
-              NEET Class 12 Boards Batch
+              NEET & Class 12 Coaching in Patna
             </Link>
             , and{" "}
             <Link to="/neet-dropper-coaching-in-patna" className="text-[#5B2D7C] font-bold hover:underline">
-              NEET Droppers Batch
+              NEET Dropper Coaching in Patna
             </Link>
             . Check our student achievements in{" "}
             <Link to="/result/neet" className="text-[#b72e2f] font-bold hover:underline">
-              NEET Results
+              NEET Results & Selections
+            </Link>
+            , read expert{" "}
+            <Link to="/blogs" className="text-[#5B2D7C] font-bold hover:underline">
+              Medical Preparation Guides
             </Link>
             , evaluate your estimated score with the{" "}
             <Link to="/rank-predictor" className="text-[#5B2D7C] font-bold hover:underline">
-              Rank Predictor
+              JEE & NEET Rank Predictor
             </Link>
             , or discover fee concessions on our{" "}
             <Link to="/scholarship" className="text-[#b72e2f] font-bold hover:underline">
@@ -597,9 +601,13 @@ function NeetContent() {
             </Link>
             . For engineering aspirants, explore our{" "}
             <Link to="/iit-jee-coaching-in-patna" className="text-[#5B2D7C] font-bold hover:underline">
-              IIT-JEE Coaching in Patna
+              IIT JEE Coaching in Patna
             </Link>
-            . Ready to join?{" "}
+            . Ready to start? View our{" "}
+            <Link to="/admission" className="text-[#b72e2f] font-bold hover:underline">
+              Admission Guidelines
+            </Link>{" "}
+            or{" "}
             <Link to="/contact" className="text-[#b72e2f] font-bold hover:underline">
               Contact our admissions desk
             </Link>{" "}

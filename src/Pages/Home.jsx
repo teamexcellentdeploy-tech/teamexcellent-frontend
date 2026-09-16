@@ -268,6 +268,7 @@ export default function Home() {
           <Features />
           <Testimonials />
           <FAQSection faqs={homepageFaqs} />
+          <ExploreLinks />
         </Suspense>
       </main>
       <Suspense fallback={<div className="h-40 bg-slate-900" />}>

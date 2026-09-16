@@ -4,6 +4,7 @@ import { BookOpen, Target, Award, Layers, ArrowRight, GraduationCap, Laptop, Hel
 import EnrollmentForm from "./EnrollmentForm";
 import FAQSection from "./FAQSection";
 import TMatSection from "./TMatSection";
+import ExploreLinks from "./ExploreLinks";
 
 function JeeContent() {
   const sections = [
@@ -551,18 +552,33 @@ function JeeContent() {
         </div>
       </div>
 
-      {/* Our Edge Summary Box */}
+      {/* Our Edge Summary Box with Deep Internal Cross-links */}
       <div className="max-w-4xl mx-auto mt-20 text-center bg-purple-50 p-10 rounded-2xl shadow-inner border border-purple-100">
         <h2 className="text-3xl font-bold text-[#522871] mb-6 flex items-center justify-center gap-2">
           <Award className="w-8 h-8 text-purple-600" /> Our Commitment to JEE Excellence
         </h2>
         <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-          At Team Excellent, we provide the best coaching for JEE in Patna by combining top-tier faculty, regular computer-based mock tests on our{" "}
+          At Team Excellent, we provide comprehensive IIT-JEE training in Patna by combining top-tier faculty, regular computer-based mock tests on our{" "}
           <Link to="/student-portal" className="text-[#5B2D7C] font-bold hover:underline">
             Student Portal
-          </Link>, comprehensive study material, and one-on-one mentorship. As a leading institute for IIT JEE preparation in Patna, we offer structured learning pathways designed to help you excel in both JEE Mains & Advanced. Check our past{" "}
+          </Link>, exhaustive study modules, and individual doubt mentorship. Explore our focused pathways:{" "}
+          <Link to="/jee-main-coaching-in-patna" className="text-[#5B2D7C] font-bold hover:underline">
+            JEE Main Coaching in Patna
+          </Link>
+          ,{" "}
+          <Link to="/jee-advanced-coaching-in-patna" className="text-[#5B2D7C] font-bold hover:underline">
+            JEE Advanced Coaching in Patna
+          </Link>
+          ,{" "}
+          <Link to="/jee-coaching-in-patna" className="text-[#5B2D7C] font-bold hover:underline">
+            JEE Preparation for Class 12
+          </Link>
+          , and{" "}
+          <Link to="/jee-dropper-coaching-in-patna" className="text-[#5B2D7C] font-bold hover:underline">
+            JEE Dropper Coaching in Patna
+          </Link>. Check our past rankers in{" "}
           <Link to="/result/jee" className="text-[#b72e2f] font-bold hover:underline">
-            JEE Results & Rankers
+            JEE Results & Toppers
           </Link>, evaluate your rank with our{" "}
           <Link to="/rank-predictor" className="text-[#5B2D7C] font-bold hover:underline">
             JEE Rank Predictor
@@ -573,13 +589,17 @@ function JeeContent() {
           </Link>, or read our detailed{" "}
           <Link to="/admission" className="text-[#b72e2f] font-bold hover:underline">
             Admission Guidelines
-          </Link>. You can also learn about our{" "}
+          </Link>{" "}
+          and{" "}
+          <Link to="/scholarship" className="text-[#b72e2f] font-bold hover:underline">
+            T-MAT Scholarship Scheme
+          </Link>. Also explore our{" "}
           <Link to="/neet-coaching-in-patna" className="text-[#5B2D7C] font-bold hover:underline">
-            NEET Medical Program
+            NEET Coaching in Patna
           </Link>{" "}
           and{" "}
           <Link to="/class-6-to-10" className="text-[#5B2D7C] font-bold hover:underline">
-            Class 6-10 Foundation Courses
+            Foundation Coaching for Classes 6–10
           </Link>. Have questions? Feel free to{" "}
           <Link to="/contact" className="text-[#b72e2f] font-bold hover:underline">
             Contact Us
@@ -589,6 +609,7 @@ function JeeContent() {
       </div>
 
       <FAQSection faqs={faqs} />
+      <ExploreLinks />
     </section>
 
     <EnrollmentForm
