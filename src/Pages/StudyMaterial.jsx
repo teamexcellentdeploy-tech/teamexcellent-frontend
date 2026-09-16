@@ -7,6 +7,7 @@ import toast from 'react-hot-toast'
 import { submitEnrollment } from '../lib/enrollmentApi'
 import ExploreLinks from '../Components/ExploreLinks'
 import FAQSection from '../Components/FAQSection'
+import StudyMaterialSection from '../Components/StudyMaterialSection'
 
 export default function StudyMaterial() {
   const [formData, setFormData] = useState({
@@ -184,6 +185,13 @@ export default function StudyMaterial() {
                 <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
+          </div>
+
+          {/* Specialized Material Kits by Stream */}
+          <div className="mb-20 space-y-12">
+            <StudyMaterialSection type="jee" title="IIT JEE Engineering Study Package" />
+            <StudyMaterialSection type="neet" title="NEET Medical Entrance Study Package" />
+            <StudyMaterialSection type="foundation" title="Classes 6–10 Junior Foundation Package" />
           </div>
 
           {/* Sample Material Section */}

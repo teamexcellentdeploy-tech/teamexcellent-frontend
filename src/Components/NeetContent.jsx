@@ -28,6 +28,7 @@ import {
 import EnrollmentForm from "./EnrollmentForm";
 import FAQSection from "./FAQSection";
 import TMatSection from "./TMatSection";
+import StudyMaterialSection from "./StudyMaterialSection";
 
 function NeetContent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -614,6 +615,9 @@ function NeetContent() {
             today.
           </p>
         </div>
+
+        {/* NEET Study Material Section */}
+        <StudyMaterialSection type="neet" title="NEET Study Material & Doctor-Curated Modules" />
 
         {/* FAQ Section */}
         <FAQSection faqs={faqs} />

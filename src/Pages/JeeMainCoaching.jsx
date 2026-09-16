@@ -15,6 +15,7 @@ import Testimonials from "../Components/Testimonials";
 import ExploreLinks from "../Components/ExploreLinks";
 import FAQSection from "../Components/FAQSection";
 import TMatSection from "../Components/TMatSection";
+import StudyMaterialSection from "../Components/StudyMaterialSection";
 
 export default function JeeMainCoaching() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -688,6 +689,9 @@ export default function JeeMainCoaching() {
 
         {/* 7. T-MAT 100% Scholarship Banner */}
         <TMatSection theme="purple" />
+
+        {/* JEE Main Study Material Section */}
+        <StudyMaterialSection type="jee" title="JEE Main Study Material, DPPs & CBT Mock Kit" />
 
         {/* 8. Faculty Section */}
         <section className="w-full py-16 px-4 bg-white">

@@ -12,6 +12,7 @@ import EnrollmentForm from "../Components/EnrollmentForm";
 import TrustedSection from "../Components/TrustedSection";
 import Testimonials from "../Components/Testimonials";
 import ExploreLinks from "../Components/ExploreLinks";
+import StudyMaterialSection from "../Components/StudyMaterialSection";
 
 export default function NeetClass11() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -791,27 +792,7 @@ export default function NeetClass11() {
         </section>
 
         {/* NEET Study Material */}
-        <section className="w-full py-16 px-4 bg-slate-50 border-t border-slate-100">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1e1b4b]">
-                NEET Study Material
-              </h2>
-              <div className="w-16 h-1 bg-[#b72e2f] mx-auto mt-3 rounded-full" />
-              <p className="text-slate-500 text-sm sm:text-base mt-4 max-w-2xl mx-auto">
-                Study resources provided to all registered medical classroom program students.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto text-center font-bold text-xs text-slate-700">
-              {["Classroom Lecture Notes", "NCERT-based Study Materials", "Daily Practice Problems (DPPs)", "Chapter-wise Workbooks", "NEET UG PYQ Banks", "Full-length Mock Papers", "Biology Diagram Sheets", "Formula & Reaction Sheets"].map((item, idx) => (
-                <div key={idx} className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <StudyMaterialSection type="neet" title="NEET Medical Study Material & Resources" />
 
         {/* Faculty List */}
         <section className="w-full py-16 px-4 bg-white border-t border-slate-100">

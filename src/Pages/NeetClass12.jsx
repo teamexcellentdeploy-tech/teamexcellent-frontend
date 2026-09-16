@@ -12,6 +12,7 @@ import {
 import TrustedSection from '../Components/TrustedSection'
 import Testimonials from '../Components/Testimonials'
 import ExploreLinks from '../Components/ExploreLinks'
+import StudyMaterialSection from '../Components/StudyMaterialSection'
 
 export default function NeetClass12() {
   const [isOpen, setIsOpen] = useState(false)
@@ -453,6 +454,11 @@ export default function NeetClass12() {
                 Reserve Your Seat Today
               </button>
             </div>
+          </div>
+
+          {/* Study Material Section */}
+          <div className="mb-20">
+            <StudyMaterialSection type="neet" title="NEET Class 12 Study Material & Resources" />
           </div>
 
           {/* FAQs Section */}

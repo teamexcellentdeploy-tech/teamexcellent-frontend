@@ -9,6 +9,7 @@ import {
 import TeamExcellent from "../assets/TeamExcellent.webp";
 import EnrollmentForm from "./EnrollmentForm";
 import FAQSection from "./FAQSection";
+import StudyMaterialSection from "./StudyMaterialSection";
 
 function JeeAdvancedContent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -1001,6 +1002,9 @@ function JeeAdvancedContent() {
           </div>
         </div>
       </section>
+
+      {/* JEE Advanced Study Material Section */}
+      <StudyMaterialSection type="jee" title="JEE Advanced Multi-Concept Study Modules & Archive" />
 
       <FAQSection faqs={faqs} />
 

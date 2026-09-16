@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import TeamExcellent from "../assets/TeamExcellent.webp";
 import EnrollmentForm from "./EnrollmentForm";
+import StudyMaterialSection from "./StudyMaterialSection";
 
 function IitJeeContent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -795,28 +796,7 @@ function IitJeeContent() {
       </section>
 
       {/* 10. IIT-JEE Study Material & Academic Support */}
-      <section className="w-full py-20 px-6 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B0B45] tracking-tight">
-            IIT-JEE Study Material & Academic Support
-          </h2>
-          <div className="w-16 h-1 bg-[#522871] mx-auto mt-4 rounded-full"></div>
-          
-          <p className="text-gray-600 mt-6 text-sm sm:text-base leading-relaxed mb-8 max-w-2xl mx-auto">
-            Every enrolled student receives a comprehensive study package. We only list resources actually provided at our campus:
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-4 text-slate-700 text-xs sm:text-sm font-bold">
-            <span className="bg-purple-50 px-4 py-2 rounded-xl border border-purple-100">Class notes</span>
-            <span className="bg-red-50 px-4 py-2 rounded-xl border border-red-100">Practice sheets & DPPs</span>
-            <span className="bg-blue-50 px-4 py-2 rounded-xl border border-blue-100">Daily assignments</span>
-            <span className="bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-100">PYQs booklets</span>
-            <span className="bg-amber-50 px-4 py-2 rounded-xl border border-amber-100">Mock tests</span>
-            <span className="bg-indigo-50 px-4 py-2 rounded-xl border border-indigo-100">Revision material</span>
-            <span className="bg-rose-50 px-4 py-2 rounded-xl border border-rose-100">Doubt-solving sessions</span>
-          </div>
-        </div>
-      </section>
+      <StudyMaterialSection type="jee" title="IIT JEE Class 11 Foundation Study Material & Resources" />
 
       {/* 11. IIT-JEE Coaching Fees in Patna */}
       <section className="w-full py-20 px-6 bg-slate-50 border-y border-slate-100">

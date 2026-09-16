@@ -10,6 +10,7 @@ import {
   Lightbulb,
 } from "lucide-react";
 import FAQSection from "./FAQSection";
+import StudyMaterialSection from "./StudyMaterialSection";
 
 function Class6to10Content() {
   const groups = [
@@ -301,6 +302,7 @@ function Class6to10Content() {
           </Link>.
         </p>
       </div>
+      <StudyMaterialSection type="foundation" title="Foundation Study Material (Classes 6–10)" />
       <FAQSection faqs={faqs} />
     </section>
   </div>

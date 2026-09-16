@@ -8,6 +8,7 @@ import TrustedSection from '../Components/TrustedSection'
 import Testimonials from '../Components/Testimonials'
 import ExploreLinks from '../Components/ExploreLinks'
 import FAQSection from '../Components/FAQSection'
+import StudyMaterialSection from '../Components/StudyMaterialSection'
 
 export default function NeetDroppers() {
   const [isOpen, setIsOpen] = useState(false)
@@ -264,6 +265,7 @@ export default function NeetDroppers() {
           </div>
 
         </div>
+        <StudyMaterialSection type="neet" title="NEET Dropper Study Material & 50+ OMR Test Series" />
         <TrustedSection />
         <Testimonials />
         <FAQSection faqs={faqs} />

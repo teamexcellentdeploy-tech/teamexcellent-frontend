@@ -8,6 +8,7 @@ import TrustedSection from '../Components/TrustedSection';
 import Testimonials from '../Components/Testimonials';
 import ExploreLinks from '../Components/ExploreLinks';
 import FAQSection from '../Components/FAQSection';
+import StudyMaterialSection from '../Components/StudyMaterialSection';
 import { 
   Award, Target, Clock, BookOpen, GraduationCap, ChevronDown, 
   CheckCircle, HelpCircle, Trophy, Sparkles, MapPin, Phone, Mail 
@@ -480,28 +481,7 @@ export default function JeeDroppers() {
         </section>
 
         {/* 8. JEE Dropper Study Material */}
-        <section className="w-full py-16 px-4 bg-white border-t border-slate-100">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1e1b4b]">
-                JEE Dropper Study Material
-              </h2>
-              <div className="w-16 h-1 bg-[#b72e2f] mx-auto mt-3 rounded-full" />
-              <p className="text-slate-500 text-sm sm:text-base mt-4 max-w-2xl mx-auto">
-                Complete, detailed resources provided to every enrolled student.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {materialFeatures.map((item, idx) => (
-                <div key={idx} className="bg-slate-50 p-5 rounded-2xl border border-slate-100/60 flex items-start gap-2.5 text-xs text-slate-700 font-semibold">
-                  <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <StudyMaterialSection type="jee" title="JEE Dropper Study Material & CBT Mock Kit" />
 
         {/* 9. Who Should Join a JEE Dropper Batch? */}
         <section className="w-full py-16 px-4 bg-slate-50 border-y border-slate-100">

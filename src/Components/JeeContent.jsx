@@ -5,6 +5,7 @@ import EnrollmentForm from "./EnrollmentForm";
 import FAQSection from "./FAQSection";
 import TMatSection from "./TMatSection";
 import ExploreLinks from "./ExploreLinks";
+import StudyMaterialSection from "./StudyMaterialSection";
 
 function JeeContent() {
   const sections = [
@@ -607,6 +608,9 @@ function JeeContent() {
           anytime.
         </p>
       </div>
+
+      {/* JEE Study Material Section */}
+      <StudyMaterialSection type="jee" title="JEE Study Material & NTA CBT Test Series" />
 
       <FAQSection faqs={faqs} />
       <ExploreLinks />
