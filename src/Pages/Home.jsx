@@ -4,6 +4,7 @@ import { fetchApprovedReviews } from '../lib/reviewApi'
 import Navbar from '../Components/Navbar'
 import Hero from '../Components/Hero'
 import Strip from '../Components/Strip'
+import LazySection from '../Components/LazySection'
 
 // Lazy load below-the-fold components
 const WhyChooseSection = lazy(() => import('../Components/WhyChooseSection'))
@@ -260,19 +261,39 @@ export default function Home() {
         <Suspense fallback={<div className="h-20 bg-slate-50 animate-pulse rounded-2xl m-4" />}>
           <TrustedSection />
           <Programs />
-          <ResultsSection />
-          <TMatSection />
-          <WhyChooseSection />
-          <AdmissionRoadmap />
-          <CbtSection />
-          <Features />
-          <Testimonials />
-          <FAQSection faqs={homepageFaqs} />
-          <ExploreLinks />
+          <LazySection fallbackHeight="350px">
+            <ResultsSection />
+          </LazySection>
+          <LazySection fallbackHeight="300px">
+            <TMatSection />
+          </LazySection>
+          <LazySection fallbackHeight="300px">
+            <WhyChooseSection />
+          </LazySection>
+          <LazySection fallbackHeight="300px">
+            <AdmissionRoadmap />
+          </LazySection>
+          <LazySection fallbackHeight="300px">
+            <CbtSection />
+          </LazySection>
+          <LazySection fallbackHeight="300px">
+            <Features />
+          </LazySection>
+          <LazySection fallbackHeight="300px">
+            <Testimonials />
+          </LazySection>
+          <LazySection fallbackHeight="300px">
+            <FAQSection faqs={homepageFaqs} />
+          </LazySection>
+          <LazySection fallbackHeight="200px">
+            <ExploreLinks />
+          </LazySection>
         </Suspense>
       </main>
       <Suspense fallback={<div className="h-40 bg-slate-900" />}>
-        <Footer />
+        <LazySection fallbackHeight="250px">
+          <Footer />
+        </LazySection>
       </Suspense>
     </>
   )

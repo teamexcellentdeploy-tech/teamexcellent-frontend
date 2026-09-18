@@ -84,18 +84,18 @@ function IitJeeContent() {
   ];
 
   const toppersJEE = [
-    { name: "Harsh Keshri", exam: "JEE Advanced Topper", score: "IIT Gandhinagar & Dharwad Selection", detail: "JEE Advanced Selection", img: "/jee-result/01-E.jpg" },
-    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "99.87 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/02-E.jpg" },
-    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "99.65 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/03-E.jpg" },
-    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "99.42 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/04-E.jpg" },
-    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "99.18 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/05-E.jpg" },
-    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "99.05 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/06-E.jpg" },
-    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "98.92 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/07-E.jpg" },
-    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "98.75 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/08-E.jpg" },
-    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "98.60 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/09-E.jpg" },
-    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "98.45 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/10-E.jpg" },
-    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "98.30 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/11-E.jpg" },
-    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "98.15 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/12-E.jpg" }
+    { name: "Harsh Keshri", exam: "JEE Advanced Topper", score: "IIT Gandhinagar & Dharwad Selection", detail: "JEE Advanced Selection", img: "/jee-result/01-E.webp" },
+    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "99.87 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/02-E.webp" },
+    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "99.65 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/03-E.webp" },
+    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "99.42 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/04-E.webp" },
+    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "99.18 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/05-E.webp" },
+    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "99.05 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/06-E.webp" },
+    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "98.92 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/07-E.webp" },
+    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "98.75 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/08-E.webp" },
+    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "98.60 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/09-E.webp" },
+    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "98.45 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/10-E.webp" },
+    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "98.30 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/11-E.webp" },
+    { name: "IIT-JEE Achiever", exam: "JEE Main Topper", score: "98.15 Percentile", detail: "Qualified for JEE Advanced", img: "/jee-result/12-E.webp" }
   ];
 
   const faqs = [
@@ -211,22 +211,22 @@ function IitJeeContent() {
             <div className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-[489/667] mx-auto lg:mr-0">
               {/* Back Card 1 */}
               <div className="absolute inset-0 bg-white rounded-2xl border border-gray-150 shadow-md transform -rotate-12 translate-x-[-22px] translate-y-[-14px] overflow-hidden opacity-50">
-                <img src="/jee-result/04-E.jpg" alt="IIT JEE Topper Anjali" className="w-full h-full object-cover" />
+                <img src="/jee-result/04-E.webp" alt="IIT JEE Topper Anjali" width="280" height="380" loading="lazy" decoding="async" className="w-full h-full object-cover" />
               </div>
 
               {/* Back Card 2 */}
               <div className="absolute inset-0 bg-white rounded-2xl border border-gray-150 shadow-md transform rotate-12 translate-x-[22px] translate-y-[14px] overflow-hidden opacity-60">
-                <img src="/jee-result/03-E.jpg" alt="IIT JEE Topper Vikash" className="w-full h-full object-cover" />
+                <img src="/jee-result/03-E.webp" alt="IIT JEE Topper Vikash" width="280" height="380" loading="lazy" decoding="async" className="w-full h-full object-cover" />
               </div>
 
               {/* Back Card 3 */}
               <div className="absolute inset-0 bg-white rounded-2xl border border-gray-150 shadow-md transform -rotate-6 translate-x-[-11px] translate-y-[-7px] overflow-hidden opacity-80">
-                <img src="/jee-result/02-E.jpg" alt="IIT JEE Topper Riya" className="w-full h-full object-cover" />
+                <img src="/jee-result/02-E.webp" alt="IIT JEE Topper Riya" width="280" height="380" loading="lazy" decoding="async" className="w-full h-full object-cover" />
               </div>
 
               {/* Main Front Card */}
               <div className="relative z-10 bg-white rounded-2xl border border-gray-200 shadow-xl overflow-hidden hover:scale-102 transition duration-300">
-                <img src="/jee-result/01-E.jpg" alt="IIT JEE Topper Amit" className="w-full h-auto block" />
+                <img src="/jee-result/01-E.webp" alt="IIT JEE Topper Amit" width="280" height="380" decoding="async" className="w-full h-auto block" />
                 <div className="absolute bottom-3 right-3 bg-[#522871] text-white text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-md shadow-sm">
                   AIR 1420
                 </div>

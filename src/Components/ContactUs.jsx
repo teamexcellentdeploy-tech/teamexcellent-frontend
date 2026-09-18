@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Contactimage from "../assets/Contactimage.jpg";
+import Contactimage from "../assets/Contactimage.webp";
 import { MapPin, Phone, Mail, Clock, BookOpen } from "lucide-react";
 
 function ContactUs() {
@@ -30,6 +30,8 @@ function ContactUs() {
           <img
             src={Contactimage}
             alt="Contact Team Excellent Career Institute for JEE and NEET Coaching"
+            width="600"
+            height="400"
             className="w-[95%] lg:w-[85%] h-auto"
             loading="lazy"
             decoding="async"

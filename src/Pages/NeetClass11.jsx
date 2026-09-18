@@ -452,17 +452,21 @@ export default function NeetClass11() {
               {/* Right Column: Topper card */}
               <div className="lg:col-span-5 w-full flex justify-center items-center px-4">
                 <div className="relative w-full max-w-sm sm:max-w-[320px] bg-white p-3.5 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-slate-100 overflow-hidden group">
-                  <div className="absolute top-6 left-6 z-10 flex items-center gap-1.5 px-3 py-1 bg-amber-500 text-white rounded-full text-[10px] font-black uppercase tracking-wider shadow-md">
+                  <div className="absolute top-6 left-6 z-10 flex items-center gap-1.5 px-3 py-1 bg-amber-600 text-white rounded-full text-[10px] font-black uppercase tracking-wider shadow-md">
                     <Trophy className="w-3.5 h-3.5" />
                     NEET Achiever
                   </div>
 
                   <div className="relative aspect-[489/667] w-full overflow-hidden bg-slate-50 rounded-2xl border border-slate-50">
                     <img
-                      src="/neet-result/01.jpg"
+                      src="/neet-result/01.webp"
                       alt="NEET Topper - Team Excellent Patna Result"
+                      width="320"
+                      height="436"
                       className="w-full h-full object-cover rounded-2xl transform hover:scale-[1.02] transition-transform duration-500"
                       loading="eager"
+                      fetchpriority="high"
+                      decoding="async"
                     />
                   </div>
                 </div>

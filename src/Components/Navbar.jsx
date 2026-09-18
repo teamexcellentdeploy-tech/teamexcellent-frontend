@@ -292,6 +292,8 @@ export default function Navbar() {
                   <img
                     src={TeamExcellent}
                     alt="Team Excellent Logo"
+                    width="160"
+                    height="36"
                     className="h-9 w-auto object-contain"
                   />
                 </Link>

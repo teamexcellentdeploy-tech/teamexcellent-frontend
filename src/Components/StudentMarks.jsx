@@ -5,7 +5,7 @@ import { marksAPI } from "../lib/api";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import toast from "react-hot-toast";
-const logo = "/logo-1_transparent.jpg.jpeg";
+const logo = "/logo-1_transparent.webp";
 
 const formatDate = (dateStr) => {
   if (!dateStr) return "";

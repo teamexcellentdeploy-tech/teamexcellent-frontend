@@ -110,21 +110,24 @@ function Hero() {
           <div className="lg:col-span-5 w-full flex justify-center items-center px-4">
             <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-sm sm:max-w-[340px] md:max-w-[360px] w-full">
               {[
-                { src: "/jee-result/01-E.jpg", alt: "JEE Topper Harsh Keshri", badge: "IIT" },
-                { src: "/neet-result/01.jpg", alt: "NEET Topper", badge: "NEET" },
-                { src: "/jee-result/02-E.jpg", alt: "JEE Achiever", badge: "IIT" },
-                { src: "/neet-result/02.jpg", alt: "NEET Achiever", badge: "NEET" }
+                { src: "/jee-result/01-E.webp", alt: "JEE Topper Harsh Keshri", badge: "IIT", priority: "high" },
+                { src: "/neet-result/01.webp", alt: "NEET Topper", badge: "NEET", priority: "high" },
+                { src: "/jee-result/02-E.webp", alt: "JEE Achiever", badge: "IIT", priority: "auto" },
+                { src: "/neet-result/02.webp", alt: "NEET Achiever", badge: "NEET", priority: "auto" }
               ].map((topper, idx) => (
                 <div key={idx} className="relative bg-white p-2 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-slate-100 overflow-hidden group hover:shadow-[0_15px_40px_rgba(0,0,0,0.12)] hover:border-purple-200 transition-all duration-300">
-                  <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-1 px-2.5 py-0.5 bg-amber-500 text-white rounded-full text-[8px] font-black uppercase tracking-wider shadow-md">
+                  <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-1 px-2.5 py-0.5 bg-amber-600 text-white rounded-full text-[8px] font-black uppercase tracking-wider shadow-md">
                     {topper.badge}
                   </div>
                   <div className="relative aspect-[489/667] w-full overflow-hidden bg-slate-50 rounded-xl border border-slate-50">
                     <img
                       src={topper.src}
                       alt={topper.alt}
+                      width="168"
+                      height="230"
                       className="w-full h-full object-cover rounded-xl transform group-hover:scale-[1.04] transition-transform duration-500"
-                      loading="lazy"
+                      fetchpriority={topper.priority === "high" ? "high" : undefined}
+                      decoding="async"
                     />
                   </div>
                 </div>
@@ -148,7 +151,7 @@ function Hero() {
                 </div>
                 <div className="text-left">
                   <div className="text-xs font-black text-[#1e1b4b] leading-tight">{stat.value}</div>
-                  <div className="text-[8px] font-bold text-slate-500 uppercase tracking-wider leading-none">{stat.label}</div>
+                  <div className="text-[8px] font-bold text-slate-700 uppercase tracking-wider leading-none">{stat.label}</div>
                 </div>
               </div>
             ))}
@@ -166,7 +169,7 @@ function Hero() {
                 </div>
                 <div className="text-left">
                   <div className="text-sm md:text-base font-black text-[#1e1b4b]">{stat.value}</div>
-                  <div className="text-[9px] md:text-[10px] font-bold text-slate-500 uppercase tracking-wider">{stat.label}</div>
+                  <div className="text-[9px] md:text-[10px] font-bold text-slate-700 uppercase tracking-wider">{stat.label}</div>
                 </div>
               </div>
             ))}

@@ -9,7 +9,7 @@ export default function ResultsSection() {
     const jeeImages = Array.from({ length: 12 }, (_, i) => {
         const num = String(i + 1).padStart(2, '0');
         return {
-            src: `/jee-result/${num}-E.jpg`,
+            src: `/jee-result/${num}-E.webp`,
             alt: `Team Excellent Patna IIT JEE Advanced Result Scorecard - Topper Achiever ${num}`
         };
     });
@@ -17,7 +17,7 @@ export default function ResultsSection() {
     const neetImages = Array.from({ length: 8 }, (_, i) => {
         const num = String(i + 1).padStart(2, '0');
         return {
-            src: `/neet-result/${num}.jpg`,
+            src: `/neet-result/${num}.webp`,
             alt: `Team Excellent Patna NEET UG Entrance Exam Result Scorecard - Topper Achiever ${num}`
         };
     });
@@ -134,7 +134,10 @@ export default function ResultsSection() {
                                             <img
                                                 src={image.src}
                                                 alt={image.alt}
+                                                width="220"
+                                                height="300"
                                                 loading="lazy"
+                                                decoding="async"
                                                 className="w-full h-auto block transform group-hover/card:scale-105 transition-transform duration-500"
                                             />
                                         </div>
