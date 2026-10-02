@@ -144,6 +144,7 @@ export default function Footer() {
             <li><Link to="/blogs" className="hover:text-gray-300 transition-colors">Blogs</Link></li>
             <li><Link to="/result" className="hover:text-gray-300 transition-colors">Results & Stars</Link></li>
             <li><Link to="/contact" className="hover:text-gray-300 transition-colors">Contact Us</Link></li>
+            <li><Link to="/admin-login" className="hover:text-gray-300 transition-colors">Admin Login</Link></li>
           </ul>
         </div>
 

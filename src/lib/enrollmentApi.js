@@ -28,6 +28,10 @@ export const fetchEnrollments = async () => {
         });
         return response.data;
     } catch (error) {
+        if (error.response?.status === 401) {
+            localStorage.removeItem('adminToken');
+            window.dispatchEvent(new Event('forceLogout'));
+        }
         throw error.response?.data || error.message;
     }
 };

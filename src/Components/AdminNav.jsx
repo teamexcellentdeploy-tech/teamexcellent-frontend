@@ -48,7 +48,7 @@ export default function AdminNav() {
                         <PhoneCall size={18} />
                         <span>Counseling</span>
                     </NavLink>
-                    <NavLink to="/admin-login" className={linkClass} onClick={() => setIsOpen(false)}>
+                    <NavLink to="/admin/marks" className={linkClass} onClick={() => setIsOpen(false)}>
                         <Award size={18} />
                         <span>Marks</span>
                     </NavLink>

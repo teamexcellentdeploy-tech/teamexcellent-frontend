@@ -74,6 +74,20 @@ const AdminMarks = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const handleAuthChange = () => {
+      setIsLoggedIn(!!localStorage.getItem("adminToken"));
+    };
+
+    window.addEventListener("forceLogout", handleAuthChange);
+    window.addEventListener("storage", handleAuthChange);
+
+    return () => {
+      window.removeEventListener("forceLogout", handleAuthChange);
+      window.removeEventListener("storage", handleAuthChange);
+    };
+  }, []);
+
+  useEffect(() => {
     if (isLoggedIn) loadMarks();
   }, [isLoggedIn]);
 
