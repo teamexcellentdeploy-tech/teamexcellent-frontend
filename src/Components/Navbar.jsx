@@ -14,31 +14,14 @@ import {
   Info, 
   ArrowRight, 
   Sparkles,
-  Stethoscope,
-  UserCheck,
-  LogIn
+  Stethoscope
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import TeamExcellent from "../assets/TeamExcellent.webp";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(!!localStorage.getItem("adminToken"));
   const location = useLocation();
-
-  useEffect(() => {
-    const handleAuthChange = () => {
-      setIsAdminLoggedIn(!!localStorage.getItem("adminToken"));
-    };
-
-    window.addEventListener("forceLogout", handleAuthChange);
-    window.addEventListener("storage", handleAuthChange);
-
-    return () => {
-      window.removeEventListener("forceLogout", handleAuthChange);
-      window.removeEventListener("storage", handleAuthChange);
-    };
-  }, []);
 
   // Prevent background scroll when mobile menu is open
   useEffect(() => {
@@ -258,31 +241,6 @@ export default function Navbar() {
             />
 
             <NavItem to="/about" label="About" active={location.pathname === "/about"} />
-            
-            {/* Admin / Login Button */}
-            <li>
-              <Link
-                to={isAdminLoggedIn ? "/admin" : "/admin-login"}
-                className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all flex items-center gap-1.5 ${
-                  isAdminLoggedIn 
-                    ? "bg-purple-50 text-[#5B2D7C] hover:bg-purple-100 border border-purple-200" 
-                    : "text-slate-600 hover:text-[#5B2D7C] hover:bg-slate-100"
-                }`}
-                title={isAdminLoggedIn ? "Admin Dashboard" : "Admin Login"}
-              >
-                {isAdminLoggedIn ? (
-                  <>
-                    <UserCheck className="w-3.5 h-3.5 text-[#5B2D7C]" />
-                    <span>Admin</span>
-                  </>
-                ) : (
-                  <>
-                    <LogIn className="w-3.5 h-3.5" />
-                    <span>Login</span>
-                  </>
-                )}
-              </Link>
-            </li>
 
             {/* Contact Us Button */}
             <li className="ml-1 xl:ml-2">
@@ -396,13 +354,6 @@ export default function Navbar() {
                   to="/about" 
                   label="About Us" 
                   icon={<Info className="w-4.5 h-4.5 text-slate-600" />} 
-                  onClick={() => setIsOpen(false)} 
-                />
-
-                <NavItemMobile 
-                  to={isAdminLoggedIn ? "/admin" : "/admin-login"}
-                  label={isAdminLoggedIn ? "Admin Dashboard" : "Admin Login"} 
-                  icon={isAdminLoggedIn ? <UserCheck className="w-4.5 h-4.5 text-purple-600" /> : <LogIn className="w-4.5 h-4.5 text-purple-600" />} 
                   onClick={() => setIsOpen(false)} 
                 />
               </div>
