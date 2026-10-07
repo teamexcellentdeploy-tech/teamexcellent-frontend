@@ -23,18 +23,35 @@ const formatDate = (dateStr) => {
 
 const parseDDMMYYYY = (str) => {
   if (!str) return null;
-  const cleanStr = str.replace(/\//g, "-").trim();
+  const cleanStr = String(str).replace(/\//g, "-").trim();
+
+  // If already in YYYY-MM-DD format
+  if (/^\d{4}-\d{1,2}-\d{1,2}$/.test(cleanStr)) {
+    const [year, month, day] = cleanStr.split("-");
+    return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+  }
+
   const parts = cleanStr.split("-");
   if (parts.length === 3) {
-    let day = parts[0].trim();
-    let month = parts[1].trim();
-    let year = parts[2].trim();
-    if (day.length === 1) day = "0" + day;
-    if (month.length === 1) month = "0" + month;
-    if (day.length === 2 && month.length === 2 && year.length === 4) {
-      return `${year}-${month}-${day}`;
+    let part1 = parts[0].trim();
+    let part2 = parts[1].trim();
+    let part3 = parts[2].trim();
+
+    // If DD-MM-YYYY
+    if (part3.length === 4) {
+      return `${part3}-${part2.padStart(2, "0")}-${part1.padStart(2, "0")}`;
+    }
+    // If YYYY-MM-DD
+    if (part1.length === 4) {
+      return `${part1}-${part2.padStart(2, "0")}-${part3.padStart(2, "0")}`;
     }
   }
+
+  const d = new Date(str);
+  if (!isNaN(d.getTime())) {
+    return d.toISOString().split("T")[0];
+  }
+
   return null;
 };
 
@@ -103,8 +120,9 @@ const AdminMarks = () => {
             : b._id.localeCompare(a._id)
         )
       );
-    } catch {
-      toast.error("Failed to load marks");
+    } catch (error) {
+      const msg = error.response?.data?.message || "Failed to load marks";
+      toast.error(msg);
       setMarks([]);
     } finally {
       setIsLoading(false);
@@ -149,14 +167,15 @@ const AdminMarks = () => {
           prev.map((m) => (m._id === editingMark._id ? response.data : m))
         );
         setEditingMark(null);
-        toast.success("Marks updated");
+        toast.success("Marks updated successfully");
       } else {
         await marksAPI.create(formData);
         await loadMarks();
-        toast.success("Marks added");
+        toast.success("Marks added successfully");
       }
-    } catch {
-      toast.error("Failed to submit");
+    } catch (error) {
+      const msg = error.response?.data?.message || error.response?.data?.error || "Failed to submit marks";
+      toast.error(msg);
     } finally {
       setIsLoading(false);
     }
@@ -169,8 +188,9 @@ const AdminMarks = () => {
       await marksAPI.delete(id);
       setMarks((prev) => prev.filter((m) => m._id !== id));
       toast.success("Record deleted");
-    } catch {
-      toast.error("Failed to delete");
+    } catch (error) {
+      const msg = error.response?.data?.message || "Failed to delete";
+      toast.error(msg);
     } finally {
       setIsLoading(false);
     }

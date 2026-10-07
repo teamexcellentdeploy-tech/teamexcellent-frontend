@@ -23,18 +23,35 @@ const formatDate = (dateStr) => {
 
 const parseDDMMYYYY = (str) => {
   if (!str) return null;
-  const cleanStr = str.replace(/\//g, "-").trim();
+  const cleanStr = String(str).replace(/\//g, "-").trim();
+
+  // If already in YYYY-MM-DD format
+  if (/^\d{4}-\d{1,2}-\d{1,2}$/.test(cleanStr)) {
+    const [year, month, day] = cleanStr.split("-");
+    return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+  }
+
   const parts = cleanStr.split("-");
   if (parts.length === 3) {
-    let day = parts[0].trim();
-    let month = parts[1].trim();
-    let year = parts[2].trim();
-    if (day.length === 1) day = "0" + day;
-    if (month.length === 1) month = "0" + month;
-    if (day.length === 2 && month.length === 2 && year.length === 4) {
-      return `${year}-${month}-${day}`;
+    let part1 = parts[0].trim();
+    let part2 = parts[1].trim();
+    let part3 = parts[2].trim();
+
+    // If DD-MM-YYYY
+    if (part3.length === 4) {
+      return `${part3}-${part2.padStart(2, "0")}-${part1.padStart(2, "0")}`;
+    }
+    // If YYYY-MM-DD
+    if (part1.length === 4) {
+      return `${part1}-${part2.padStart(2, "0")}-${part3.padStart(2, "0")}`;
     }
   }
+
+  const d = new Date(str);
+  if (!isNaN(d.getTime())) {
+    return d.toISOString().split("T")[0];
+  }
+
   return null;
 };
 
