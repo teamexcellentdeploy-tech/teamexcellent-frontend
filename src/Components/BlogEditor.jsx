@@ -164,7 +164,7 @@ export default function BlogEditor() {
             const token = localStorage.getItem('adminToken');
 
             const response = await axios.post(
-                `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api'}/upload/image`,
+                `${import.meta.env.VITE_API_BASE_URL || 'https://team-excellent-website-backend.vercel.app/api'}/upload/image`,
                 formDataToUpload,
                 {
                     headers: {
