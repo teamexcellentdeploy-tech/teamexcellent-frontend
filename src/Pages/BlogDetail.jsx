@@ -6,6 +6,7 @@ import { fetchBlogByPermalink } from '../lib/blogApi';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import ExploreLinks from '../Components/ExploreLinks';
+import toast from 'react-hot-toast';
 
 export default function BlogDetail() {
     const { permalink } = useParams();
@@ -33,6 +34,48 @@ export default function BlogDetail() {
         }
     };
 
+    useEffect(() => {
+        if (!blog?.seoExtraHead) return;
+
+        try {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(blog.seoExtraHead, 'text/html');
+            const nodes = [
+                ...Array.from(doc.head.childNodes),
+                ...Array.from(doc.body.childNodes)
+            ];
+
+            const injected = [];
+            nodes.forEach((node) => {
+                if (node.nodeType === Node.ELEMENT_NODE) {
+                    let el;
+                    if (node.tagName.toLowerCase() === 'script') {
+                        el = document.createElement('script');
+                        Array.from(node.attributes).forEach((attr) => {
+                            el.setAttribute(attr.name, attr.value);
+                        });
+                        el.text = node.textContent;
+                    } else {
+                        el = node.cloneNode(true);
+                    }
+                    el.setAttribute('data-blog-extra-head', 'true');
+                    document.head.appendChild(el);
+                    injected.push(el);
+                }
+            });
+
+            return () => {
+                injected.forEach((el) => {
+                    if (el.parentNode) {
+                        el.parentNode.removeChild(el);
+                    }
+                });
+            };
+        } catch (e) {
+            console.error('Error injecting custom blog head elements:', e);
+        }
+    }, [blog?.seoExtraHead]);
+
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         return date.toLocaleDateString('en-US', {
@@ -43,7 +86,7 @@ export default function BlogDetail() {
     };
 
     const getReadingTime = (description) => {
-        const text = description.replace(/<[^>]*>/g, '');
+        const text = (description || '').replace(/<[^>]*>/g, '');
         const words = text.split(/\s+/).length;
         const minutes = Math.ceil(words / 200);
         return `${minutes} min`;
@@ -127,22 +170,19 @@ export default function BlogDetail() {
                 <title>{blog.seoTitle || blog.title}</title>
                 <meta
                     name="description"
-                    content={blog.seoDescription || blog.excerpt || blog.description.replace(/<[^>]*>/g, '').substring(0, 160)}
+                    content={blog.seoDescription || blog.excerpt || (blog.description || '').replace(/<[^>]*>/g, '').substring(0, 160)}
                 />
                 <meta property="og:type" content="article" />
                 <meta property="og:url" content={`https://teamexcellentcareerinstitute.in/blogs/${blog.permalink}`} />
                 <link rel="canonical" href={`https://teamexcellentcareerinstitute.in/blogs/${blog.permalink}`} />
                 <meta property="og:title" content={blog.ogTitle || blog.seoTitle || blog.title} />
-                <meta property="og:description" content={blog.ogDescription || blog.seoDescription || blog.excerpt || blog.description.replace(/<[^>]*>/g, '').substring(0, 160)} />
+                <meta property="og:description" content={blog.ogDescription || blog.seoDescription || blog.excerpt || (blog.description || '').replace(/<[^>]*>/g, '').substring(0, 160)} />
                 {blog.featuredImage && <meta property="og:image" content={blog.featuredImage} />}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={blog.ogTitle || blog.seoTitle || blog.title} />
-                <meta name="twitter:description" content={blog.ogDescription || blog.seoDescription || blog.excerpt || blog.description.replace(/<[^>]*>/g, '').substring(0, 160)} />
+                <meta name="twitter:description" content={blog.ogDescription || blog.seoDescription || blog.excerpt || (blog.description || '').replace(/<[^>]*>/g, '').substring(0, 160)} />
                 {blog.featuredImage && <meta name="twitter:image" content={blog.featuredImage} />}
                 {blog.seoKeywords && <meta name="keywords" content={blog.seoKeywords} />}
-                {blog.seoExtraHead && (
-                    <div dangerouslySetInnerHTML={{ __html: blog.seoExtraHead }} />
-                )}
 
                 {/* BLOG POST SCHEMA */}
                 <script type="application/ld+json">
@@ -155,7 +195,7 @@ export default function BlogDetail() {
                             "@id": `https://teamexcellentcareerinstitute.in/blogs/${blog.permalink}`
                         },
                         "headline": blog.title,
-                        "description": blog.seoDescription || blog.excerpt || blog.description.replace(/<[^>]*>/g, '').substring(0, 160),
+                        "description": blog.seoDescription || blog.excerpt || (blog.description || '').replace(/<[^>]*>/g, '').substring(0, 160),
                         "image": blog.featuredImage || "https://teamexcellentcareerinstitute.in/logo192.png",
                         "author": {
                             "@type": "Organization",
