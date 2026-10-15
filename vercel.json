@@ -1,11 +1,110 @@
 {
   "redirects": [
     {
-      "source": "/best-jee-coaching-in-patna",
+      "source": "/programs/jee",
       "destination": "/iit-jee-coaching-in-patna",
       "permanent": true
     },
-
+    {
+      "source": "/programs/neet",
+      "destination": "/neet-coaching-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/programs/jee-main-coaching-in-patna",
+      "destination": "/jee-main-coaching-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/programs/jee-advanced-coaching-in-patna",
+      "destination": "/jee-advanced-coaching-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/programs/class-6-to-10",
+      "destination": "/class-6-to-10",
+      "permanent": true
+    },
+    {
+      "source": "/programs/jee-class-11-in-patna",
+      "destination": "/iit-jee-coaching-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/programs/jee-class-12-in-patna",
+      "destination": "/jee-coaching-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/programs/jee-droppers-in-patna",
+      "destination": "/jee-dropper-coaching-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/programs/neet-class-11-in-patna",
+      "destination": "/neet-coaching-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/programs/neet-class-12-in-patna",
+      "destination": "/neet-class-12-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/programs/neet-droppers-in-patna",
+      "destination": "/neet-dropper-coaching-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/programs/class-6-in-patna",
+      "destination": "/class-6-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/programs/class-7-in-patna",
+      "destination": "/class-7-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/programs/class-8-in-patna",
+      "destination": "/class-8-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/programs/class-9-in-patna",
+      "destination": "/class-9-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/programs/class-10-in-patna",
+      "destination": "/class-10-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/jee-class-11-in-patna",
+      "destination": "/iit-jee-coaching-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/jee-class-12-in-patna",
+      "destination": "/jee-coaching-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/jee-droppers-in-patna",
+      "destination": "/jee-dropper-coaching-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/neet-class-11-in-patna",
+      "destination": "/neet-coaching-in-patna",
+      "permanent": true
+    },
+    {
+      "source": "/neet-droppers-in-patna",
+      "destination": "/neet-dropper-coaching-in-patna",
+      "permanent": true
+    },
     {
       "source": "/blogs/role-of-time-management-in-jee-and-neet-preparation",
       "destination": "/blogs",
