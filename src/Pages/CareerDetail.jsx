@@ -72,6 +72,98 @@ export default function CareerDetail() {
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={`https://teamexcellentcareerinstitute.in/careers/${career._id}`} />
                 <link rel="canonical" href={`https://teamexcellentcareerinstitute.in/careers/${career._id}`} />
+
+                {/* JobPosting Schema */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "JobPosting",
+                        "title": career.title,
+                        "description": career.description || career.title,
+                        "datePosted": career.datePosted ? new Date(career.datePosted).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
+                        "employmentType": career.jobType === "Full-time" ? "FULL_TIME" : (career.jobType === "Part-time" ? "PART_TIME" : "OTHER"),
+                        "hiringOrganization": {
+                            "@type": "Organization",
+                            "name": "Team Excellent Career Institute",
+                            "sameAs": "https://teamexcellentcareerinstitute.in",
+                            "logo": "https://teamexcellentcareerinstitute.in/logo192.png"
+                        },
+                        "jobLocation": {
+                            "@type": "Place",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": "Near NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
+                                "addressLocality": "Patna",
+                                "addressRegion": "Bihar",
+                                "postalCode": "800016",
+                                "addressCountry": "IN"
+                            }
+                        },
+                        "baseSalary": {
+                            "@type": "MonetaryAmount",
+                            "currency": "INR",
+                            "value": {
+                                "@type": "QuantitativeValue",
+                                "value": career.salary || "Competitive",
+                                "unitText": "MONTH"
+                            }
+                        }
+                    })}
+                </script>
+
+                {/* BreadcrumbList Schema */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "https://teamexcellentcareerinstitute.in/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Careers",
+                                "item": "https://teamexcellentcareerinstitute.in/careers"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": career.title,
+                                "item": `https://teamexcellentcareerinstitute.in/careers/${career._id}`
+                            }
+                        ]
+                    })}
+                </script>
+
+                {/* FAQPage Schema */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": [
+                            {
+                                "@type": "Question",
+                                "name": `What is the location of the job for ${career.title}?`,
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "The job location is at Team Excellent Career Institute campus near NMCH College, Saketpuri, Patna, Bihar."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "How can I apply for this position?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "You can send your updated resume directly through our contact email at teamexcellentpatna@gmail.com or visit our administrative desk in Patna."
+                                }
+                            }
+                        ]
+                    })}
+                </script>
             </Helmet>
             <Navbar />
             

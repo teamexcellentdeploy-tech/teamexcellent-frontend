@@ -20,6 +20,107 @@ export default function Class8() {
           content="Start building strong basic concepts early with our school foundation course for Class 8 in Patna. Prepare for Science, Math, and Mental Ability." 
         />
         <link rel="canonical" href="https://teamexcellentcareerinstitute.in/class-8-in-patna" />
+
+        {/* EducationalOrganization Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "Team Excellent Career Institute",
+            "url": "https://teamexcellentcareerinstitute.in",
+            "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Near NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
+              "addressLocality": "Patna",
+              "addressRegion": "Bihar",
+              "postalCode": "800016",
+              "addressCountry": "IN"
+            }
+          })}
+        </script>
+
+        {/* Course Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": "Class 8 Foundation Course",
+            "description": "Pre-foundation coaching program for Class 8 students in Patna focusing on advanced Mathematics, Science, and Mental Ability for Olympiads and future entrance preparation.",
+            "provider": {
+              "@type": "EducationalOrganization",
+              "name": "Team Excellent Career Institute",
+              "url": "https://teamexcellentcareerinstitute.in"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "210"
+            }
+          })}
+        </script>
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teamexcellentcareerinstitute.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Foundation (Class 6-10)",
+                "item": "https://teamexcellentcareerinstitute.in/class-6-to-10"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Class 8 Foundation",
+                "item": "https://teamexcellentcareerinstitute.in/class-8-in-patna"
+              }
+            ]
+          })}
+        </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Why is Class 8 a crucial year for starting competitive foundation coaching?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Class 8 introduces advanced concepts in Algebraic expressions, Linear equations, Mechanics, and Chemical reactions which form the base for Class 9 and 10 competitive exams."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which national talent exams can Class 8 students prepare for?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Students are trained for NMMS, Science Olympiads (NSO), Math Olympiads (IMO), and Cyber Olympiads alongside school syllabus."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are doubt sessions provided for Class 8 foundation students?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, dedicated daily doubt sessions ensure every student masters each numerical and conceptual theory completely."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <Navbar />

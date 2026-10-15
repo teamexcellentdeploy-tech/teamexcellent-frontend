@@ -20,6 +20,107 @@ export default function Class7() {
           content="Start building strong basic concepts early with our school foundation course for Class 7 in Patna. Prepare for Science, Math, and Mental Ability." 
         />
         <link rel="canonical" href="https://teamexcellentcareerinstitute.in/class-7-in-patna" />
+
+        {/* EducationalOrganization Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "Team Excellent Career Institute",
+            "url": "https://teamexcellentcareerinstitute.in",
+            "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Near NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
+              "addressLocality": "Patna",
+              "addressRegion": "Bihar",
+              "postalCode": "800016",
+              "addressCountry": "IN"
+            }
+          })}
+        </script>
+
+        {/* Course Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": "Class 7 Foundation Course",
+            "description": "Comprehensive school foundation program for Class 7 students in Patna covering Mathematics, Science, and Mental Ability for Olympiads and early competitive exam preparation.",
+            "provider": {
+              "@type": "EducationalOrganization",
+              "name": "Team Excellent Career Institute",
+              "url": "https://teamexcellentcareerinstitute.in"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "195"
+            }
+          })}
+        </script>
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teamexcellentcareerinstitute.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Foundation (Class 6-10)",
+                "item": "https://teamexcellentcareerinstitute.in/class-6-to-10"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Class 7 Foundation",
+                "item": "https://teamexcellentcareerinstitute.in/class-7-in-patna"
+              }
+            ]
+          })}
+        </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the syllabus of Class 7 foundation batch at Team Excellent?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The course covers advanced Mathematics (Algebra, Integers, Geometry), Science (Physics, Chemistry, Biology), and Mental Ability/Reasoning designed for Olympiads and CBSE/ICSE excellence."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does this course prepare students for Olympiads?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Students receive specialized Olympiad problem worksheets, past years' questions, and weekly timed test practice."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the batch timing for Class 7 in Patna?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Batches are conducted in evening shifts to accommodate regular school hours comfortably."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <Navbar />

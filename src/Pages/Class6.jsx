@@ -20,6 +20,107 @@ export default function Class6() {
           content="Start building strong basic concepts early with our school foundation course for Class 6 in Patna. Prepare for Science, Math, and Mental Ability." 
         />
         <link rel="canonical" href="https://teamexcellentcareerinstitute.in/class-6-in-patna" />
+
+        {/* EducationalOrganization Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "Team Excellent Career Institute",
+            "url": "https://teamexcellentcareerinstitute.in",
+            "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Near NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
+              "addressLocality": "Patna",
+              "addressRegion": "Bihar",
+              "postalCode": "800016",
+              "addressCountry": "IN"
+            }
+          })}
+        </script>
+
+        {/* Course Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": "Class 6 Foundation Course",
+            "description": "Junior school foundation course for Class 6 students in Patna covering Mathematics, Science, and Mental Ability for Olympiads and early competitive exam preparation.",
+            "provider": {
+              "@type": "EducationalOrganization",
+              "name": "Team Excellent Career Institute",
+              "url": "https://teamexcellentcareerinstitute.in"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "180"
+            }
+          })}
+        </script>
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teamexcellentcareerinstitute.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Foundation (Class 6-10)",
+                "item": "https://teamexcellentcareerinstitute.in/class-6-to-10"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Class 6 Foundation",
+                "item": "https://teamexcellentcareerinstitute.in/class-6-in-patna"
+              }
+            ]
+          })}
+        </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is covered in the Class 6 foundation coaching at Team Excellent Patna?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The Class 6 program covers comprehensive Mathematics, General Science (Physics, Chemistry, Biology basics), and Logical Reasoning/Mental Ability aligned with CBSE/ICSE syllabus and Olympiads."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can Class 6 students win scholarships at Team Excellent?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, Class 6 students can appear for the T-MAT scholarship exam to receive up to 100% scholarship on tuition fees."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does early foundation coaching in Class 6 help students?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It builds curiosity, improves school exam marks, eliminates math anxiety, and builds strong critical thinking skills for future exams like JEE and NEET."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <Navbar />

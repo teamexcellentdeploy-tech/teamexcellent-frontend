@@ -20,6 +20,107 @@ export default function Class9() {
           content="Start building strong basic concepts early with our school foundation course for Class 9 in Patna. Prepare for Science, Math, and Mental Ability." 
         />
         <link rel="canonical" href="https://teamexcellentcareerinstitute.in/class-9-in-patna" />
+
+        {/* EducationalOrganization Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "Team Excellent Career Institute",
+            "url": "https://teamexcellentcareerinstitute.in",
+            "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Near NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
+              "addressLocality": "Patna",
+              "addressRegion": "Bihar",
+              "postalCode": "800016",
+              "addressCountry": "IN"
+            }
+          })}
+        </script>
+
+        {/* Course Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": "Class 9 Pre-Foundation & Olympiad Course",
+            "description": "Pre-foundation coaching course for Class 9 students in Patna preparing for CBSE board excellence, NSEJS, NTSE, and strong fundamentals for IIT-JEE and NEET.",
+            "provider": {
+              "@type": "EducationalOrganization",
+              "name": "Team Excellent Career Institute",
+              "url": "https://teamexcellentcareerinstitute.in"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "240"
+            }
+          })}
+        </script>
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teamexcellentcareerinstitute.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Foundation (Class 6-10)",
+                "item": "https://teamexcellentcareerinstitute.in/class-6-to-10"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Class 9 Foundation",
+                "item": "https://teamexcellentcareerinstitute.in/class-9-in-patna"
+              }
+            ]
+          })}
+        </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How does Class 9 coaching prepare students for future IIT-JEE and NEET?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Class 9 covers core Physics (Laws of Motion, Gravitation, Work & Energy), Chemistry (Structure of Atom), and Mathematics (Coordinate Geometry, Polynomials) which directly link to Class 11 JEE and NEET syllabus."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are competitive exams like NSEJS and Olympiads covered in Class 9?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, our curriculum provides dedicated modules, mock tests, and analytical reasoning worksheets for NSEJS, PRMO, and State Olympiads."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can Class 9 students get admission through T-MAT scholarship exam?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, students can take the T-MAT scholarship exam and win up to 100% scholarship on tuition fees for their Class 9 foundation batch."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <Navbar />

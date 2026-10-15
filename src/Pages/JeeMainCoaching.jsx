@@ -322,6 +322,48 @@ export default function JeeMainCoaching() {
             ]
           })}
         </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How does Team Excellent prepare students specifically for JEE Main in Patna?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our JEE Main coaching emphasizes high speed and high accuracy through NCERT-based core coverage, topic-wise practice questions, formula application drills, and full-length CBT computer-based mock tests."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is the JEE Main test series conducted in CBT (Computer Based Test) format?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, our mock tests mirror the exact NTA interface on our specialized online portal (AITS), preparing students for time management and exam pressure."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the fee structure and scholarship for JEE Main coaching?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Fees depend on the chosen batch (Class 11, Class 12, or Dropper). Students can avail up to 100% scholarship through our T-MAT entrance test."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can Class 12 board students manage both Boards and JEE Main at Team Excellent?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, our syllabus is synchronized with CBSE/State Board exams to ensure students excel in both their 12th board exams and JEE Main without burnout."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <Navbar />

@@ -20,6 +20,107 @@ export default function Class10() {
           content="Succeed in your Board exams and build a strong foundation for JEE/NEET with our Class 10 coaching program in Patna. Prepare for Boards, NTSE, and Olympiads." 
         />
         <link rel="canonical" href="https://teamexcellentcareerinstitute.in/class-10-in-patna" />
+
+        {/* EducationalOrganization Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "Team Excellent Career Institute",
+            "url": "https://teamexcellentcareerinstitute.in",
+            "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Near NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
+              "addressLocality": "Patna",
+              "addressRegion": "Bihar",
+              "postalCode": "800016",
+              "addressCountry": "IN"
+            }
+          })}
+        </script>
+
+        {/* Course Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": "Class 10 Board Excellence & Foundation Course",
+            "description": "Class 10 board exam preparation and competitive foundation program in Patna ensuring 95%+ board scores and strong preparation for Olympiads, NTSE, JEE, and NEET.",
+            "provider": {
+              "@type": "EducationalOrganization",
+              "name": "Team Excellent Career Institute",
+              "url": "https://teamexcellentcareerinstitute.in"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "260"
+            }
+          })}
+        </script>
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teamexcellentcareerinstitute.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Foundation (Class 6-10)",
+                "item": "https://teamexcellentcareerinstitute.in/class-6-to-10"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Class 10 Foundation",
+                "item": "https://teamexcellentcareerinstitute.in/class-10-in-patna"
+              }
+            ]
+          })}
+        </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How does Team Excellent help students score 95%+ in Class 10 Board exams?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We provide rigorous NCERT line-by-line coverage, chapter-wise sample papers, answer-writing masterclasses, and pre-board simulated examinations."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does the Class 10 program also prepare students for Class 11 IIT-JEE and NEET?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, our bridge modules teach advanced problem-solving techniques in Trigonometry, Mechanics, Electricity, and Carbon compounds to ensure a smooth transition to Class 11 entrance prep."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can Class 10 students win scholarships for Class 11 batches?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, through our T-MAT scholarship exam, top-performing Class 10 students can earn up to 100% scholarship for their 2-year JEE or NEET program."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <Navbar />

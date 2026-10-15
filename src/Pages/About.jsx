@@ -83,6 +83,48 @@ export default function About() {
             ]
           })}
         </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Who is the founder of Team Excellent Career Institute?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Team Excellent Career Institute was founded and is led by Albert Newwel, an alumnus of IIT-BHU Varanasi (M.Tech) with over 12 years of specialized experience in mentoring IIT-JEE and NEET aspirants."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What courses does Team Excellent offer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We provide dedicated coaching for IIT-JEE (Main & Advanced), NEET UG, and School Foundation courses for Class 6 to 10 students."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is Team Excellent's teaching philosophy?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our philosophy revolves around fundamental conceptual clarity, rigorous numerical practice, individual doubt resolution, and real-time computer-based test simulation."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where is the Team Excellent campus in Patna?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our head institute is located Near NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri, Patna, Bihar, 800016."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <Navbar />

@@ -16,6 +16,73 @@ export default function PrivacyPolicy() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://teamexcellentcareerinstitute.in/privacy-policy" />
         <link rel="canonical" href="https://teamexcellentcareerinstitute.in/privacy-policy" />
+
+        {/* WebPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Privacy Policy | Team Excellent Career Institute",
+            "url": "https://teamexcellentcareerinstitute.in/privacy-policy",
+            "description": "Privacy policy outlining data collection, usage, and student security safeguards at Team Excellent Career Institute."
+          })}
+        </script>
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teamexcellentcareerinstitute.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Privacy Policy",
+                "item": "https://teamexcellentcareerinstitute.in/privacy-policy"
+              }
+            ]
+          })}
+        </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What personal information does Team Excellent collect?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We collect basic contact details (name, phone number, email) and student academic records required for course enrollment, performance tracking, and parent communication."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Team Excellent sell student data to third parties?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No, we strictly do not sell, rent, or share personal student information with unauthorized external third parties."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I contact Team Excellent regarding privacy concerns?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can email our data support team at teamexcellentpatna@gmail.com or call our admissions office at +91-9942000371."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <Navbar />

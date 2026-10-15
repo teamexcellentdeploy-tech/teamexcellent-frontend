@@ -22,6 +22,13 @@ export default defineConfig({
     }
   },
   server: {
+    proxy: {
+      '/sitemap.xml': {
+        target: 'https://team-excellent-website-backend.vercel.app',
+        changeOrigin: true,
+        rewrite: () => '/api/sitemap.xml'
+      }
+    },
     hmr: {
       overlay: false, // Disable error overlay
       clientErrorOverlay: false, // Disable client-side error overlay

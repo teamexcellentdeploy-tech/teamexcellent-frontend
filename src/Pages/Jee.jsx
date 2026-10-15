@@ -164,6 +164,56 @@ export default function Jee() {
             ]
           })}
         </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Which is the best coaching institute for IIT JEE in Patna?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Team Excellent Career Institute is widely recognized as one of the best coaching institutes in Patna for IIT JEE (Main & Advanced), led by IIT-BHU alumni and expert faculty with high success rates."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Team Excellent provide coaching for both JEE Main and JEE Advanced?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, our integrated curriculum covers both JEE Main concept mastery and JEE Advanced analytical problem solving with dedicated numerical practice and computer-based mock tests."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What batches are available for JEE preparation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We offer 2-year classroom programs for Class 11 students, 1-year target batches for Class 12 students, and intensive repeater/dropper batches for 12th pass students."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is scholarship available for JEE coaching at Team Excellent?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, students can appear for the T-MAT (Team Excellent Talent Search Examination) to receive up to 100% scholarships on tuition fees."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does Team Excellent help with doubt clearing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We provide daily 1-on-1 doubt clearing sessions with senior faculties, dedicated discussion rooms, and complete module-wise DPP solutions."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <Navbar />

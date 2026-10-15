@@ -250,6 +250,32 @@ export default function BlogDetail() {
                         ]
                     })}
                 </script>
+
+                {/* FAQPage Schema */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": [
+                            {
+                                "@type": "Question",
+                                "name": `How does Team Excellent help students prepare for competitive exams like JEE & NEET?`,
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Team Excellent Career Institute in Patna provides comprehensive curriculum design, smart classroom teaching by IITian faculty, module-wise daily practice problems, and real-time computer-based test series."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "Where can students get more information or admission counseling?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Students and parents can visit our Patna center near NMCH College in Saketpuri, or contact us at +91-9942000371."
+                                }
+                            }
+                        ]
+                    })}
+                </script>
             </Helmet>
             <Navbar />
             <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50 pt-32 pb-20">

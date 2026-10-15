@@ -34,6 +34,81 @@ export default function Careers() {
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://teamexcellentcareerinstitute.in/careers" />
                 <link rel="canonical" href="https://teamexcellentcareerinstitute.in/careers" />
+
+                {/* EducationalOrganization Schema */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "EducationalOrganization",
+                        "name": "Team Excellent Career Institute",
+                        "url": "https://teamexcellentcareerinstitute.in",
+                        "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "Near NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
+                            "addressLocality": "Patna",
+                            "addressRegion": "Bihar",
+                            "postalCode": "800016",
+                            "addressCountry": "IN"
+                        }
+                    })}
+                </script>
+
+                {/* BreadcrumbList Schema */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "https://teamexcellentcareerinstitute.in/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Careers",
+                                "item": "https://teamexcellentcareerinstitute.in/careers"
+                            }
+                        ]
+                    })}
+                </script>
+
+                {/* FAQPage Schema */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": [
+                            {
+                                "@type": "Question",
+                                "name": "What career opportunities are available at Team Excellent Patna?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "We hire JEE and NEET faculty members in Physics, Chemistry, Mathematics, and Biology, along with academic counselors, content developers, and student support executives."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "How can I apply for a job at Team Excellent?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "You can browse active job postings on our careers page and submit your resume directly, or email your CV to teamexcellentpatna@gmail.com."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "What is the interview and selection process for faculty?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "The selection process includes a written subject test, a offline classroom demo lecture, and a personal interview with the Director."
+                                }
+                            }
+                        ]
+                    })}
+                </script>
             </Helmet>
             <Navbar />
             

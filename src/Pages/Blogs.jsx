@@ -111,6 +111,28 @@ export default function Blogs() {
                         ]
                     })}
                 </script>
+
+                {/* BREADCRUMB SCHEMA */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "https://teamexcellentcareerinstitute.in/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Blog",
+                                "item": "https://teamexcellentcareerinstitute.in/blogs"
+                            }
+                        ]
+                    })}
+                </script>
             </Helmet>
             <Navbar />
             <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-32 pb-16">

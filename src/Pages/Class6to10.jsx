@@ -144,6 +144,48 @@ export default function Class6to10() {
             ]
           })}
         </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Why should students join foundation courses in Class 6 to 10?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Early foundation courses build analytical problem-solving skills, remove exam fear in Mathematics and Science, and create a solid base for future competitive exams like JEE, NEET, NTSE, and Olympiads."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does the foundation course cover the school board syllabus?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, our foundation batches fully cover the school syllabus (CBSE, ICSE, and State Board) ensuring top school grades while teaching advanced concepts for competitive exams."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What subjects are taught in Class 6-10 foundation courses?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The curriculum includes Physics, Chemistry, Biology, Mathematics, and Mental Ability (Logical Reasoning)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are scholarships available for junior students?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, Class 6 to 10 students can appear for the T-MAT examination to win scholarships up to 100% on their tuition fees."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <Navbar />

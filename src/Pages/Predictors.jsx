@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import ExploreLinks from "../Components/ExploreLinks";
@@ -258,6 +259,78 @@ export default function Predictors() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100/50 flex flex-col font-sans">
+      <Helmet>
+        <title>Rank & College Predictor (JEE & NEET) | Team Excellent</title>
+        <meta name="description" content="Calculate your expected IIT-JEE and NEET ranks dynamically and discover matching medical and engineering colleges with Team Excellent Career Institute." />
+        <link rel="canonical" href="https://teamexcellentcareerinstitute.in/rank-predictor" />
+
+        {/* WebPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Rank & College Predictor (JEE & NEET) | Team Excellent",
+            "url": "https://teamexcellentcareerinstitute.in/rank-predictor",
+            "description": "Interactive online tool to calculate expected ranks and matching colleges for JEE and NEET aspirants."
+          })}
+        </script>
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teamexcellentcareerinstitute.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Predictors",
+                "item": "https://teamexcellentcareerinstitute.in/rank-predictor"
+              }
+            ]
+          })}
+        </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How does the Team Excellent JEE & NEET rank predictor work?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The predictor calculates your estimated All India Rank using historical score-versus-percentile shifts and NTA opening-closing cutoffs from previous years."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I check which NIT or Medical College I can get based on my rank?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, enter your category and state to view your probability (High, Medium, Low) for premier NITs, IIITs, AIIMS, and state medical colleges."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Team Excellent provide 1-on-1 counseling support after results?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, students can book a free academic counseling session with senior IITian mentors to finalize branch selection and college preference lists."
+                }
+              }
+            ]
+          })}
+        </script>
+      </Helmet>
       <Navbar />
 
       {/* Main Container */}

@@ -15,6 +15,81 @@ export default function Student() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://teamexcellentcareerinstitute.in/student-portal" />
         <link rel="canonical" href="https://teamexcellentcareerinstitute.in/student-portal" />
+
+        {/* EducationalOrganization Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "Team Excellent Career Institute",
+            "url": "https://teamexcellentcareerinstitute.in",
+            "logo": "https://teamexcellentcareerinstitute.in/logo192.png",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Near NMCH College, Bajar Samiti, New Kunj Colony, Saketpuri",
+              "addressLocality": "Patna",
+              "addressRegion": "Bihar",
+              "postalCode": "800016",
+              "addressCountry": "IN"
+            }
+          })}
+        </script>
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teamexcellentcareerinstitute.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Student Portal",
+                "item": "https://teamexcellentcareerinstitute.in/student-portal"
+              }
+            ]
+          })}
+        </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How can enrolled students check their weekly test marks?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Students can enter their registered Roll Number or Mobile Number in the Student Performance section to view detailed marks and subject-wise scorecards."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the AITS Online Examination Centre?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "AITS is our Computer-Based Test (CBT) portal simulating the real NTA interface for JEE Main, JEE Advanced, and NEET mock examinations."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do students access the online mock test portal?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Students can click the 'Start Online Test' link on the portal to log in with their allocated credentials at teamexcellent-aits.online."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       <Navbar />
       

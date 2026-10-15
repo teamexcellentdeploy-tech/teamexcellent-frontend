@@ -16,6 +16,73 @@ export default function TermsOfService() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://teamexcellentcareerinstitute.in/terms-of-service" />
         <link rel="canonical" href="https://teamexcellentcareerinstitute.in/terms-of-service" />
+
+        {/* WebPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Terms of Service | Team Excellent Career Institute",
+            "url": "https://teamexcellentcareerinstitute.in/terms-of-service",
+            "description": "Terms and conditions governing course admissions, classroom code of conduct, and services at Team Excellent Career Institute."
+          })}
+        </script>
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://teamexcellentcareerinstitute.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Terms of Service",
+                "item": "https://teamexcellentcareerinstitute.in/terms-of-service"
+              }
+            ]
+          })}
+        </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What are the rules regarding attendance and classroom conduct?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Students are required to maintain regular attendance and follow academic decorum. Absenteeism notifications are automatically sent to registered parents."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the policy on study material distribution?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Team Excellent proprietary study materials and test series modules are licensed exclusively for registered student use and cannot be reproduced or redistributed."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does the institute handle fee payment and refund requests?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Tuition fees must be cleared according to the agreed installment schedules. Refund rules apply as stated in the institutional admission guidelines."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <Navbar />

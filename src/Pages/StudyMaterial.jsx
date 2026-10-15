@@ -128,6 +128,40 @@ export default function StudyMaterial() {
             ]
           })}
         </script>
+
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What study materials does Team Excellent provide for JEE and NEET?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We provide comprehensive theory modules, Daily Practice Problems (DPPs), previous years' question banks (PYQs), formula cheat sheets, and NCERT-based question drills."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are answer keys and video/text solutions provided with the DPPs?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, detailed stepwise solutions are provided for every DPP, and unresolved doubts are discussed in daily classroom doubt sessions."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can external students access Team Excellent study materials?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Selected study packages and full test series modules are available for distance learning and external students upon enrollment."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <Navbar />
